@@ -4,22 +4,19 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "build",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   },
   "emulators": {
     "firestore": {
       "port": 8080
     }
+  },
+  "database": {
+    "rules": "database.rules.json"
   }
 }
