@@ -3,14 +3,12 @@ import firebase from 'firebase';
 import authenticate from './authenticate.js';
 
  
-function LoginButton() {
-  
-
+export default function LoginButton() {
   return (
-    <div class="Toggle">
-    <button class="myButton" onClick={() => authenticate()}>
-      Login
-    </button></div>);
-  }
+    <div className="Toggle">
+      <button className="myButton" onClick={() => authenticate()}>
+        Login
+      </button>
+    </div>);
+}
 
-export default LoginButton;
