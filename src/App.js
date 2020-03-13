@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { useState, Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import authenticate from './authenticate.js';
+import LoginButton from './components/LoginButton';
+import SpotifyWebApi from 'spotify-web-api-js';
+import getToken from './GetToken'
+import getPlaylistInfo from './getPlaylistInfo'
 
-function App() {
+export default function App() {
+  const spotifyApi = new SpotifyWebApi();
+  const token = getToken();
+  getPlaylistInfo(token)
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Eit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Testing that we're here</h1>
+        <LoginButton />
       </header>
     </div>
   );
 }
-
-export default App;
