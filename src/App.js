@@ -2,10 +2,10 @@ import React, { useState, Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import authenticate from './authenticate.js';
-import LoginButton from './LoginButton.js';
+import LoginButton from './components/LoginButton';
 import SpotifyWebApi from 'spotify-web-api-js';
-import getToken from './GetToken.js'
-import getPlaylistInfo from './getPlaylistInfo.js'
+import getToken from './GetToken'
+import getPlaylistInfo from './getPlaylistInfo'
 
 export default function App() {
   const spotifyApi = new SpotifyWebApi();
