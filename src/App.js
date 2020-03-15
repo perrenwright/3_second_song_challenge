@@ -1,11 +1,11 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import MenuAppBar from './appNav';
-import globalleaderboard from './globalleaderboard';
-import challenges from './challenges';
-import about from './about';
-import contactus from './contactus';
+import MenuAppBar from './components/appNav';
+import globalleaderboard from './components/globalleaderboard';
+import challenges from './components/challenges';
+import about from './components/about';
+import contactus from './components/contactus';
 import { Route, Switch} from 'react-router-dom';
 function App() {
   return (
