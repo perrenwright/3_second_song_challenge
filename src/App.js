@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button,withStyles} from '@material-ui/core';
 import './App.css';
-import authenticate from './authenticate.js';
+import authenticate from './authenticate';
 import LoginButton from './components/LoginButton';
 import SpotifyWebApi from 'spotify-web-api-js';
 import getToken from './GetToken'
