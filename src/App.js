@@ -1,6 +1,11 @@
 import React from 'react';
 import {Button,withStyles} from '@material-ui/core';
 import './App.css';
+import authenticate from './authenticate.js';
+import LoginButton from './components/LoginButton';
+import SpotifyWebApi from 'spotify-web-api-js';
+import getToken from './GetToken'
+import getPlaylistInfo from './getPlaylistInfo'
 
 const StyledButton = withStyles({
   root: {
@@ -20,7 +25,10 @@ const StyledButton = withStyles({
   },
 })(Button);
 
-function App() {
+export default function App() {
+  const spotifyApi = new SpotifyWebApi();
+  const token = getToken();
+  getPlaylistInfo(token)
   return (
     <div className="App">
       <header className="App-header">
@@ -40,7 +48,7 @@ function App() {
         </h2>
         </div>
         
-        <StyledButton>Get Started</StyledButton>
+        <StyledButton onClick={() => authenticate()}>Get Started</StyledButton>
       </header>
       <div className="App-lowerSection">
         <div className="App-innerRectangle">
@@ -70,5 +78,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -1,0 +1,2 @@
+componentchange: src/components/*
+testupdate: src/tests/*
