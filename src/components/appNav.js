@@ -8,7 +8,7 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+// import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -16,6 +16,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import {Link} from 'react-router-dom';
+import './appNav.css';
 // import { sizing } from '@material-ui/system';
 
 function TabPanel(props) {
@@ -85,27 +86,24 @@ export default function MenuAppBar() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} >
       <FormGroup>
         <FormControlLabel
           control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
           label={auth ? 'Logout' : 'Login'}
         />
       </FormGroup>
-      <AppBar position="static" >
+      <AppBar position="static" style={{background:'white', color: 'black'}}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+            <img className="appNav-3SecondLogo"src="https://lh3.googleusercontent.com/-RDigpJXnuR0/Xl6uQ5qxvnI/AAAAAAAAAE8/wJJ349F9mcwMhrl4qlooXW2iBwo61v3TwCK8BGAsYHg/s0/2020-03-03.png" alt="3 Second Logo"/>
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            3 Second Song Challenge
-          </Typography>
-            <Tabs value={value} onChange={handleEvent} aria-label="simple tabs example">
-              <Tab label="Challenges" {...a11yProps(0)} to="/challenges" component={Link}/>
-              <Tab label="Global Leaderboard" {...a11yProps(1)} to="/globalleaderboard" component={Link}/>
-              <Tab label="About" {...a11yProps(2)} to="/about" component={Link}/>
-              <Tab label="Contact Us" {...a11yProps(3)} to="/contactus" compenent={Link}/>
-            </Tabs>
+          <Tabs value={value} onChange={handleEvent} aria-label="simple tabs example" indicatorColor="primary" centered>
+            <Tab label="Challenges" {...a11yProps(0)} to="/challenges" component={Link}/>
+            <Tab label="Global Leaderboard" {...a11yProps(1)} to="/globalleaderboard" component={Link}/>
+            <Tab label="About" {...a11yProps(2)} to="/about" component={Link}/>
+            <Tab label="Contact Us" {...a11yProps(3)} to="/contact" component={Link}/>
+          </Tabs>
           {auth && (
             <div>
               <IconButton
@@ -114,6 +112,7 @@ export default function MenuAppBar() {
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
+                edge="end"
               >
                 <AccountCircle />
               </IconButton>
@@ -148,8 +147,8 @@ export default function MenuAppBar() {
       <TabPanel value={value} index={2}>
         <Link to='/about'></Link>
       </TabPanel>
-      <TabPanel value={value} index={4}>
-        <Link to='/contactus'></Link>
+      <TabPanel value={value} index={3}>
+        <Link to='/contact'></Link>
       </TabPanel>
     </div>
   );
