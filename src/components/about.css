@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+
+.about {
+    text-align: left;
+}
+
+.about-column {
+    float: left;
+    width: 30%;
+    padding: 10px;
+}
+
+.about-header {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: #FAFAF6;
+}
+
+.about-headerText {
+    position: absolute;
+    color: #19869E;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    left: 80px;  
+    line-height: 0.25;
+    font-size: 24px;
+    top: 200px;
+}
+  
+.about-innerRectangle {
+  border-radius: 30px;
+  background: #FAFAF6;
+  position: relative;
+  height: 350px;
+  width: 95%;
+  left: 40px;
+  top: 60px;
+}
+
+.about-musicLogo {
+    position: absolute;
+    height: 400px;
+    width: 400px; 
+    right: 80px;
+    top: 200px;
+    display: inline-block;
+}
+
+.about-lowerSection {
+    background-color: #19869E;
+    height: 470px;
+    width: 100%;
+    position: relative;
+    top: 0px;
+}
+
+.about-titleText {
+    color: #19869E;
+    font-family: 'Inter', sans-serif;
+    position: absolute;
+    left: 80px;
+    top: 120px;
+    font-size: 48px;
+    display: inline-block;  
+}
+  
