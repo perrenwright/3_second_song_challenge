@@ -2,19 +2,6 @@
 .App {
   text-align: center;
 }
-.App-3SecondLogo {
-  position: absolute;
-  height: 60px;
-  width: 60px; 
-  left: 60px;
-  top: 10px;
-  display: inline-block;
-}
-.App-column {
-  float: left;
-  width: 30%;
-  padding: 10px;
-}
 
 .App-header {
   background-color: white;
@@ -25,52 +12,5 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #FAFAF6;
-}
-.App-headerText {
-  position: absolute;
-  color: #19869E;
-  text-align: left;
-  font-family: 'Inter', sans-serif;
-  left: 80px;  
-  line-height: 0.25;
-  font-size: 20px;
-}
-
-.App-innerRectangle {
-  border-radius: 30px;
-  background: #FAFAF6;
-  position: absolute;
-  height: 350px;
-  width: 95%;
-  left: 40px;
-  top: 60px;
-}
-
-.App-musicLogo {
-    position: absolute;
-    height: 400px;
-    width: 400px; 
-    right: 80px;
-    top: 80px;
-    display: inline-block;
-}
-
-.App-lowerSection {
-  background-color: #19869E;
-  height: 470px;
-  width: 100%;
-  position: absolute;
-  top: 400px;
-}
-
-.App-titleText {
-  color: #19869E;
-  font-family: 'Inter', sans-serif;
-  position: absolute;
-  left: 80px;
-  top: 120px;
-  font-size: 48px;
-  display: inline-block;
-
 }
 

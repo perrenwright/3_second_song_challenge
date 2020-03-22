@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "secondsongchallenge"
+    "default": "secondsongchallenge",
+    "dev": "secondsongchallenge"
   }
 }

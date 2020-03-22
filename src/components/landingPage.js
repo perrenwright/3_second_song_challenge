@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button,withStyles} from '@material-ui/core';
+import authenticate from '../authenticate';
 import './landingPage.css';
 
 const StyledButton = withStyles({
@@ -40,7 +41,7 @@ function LandingPage() {
         </h2>
         </div>
         
-        <StyledButton>Get Started</StyledButton>
+        <StyledButton onClick={() => authenticate()}>Get Started</StyledButton>
       </header>
       <div className="LandingPage-lowerSection">
         <div className="LandingPage-innerRectangle">
