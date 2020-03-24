@@ -15,51 +15,51 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './appNav.css';
 // import { sizing } from '@material-ui/system';
 
 function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-  
-    return (
-      <Typography
-        component="div"
-        role="tabpanel"
-        hidden={value !== index}
-        id={`simple-tabpanel-${index}`}
-        aria-labelledby={`simple-tab-${index}`}
-        {...other}
-      >
-        {value === index && <Box p={3}>{children}</Box>}
-      </Typography>
-    );
-  }
-  
-  TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.any.isRequired,
-    value: PropTypes.any.isRequired,
+  const { children, value, index, ...other } = props;
+
+  return (
+    <Typography
+      component="div"
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box p={3}>{children}</Box>}
+    </Typography>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`
   };
-  
-  function a11yProps(index) {
-    return {
-      id: `simple-tab-${index}`,
-      'aria-controls': `simple-tabpanel-${index}`,
-    };
-  }
-  
+}
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    width: "100%",
+    width: '100%'
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   title: {
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 }));
 
 export default function MenuAppBar() {
@@ -86,23 +86,59 @@ export default function MenuAppBar() {
   };
 
   return (
-    <div className={classes.root} >
+    <div className={classes.root}>
       <FormGroup>
         <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
+          control={
+            <Switch
+              checked={auth}
+              onChange={handleChange}
+              aria-label="login switch"
+            />
+          }
           label={auth ? 'Logout' : 'Login'}
         />
       </FormGroup>
-      <AppBar position="static" style={{background:'white', color: 'black'}}>
+      <AppBar position="static" style={{ background: 'white', color: 'black' }}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <img className="appNav-3SecondLogo"src="https://lh3.googleusercontent.com/-RDigpJXnuR0/Xl6uQ5qxvnI/AAAAAAAAAE8/wJJ349F9mcwMhrl4qlooXW2iBwo61v3TwCK8BGAsYHg/s0/2020-03-03.png" alt="3 Second Logo"/>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+          >
+            <img
+              className="appNav-3SecondLogo"
+              src="https://lh3.googleusercontent.com/-RDigpJXnuR0/Xl6uQ5qxvnI/AAAAAAAAAE8/wJJ349F9mcwMhrl4qlooXW2iBwo61v3TwCK8BGAsYHg/s0/2020-03-03.png"
+              alt="3 Second Logo"
+            />
           </IconButton>
-          <Tabs value={value} onChange={handleEvent} aria-label="simple tabs example" indicatorColor="primary" centered>
-            <Tab label="Challenges" {...a11yProps(0)} to="/challenges" component={Link}/>
-            <Tab label="Global Leaderboard" {...a11yProps(1)} to="/globalleaderboard" component={Link}/>
-            <Tab label="About" {...a11yProps(2)} to="/about" component={Link}/>
-            <Tab label="Contact Us" {...a11yProps(3)} to="/contact" component={Link}/>
+          <Tabs
+            value={value}
+            onChange={handleEvent}
+            aria-label="simple tabs example"
+            indicatorColor="primary"
+            centered
+          >
+            <Tab
+              label="Challenges"
+              {...a11yProps(0)}
+              to="/challenges"
+              component={Link}
+            />
+            <Tab
+              label="Global Leaderboard"
+              {...a11yProps(1)}
+              to="/globalleaderboard"
+              component={Link}
+            />
+            <Tab label="About" {...a11yProps(2)} to="/about" component={Link} />
+            <Tab
+              label="Contact Us"
+              {...a11yProps(3)}
+              to="/contact"
+              component={Link}
+            />
           </Tabs>
           {auth && (
             <div>
@@ -121,12 +157,12 @@ export default function MenuAppBar() {
                 anchorEl={anchorEl}
                 anchorOrigin={{
                   vertical: 'top',
-                  horizontal: 'right',
+                  horizontal: 'right'
                 }}
                 keepMounted
                 transformOrigin={{
                   vertical: 'top',
-                  horizontal: 'right',
+                  horizontal: 'right'
                 }}
                 open={open}
                 onClose={handleClose}
@@ -139,16 +175,16 @@ export default function MenuAppBar() {
         </Toolbar>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Link to='/challenges'> </Link>
+        <Link to="/challenges"> </Link>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Link to='/globalleaderboard'></Link>
+        <Link to="/globalleaderboard"></Link>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Link to='/about'></Link>
+        <Link to="/about"></Link>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Link to='/contact'></Link>
+        <Link to="/contact"></Link>
       </TabPanel>
     </div>
   );
