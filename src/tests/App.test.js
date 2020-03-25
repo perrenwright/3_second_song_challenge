@@ -1,14 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from '../App';
-
-test('simple rendering test', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/3 SECOND CHALLENGE/i);
-});
-
+import {BrowserRouter as Router} from 'react-router-dom';
 test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/login/i);
+  const { getByText } = render(<Router><App /></Router>);
+  const linkElement = getByText(/Challenges/i);
   expect(linkElement).toBeInTheDocument();
 });
