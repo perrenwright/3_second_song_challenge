@@ -2,7 +2,7 @@
 
 
 .about {
-    text-align: left;
+    text-align: center;
 }
 
 .about-column {
@@ -29,24 +29,24 @@
     font-family: 'Inter', sans-serif;
     left: 80px;  
     line-height: 0.25;
-    font-size: 24px;
-    top: 200px;
+    top: 250px;
+    font-size: 20px;
 }
   
 .about-innerRectangle {
-  border-radius: 30px;
-  background: #FAFAF6;
-  position: relative;
-  height: 350px;
-  width: 95%;
-  left: 40px;
-  top: 60px;
+    border-radius: 30px;
+    background: #FAFAF6;
+    position: absolute;
+    height: 200px;
+    width: 95%;
+    left: 40px;
+    top: 30px;
 }
 
 .about-musicLogo {
     position: absolute;
-    height: 400px;
-    width: 400px; 
+    height: 300px;
+    width: 300px; 
     right: 80px;
     top: 200px;
     display: inline-block;
@@ -54,10 +54,11 @@
 
 .about-lowerSection {
     background-color: #19869E;
-    height: 470px;
+    height: 250px;
     width: 100%;
-    position: relative;
-    top: 0px;
+    position: absolute;
+    right: 0px; 
+    top: 600px;
 }
 
 .about-titleText {
@@ -65,8 +66,8 @@
     font-family: 'Inter', sans-serif;
     position: absolute;
     left: 80px;
-    top: 120px;
-    font-size: 48px;
-    display: inline-block;  
+    top: 140px;
+    font-size: 36px;
+    display: inline-block;
 }
   

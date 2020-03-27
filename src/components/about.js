@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, withStyles} from '@material-ui/core';
 import authenticate from '../authenticate';
-import Paper from '@material-ui/core/Paper';
+
 import './about.css';
 
 const StyledButton = withStyles({
@@ -11,11 +11,10 @@ const StyledButton = withStyles({
       border: 0,
       color: 'white',
       height: 48,
+      width: 144,
       padding: '0 30px',
       boxShadow: '0 3px 5px 2px rgba(250, 250, 250, 250)',
-      marginRight: '80%',
-      top: '75px',
-      
+      right: '575px',  
     },
     label: {
       textTransform: 'capitalize',
@@ -45,21 +44,21 @@ export default function about()
                 <div className="about-innerRectangle">
                     <div className='about-column'>
                         <h3 style={{color:"#19869E"}}>Play Challenges</h3>
-                        <p style={{color:"#19869E"}}>From your Beyoncé to Frank Sinatra,
+                        <p style={{color:"#19869E", fontSize: '20px'}}>From your Beyoncé to Frank Sinatra,
                         from K-Pop to Rock and Roll, test your song
                         guess abilities with many Spotify playlists
                         </p>
                     </div>
                     <div className='about-column'>
                         <h3 style={{color:"#19869E"}}>Create Challenges</h3>
-                        <p style={{color:"#19869E"}}>Got a playlist you want to share?
+                        <p style={{color:"#19869E", fontSize: '20px'}}>Got a playlist you want to share?
                         Upload your Spotify playlist and have your
                         favorite songs guessed by people around the world
                         </p>
                     </div>
                     <div className='about-column'>
                         <h3 style={{color:"#19869E"}}>Play With Friends</h3>
-                        <p style={{color:"#19869E"}}>
+                        <p style={{color:"#19869E", fontSize: '20px'}}>
                         Test your skills against friends and see who really
                         knows your favorite genre/artist
                         </p>

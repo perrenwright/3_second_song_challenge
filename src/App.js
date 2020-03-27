@@ -1,4 +1,6 @@
 import React from 'react';
+import {Button,withStyles} from '@material-ui/core';
+import LandingPage from './components/landingPage';
 // import logo from './logo.svg';
 import './App.css';
 import MenuAppBar from './components/appNav';
@@ -6,7 +8,7 @@ import globalleaderboard from './components/globalleaderboard';
 import challenges from './components/challenges';
 import about from './components/about';
 import contact from './components/contact';
-import {Button,withStyles} from '@material-ui/core';
+// import {Button,withStyles} from '@material-ui/core';
 import './App.css';
 import authenticate from './authenticate';
 import LoginButton from './components/LoginButton';
@@ -16,23 +18,6 @@ import getPlaylistInfo from './getPlaylistInfo';
 import { Route, Switch} from 'react-router-dom';
 
 
-const StyledButton = withStyles({
-  root: {
-    background: '#19869E',
-    borderRadius: 10,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(250, 250, 250, 250)',
-    marginRight: '80%',
-    top: '240px',
-    
-  },
-  label: {
-    textTransform: 'capitalize',
-  },
-})(Button);
 
 export default function App() {
   const spotifyApi = new SpotifyWebApi();
@@ -50,5 +35,6 @@ export default function App() {
         </Switch> 
       </header>
     </div>
+    
   );
 }
