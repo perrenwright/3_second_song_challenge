@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+.LandingPage {
+  text-align: center;
+}
+.LandingPage-3SecondLogo {
+  position: absolute;
+  height: 50px;
+  width: 50px; 
+  left: 65px;
+  top: 10px;
+  display: inline-block;
+}
+.LandingPage-column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+.LandingPage-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #FAFAF6;
+}
+.LandingPage-headerText {
+  position: absolute;
+  color: #19869E;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  left: 80px;  
+  line-height: 0.25;
+  top: 200px;
+  font-size: 20px;
+}
+
+.LandingPage-innerRectangle {
+  border-radius: 30px;
+  background: #FAFAF6;
+  position: absolute;
+  height: 200px;
+  width: 95%;
+  left: 40px;
+  top: 30px;
+}
+
+.LandingPage-musicLogo {
+    position: absolute;
+    height: 300px;
+    width: 300px; 
+    right: 80px;
+    top: 80px;
+    display: inline-block;
+}
+
+.LandingPage-lowerSection {
+  background-color: #19869E;
+  height: 250px;
+  width: 100%;
+  position: absolute;
+  bottom: 0.5px;
+}
+
+.LandingPage-titleText {
+  color: #19869E;
+  font-family: 'Inter', sans-serif;
+  position: absolute;
+  left: 80px;
+  top: 120px;
+  font-size: 36px;
+  display: inline-block;
+
+}
+

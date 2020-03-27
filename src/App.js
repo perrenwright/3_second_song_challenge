@@ -1,4 +1,6 @@
 import React from 'react';
+import {Button,withStyles} from '@material-ui/core';
+import LandingPage from './components/landingPage';
 // import logo from './logo.svg';
 import './App.css';
 import MenuAppBar from './components/appNav';
@@ -6,6 +8,7 @@ import globalleaderboard from './components/globalleaderboard';
 import challenges from './components/challenges';
 import about from './components/about';
 import contact from './components/contact';
+
 import { Button, withStyles } from '@material-ui/core';
 import './App.css';
 import authenticate from './authenticate';
@@ -48,5 +51,6 @@ export default function App() {
         </Switch>
       </header>
     </div>
+    
   );
 }
