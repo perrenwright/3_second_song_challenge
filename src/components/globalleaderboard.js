@@ -43,21 +43,20 @@ export default function Leaderboard() {
   return (
     <div className="gbl">
       <div className="gbl-header">
-      {console.log('Return called')}
-      {highest_scores[0] &&
-        highest_scores[1] &&
-        highest_scores[2] &&
-        highest_scores[3] &&
-        highest_scores[4] &&
-        (
-          <p>
-            ({score_to_user[highest_scores[0]]} : {highest_scores[0]}
-            {score_to_user[highest_scores[1]]} : {highest_scores[1]}
-            {score_to_user[highest_scores[2]]} : {highest_scores[2]}
-            {score_to_user[highest_scores[3]]} : {highest_scores[3]}
-            {score_to_user[highest_scores[4]]} : {highest_scores[4]})
-          </p>
-        )}
+        {console.log('Return called')}
+        {highest_scores[0] &&
+          highest_scores[1] &&
+          highest_scores[2] &&
+          highest_scores[3] &&
+          highest_scores[4] && (
+            <p>
+              ({score_to_user[highest_scores[0]]} : {highest_scores[0]}
+              {score_to_user[highest_scores[1]]} : {highest_scores[1]}
+              {score_to_user[highest_scores[2]]} : {highest_scores[2]}
+              {score_to_user[highest_scores[3]]} : {highest_scores[3]}
+              {score_to_user[highest_scores[4]]} : {highest_scores[4]})
+            </p>
+          )}
       </div>
     </div>
   );
