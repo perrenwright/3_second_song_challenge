@@ -8,9 +8,6 @@ import globalleaderboard from './components/globalleaderboard';
 import challenges from './components/challenges';
 import about from './components/about';
 import contact from './components/contact';
-
-import { Button, withStyles } from '@material-ui/core';
-import './App.css';
 import authenticate from './authenticate';
 import LoginButton from './components/LoginButton';
 import SpotifyWebApi from 'spotify-web-api-js';
