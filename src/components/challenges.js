@@ -3,6 +3,7 @@ import { Button, withStyles } from '@material-ui/core';
 import GetToken from '../GetToken';
 import authenticate from '../authenticate';
 import SpotifyWebApi from 'spotify-web-api-js';
+import createChallengeUtil from '../createChallengeUtil';
 
 import './about.css';
 
@@ -28,7 +29,8 @@ export default function Challenges() {
   const [valid_playlists, setValidPlaylists] = useState({});
 
   var token =
-    'BQDO4WAEBgvnADE_gdzHL8BlF_lNGCjXwhiEvfD139m7cNnuGS37x6eEA6oQ9bPzR3XSYzlsIKufFNhk-NkgCzne5mb8v2bqgDOmDrCZwviqU5WA2HM73BMS67TvqX9_ssQdwPPkzYFCTIQ8fOkyOfIK-2Ub8EE';
+    'BQCOn_cMc23WvihAzqDBlF-dO6UUSxeTelEc92mezp_WdKGHW2GD-XgexIkajTeTzc7lOJE9XwzQT-gIJZBnsxkbS0v_Loq-6Dl6q11Ij9NynWLaEJR9oD1uGZ1fA7deYS4w-t_fCcqiPWgAwL35OpCMpqga3JI';
+
   console.log('Token in challenges page: ', token);
 
   var spotifyApi = new SpotifyWebApi();
@@ -50,8 +52,7 @@ export default function Challenges() {
     }
 
     setValidPlaylistsFn();
-    console.log('setValidPlaylistsFn', valid_playlists);
-  }, []);
+  }, [valid_playlists]);
 
   return (
     <div className="about">
@@ -63,10 +64,10 @@ export default function Challenges() {
           <h2> Dummy Challenge </h2>
           <h2> Dummy Challenge </h2>
           <hr />
-          {Object.keys(valid_playlists).map((key, index) => (
-            <p key={index}>
-              <button type="button">{valid_playlists[key]} </button>
-            </p>
+          {Object.keys(valid_playlists).map(key => (
+            <button type="button" onClick={createChallengeUtil(key)}>
+              {valid_playlists[key]}
+            </button>
           ))}
         </div>
       </div>
