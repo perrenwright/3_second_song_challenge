@@ -1,8 +1,14 @@
 import React from 'react';
+import PlayChallenge from './ChallengePage';
 export default function challenges()
 {
     console.log("we here!");
     return(
-        <h1>challenges</h1>
+        <div>
+            <header>
+                <PlayChallenge />
+            </header>
+        </div>
+        
     );
 }
