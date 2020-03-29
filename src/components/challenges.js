@@ -29,7 +29,7 @@ export default function Challenges() {
   const [valid_playlists, setValidPlaylists] = useState({});
 
   var token =
-    'BQCOn_cMc23WvihAzqDBlF-dO6UUSxeTelEc92mezp_WdKGHW2GD-XgexIkajTeTzc7lOJE9XwzQT-gIJZBnsxkbS0v_Loq-6Dl6q11Ij9NynWLaEJR9oD1uGZ1fA7deYS4w-t_fCcqiPWgAwL35OpCMpqga3JI';
+    'BQC1uDvPB0id2CbTJ8BMXhgMqO0gYZ9LBVaniUZ9wjVRlLJhdQmIvQUZ6QoNRpuUJ2pjIdJ3IoEGg8hhntXepxDf1xUjnNavwY7YgldkpUhHxn_oPavaKfqRWnYh_O-Vnqc2XA1loiHw-HNZX66t5PYHL0VOFT0';
 
   console.log('Token in challenges page: ', token);
 
@@ -52,7 +52,7 @@ export default function Challenges() {
     }
 
     setValidPlaylistsFn();
-  }, [valid_playlists]);
+  }, [valid_playlists, spotifyApi]);
 
   return (
     <div className="about">
