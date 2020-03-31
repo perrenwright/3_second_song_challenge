@@ -24,7 +24,7 @@ const StyledButton = withStyles({
   }
 })(Button);
 
-export default function Challenges() {
+function Challenges() {
   console.log('Challenge function called');
   const [valid_playlists, setValidPlaylists] = useState({});
 
@@ -74,3 +74,56 @@ export default function Challenges() {
     </div>
   );
 }
+ export default Challenges;
+
+//  function Challenges() {
+//   console.log('Challenge function called');
+//   const [valid_playlists, setValidPlaylists] = useState({});
+
+//   var token =
+//     'BQC1uDvPB0id2CbTJ8BMXhgMqO0gYZ9LBVaniUZ9wjVRlLJhdQmIvQUZ6QoNRpuUJ2pjIdJ3IoEGg8hhntXepxDf1xUjnNavwY7YgldkpUhHxn_oPavaKfqRWnYh_O-Vnqc2XA1loiHw-HNZX66t5PYHL0VOFT0';
+
+//   console.log('Token in challenges page: ', token);
+
+//   var spotifyApi = new SpotifyWebApi();
+//   spotifyApi.setAccessToken(token);
+
+//   useEffect(() => {
+//     async function setValidPlaylistsFn() {
+//       await spotifyApi.getUserPlaylists().then(function(data) {
+//         console.log('User playlists', data['items']);
+//         for (var i in data['items']) {
+//           //   console.log(data['items'][i]);
+//           var playlist_info = data['items'][i];
+//           var id_to_name_state = valid_playlists;
+//           id_to_name_state[playlist_info['id']] = playlist_info['name'];
+//           setValidPlaylists(id_to_name_state);
+//           console.log(playlist_info['id'], playlist_info['name']);
+//         }
+//       });
+//     }
+
+//     setValidPlaylistsFn();
+//   }, [valid_playlists, spotifyApi]);
+
+//   return (
+//     <div className="about">
+//       <div className="about-header">
+//         <div className="about-headerText">
+//           <h2> Dummy Challenge </h2>
+//           <h2> Dummy Challenge </h2>
+//           <h2> Dummy Challenge </h2>
+//           <h2> Dummy Challenge </h2>
+//           <h2> Dummy Challenge </h2>
+//           <hr />
+//           {Object.keys(valid_playlists).map(key => (
+//             <button type="button" onClick={createChallengeUtil(key)}>
+//               {valid_playlists[key]}
+//             </button>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+//  export default Challenges;
