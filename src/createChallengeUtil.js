@@ -1,9 +1,9 @@
 import SpotifyWebApi from 'spotify-web-api-js';
-import { getLocalToken } from './token';
 
 export default function createChallengeUtil(playlist_id) {
   // Check if there are at least 20 songs
-  var token = getLocalToken();
+  var token =
+    'BQC1uDvPB0id2CbTJ8BMXhgMqO0gYZ9LBVaniUZ9wjVRlLJhdQmIvQUZ6QoNRpuUJ2pjIdJ3IoEGg8hhntXepxDf1xUjnNavwY7YgldkpUhHxn_oPavaKfqRWnYh_O-Vnqc2XA1loiHw-HNZX66t5PYHL0VOFT0';
 
   console.log('Token in challenges page: ', token);
   var spotifyApi = new SpotifyWebApi();
