@@ -1,5 +1,4 @@
 import SpotifyWebApi from 'spotify-web-api-js';
-import { setLocalToken, getLocalToken } from './token';
 
 export default function getToken() {
   // This function grabs the user's access token from the url so we can grab the information
@@ -15,9 +14,6 @@ export default function getToken() {
   }
 
   const token = hashParams.access_token;
-  setLocalToken(token);
   console.log('Token: ', token);
-  var local_token = getLocalToken();
-  console.log('Local Storage token', local_token);
   return token;
 }
