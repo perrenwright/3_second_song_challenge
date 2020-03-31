@@ -1,4 +1,5 @@
 import SpotifyWebApi from 'spotify-web-api-js';
+import {setLocalToken} from './token';
 
 export default function getToken() {
 
@@ -14,6 +15,7 @@ export default function getToken() {
     }
 
     const token = hashParams.access_token;
+    setLocalToken(token);
     return token;
   
 }
