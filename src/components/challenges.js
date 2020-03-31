@@ -26,12 +26,28 @@ const StyledButton = withStyles({
 })(Button);
 
 export default function Challenges() {
+  // We will retrieve our token from localstorage if it has been stored here in a previous session.
+  const [value, setValue] = React.useState(
+    localStorage.getItem('myValueInLocalStorage') || ''
+  );
+  // Here I am just checking to see if we need to retrieve a new token or not.
+   if (value === "undefined"){
+    var token = getLocalToken();
+   }
+   else{
+      var token = value;
+   }
+   // This block detects if the user refreshes the page and stores the current token if so.
+    window.onbeforeunload = (e) => {
+    // I'm about to refresh! do something...
+    localStorage.setItem('myValueInLocalStorage', token)
+            setValue(token);
+    };
+
   console.log('Challenge function called');
   const [valid_playlists, setValidPlaylists] = useState({});
 
-  var token = getLocalToken();
-
-  console.log('Token in challenges page: ', token);
+  console.log('Token in challenges page: ', token, value);
 
   var spotifyApi = new SpotifyWebApi();
   spotifyApi.setAccessToken(token);
