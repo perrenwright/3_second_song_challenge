@@ -4,6 +4,7 @@ import GetToken from '../GetToken';
 import authenticate from '../authenticate';
 import SpotifyWebApi from 'spotify-web-api-js';
 import createChallengeUtil from '../createChallengeUtil';
+import { getLocalToken } from '../token';
 
 import './about.css';
 
@@ -28,8 +29,7 @@ function Challenges() {
   console.log('Challenge function called');
   const [valid_playlists, setValidPlaylists] = useState({});
 
-  var token =
-    'BQC1uDvPB0id2CbTJ8BMXhgMqO0gYZ9LBVaniUZ9wjVRlLJhdQmIvQUZ6QoNRpuUJ2pjIdJ3IoEGg8hhntXepxDf1xUjnNavwY7YgldkpUhHxn_oPavaKfqRWnYh_O-Vnqc2XA1loiHw-HNZX66t5PYHL0VOFT0';
+  var token = getLocalToken();
 
   console.log('Token in challenges page: ', token);
 
