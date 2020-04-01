@@ -3,6 +3,7 @@ import { Button, withStyles } from '@material-ui/core';
 import GetToken from '../GetToken';
 import authenticate from '../authenticate';
 import SpotifyWebApi from 'spotify-web-api-js';
+import createChallengeUtil from '../createChallengeUtil';
 import { getLocalToken } from '../token';
  
 import './about.css';
@@ -25,26 +26,11 @@ const StyledButton = withStyles({
 })(Button);
  
 function Challenges() {
- // We will retrieve our token from localstorage if it has been stored here in a previous session.
- const [value, setValue] = React.useState(
-  localStorage.getItem('myValueInLocalStorage') || ''
-);
-// Here I am just checking to see if we need to retrieve a new token or not.
- if (value === "undefined"){
-  var token = getLocalToken();
- }
- else{
-    var token = value;
- }
- // This block detects if the user refreshes the page and stores the current token if so.
-  window.onbeforeunload = (e) => {
-  // I'm about to refresh! do something...
-  localStorage.setItem('myValueInLocalStorage', token)
-          setValue(token);
-  };
-
+ 
  console.log('Challenge function called');
  const [valid_playlists, setValidPlaylists] = useState({});
+ 
+ var token = getLocalToken();
  
  var spotifyApi = new SpotifyWebApi();
  spotifyApi.setAccessToken(token);
@@ -68,27 +54,12 @@ function Challenges() {
   
   setValidPlaylistsFn();
   }, []);
- function createChallengeUtil(playlist_id) {
-  var token = value;
-  var spotifyApi = new SpotifyWebApi();
-  spotifyApi.setAccessToken(token);
-
-  spotifyApi.getPlaylistTracks(playlist_id).then(function(value) {
-    var playlist_ref = value['items'];
-    var all_tracks = [];
-    for (var i = 0; i < playlist_ref.length; i++) {
-      var track_name_and_id =
-        playlist_ref[i].track.name + ' : ' + playlist_ref[i].track.id;
-      all_tracks.push(track_name_and_id);
-    }
-    console.log(all_tracks);
-    return all_tracks;
-  });
-}
+ 
  function handleclick(key)
  {
    return createChallengeUtil(key);
  }
+ 
  return (
    <div className="about">
      <div className="about-header">
@@ -96,10 +67,12 @@ function Challenges() {
          <h2> Challenges you can add</h2>
          <hr />
        {Object.keys(valid_playlists).map(key => (
-           <Button onClick={() => handleclick(key)}>
+           <Button onClick={()=> handleclick(key)}>
              {valid_playlists[key]}
            </Button>
+
          ))}
+        
        </div>
      </div>
    </div>
