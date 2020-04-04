@@ -5,6 +5,7 @@ import authenticate from '../authenticate';
 import SpotifyWebApi from 'spotify-web-api-js';
 import createChallengeUtil from '../createChallengeUtil';
 import { getLocalToken } from '../token';
+import { getChallengeUtil } from '../getChallengeUtil';
 
 import './about.css';
 
