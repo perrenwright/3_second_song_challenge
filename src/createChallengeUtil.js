@@ -1,5 +1,6 @@
 import SpotifyWebApi from 'spotify-web-api-js';
 import { getLocalToken } from './token';
+import firestoreRef from './firebase';
 
 // Given the right choice and all choices for 20 songs in the playlist or challenge
 // this function should return 3 other random choices
@@ -25,6 +26,36 @@ function getRandomChoices(right_choice, all_songs) {
     }
     new_random_choice = all_songs[Math.floor(Math.random() * 20)];
     while_loop_counts++;
+  }
+}
+
+// Adds unique track info in Firestore database
+// UniqueTrack is different from a normal track because it has unique sets of choices and unique start time
+// More than one UniqueTrack can share the same track_id but other fields of UniqueTracks might differ
+// TODO: start time will be randomized later
+function populateTracksInfo(
+  all_unique_track_ids,
+  tracks_info,
+  choices_A,
+  choices_B,
+  choices_C,
+  choices_D
+) {
+  for (let i = 0; i < 20; i++) {
+    firestoreRef
+      .collection('UniqueTracks')
+      .doc(all_unique_track_ids[i])
+      .set({
+        track_id: tracks_info[i],
+        start_time: 0,
+        choice_A: choices_A[i],
+        choice_B: choices_B[i],
+        choice_C: choices_C[i],
+        choice_D: choices_D[i]
+      })
+      .then(function() {
+        console.log('Finished populating all unique track info in Firestore');
+      });
   }
 }
 
@@ -58,9 +89,11 @@ export default function createChallengeUtil(playlist_id) {
     var all_choices_B = [];
     var all_choices_C = [];
     var all_choices_D = [];
+    var all_unique_track_ids = [];
 
     for (let track_index = 0; track_index < 20; track_index++) {
       let B_C_D = getRandomChoices(all_choices_A[track_index], all_choices_A);
+      all_unique_track_ids.push(playlist_id + all_tracks_ids[track_index]);
       while (B_C_D == undefined) {
         B_C_D = getRandomChoices(all_choices_A[track_index], all_choices_A);
       }
@@ -75,5 +108,23 @@ export default function createChallengeUtil(playlist_id) {
     console.log(all_choices_B);
     console.log(all_choices_C);
     console.log(all_choices_D);
+
+    populateTracksInfo(
+      all_unique_track_ids,
+      all_tracks_ids,
+      all_choices_A,
+      all_choices_B,
+      all_choices_C,
+      all_choices_D
+    );
+    console.log('All unique_track_ids', all_unique_track_ids);
+    // Replace challenge_name with actual playlist_name later
+    firestoreRef
+      .collection('challenge_test')
+      .doc(playlist_id)
+      .set({
+        challenge_name: playlist_id,
+        unique_tracks_info: all_unique_track_ids
+      });
   });
 }
