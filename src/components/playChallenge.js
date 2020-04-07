@@ -1,4 +1,5 @@
 import React from 'react';
+import {Howl, Howler} from 'howler';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -8,6 +9,10 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
+import playsong from './playsong.js'
+import { getChallengeUtil } from '../getChallengeUtil';
+import {useState,useEffect} from 'react';
+
 
 const spaceStyles = makeStyles(theme => ({
     root: {
@@ -40,7 +45,7 @@ const spaceOption = makeStyles(theme => ({
       '& > *': {
         marginRight: theme.spacing(32),
       },
-     
+
     },
   }));
 
@@ -102,7 +107,7 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
-function PlayChallenge() {
+function PlayChallenge(data) {
     const classes = useStyles();
     const playclasses = playStyles();
     const questionclasses = questionStyles();
@@ -111,9 +116,43 @@ function PlayChallenge() {
     const spaceOptClasses = spaceOption();
     const cardClasses = cardStyles();
     const gridClasses = GridStyles();
+
+    const [i, set_i] = useState(0);
+    const [choice, setChoice] = useState("");
+    const [score, setScore] = useState(0);
+
+    var questions = data["data"]
+    // Questions contains the challenge passed into from data.
+    var choice_A = questions[i]["choice_A"]
+    var choice_B = questions[i]["choice_B"]
+    var choice_C = questions[i]["choice_C"]
+    var choice_D = questions[i]["choice_D"]
+    var right_choice = questions[i]["right_choice"]
+    var url = "https://p.scdn.co/mp3-preview/7d7b21c22e4408cab450115286c248a84196bac8?cid=9a9b0b83d79a4ece84e608715bc5e114";
+    var playlist_image = "Not in database"
+    // We extract the necessary components we would like to display. Playlist image and preview_url are not in the database.
+    var sound = new Howl({
+      src: [url],
+      html5: true,
+      format: ['mp3', 'aac']
+    });
+    var count = 0
+    const start = () => {
+      playsong(url,count,sound);
+      count = 1
+      // This count stops the user from playing the sound more than once.
+    }
+
+    if (choice === right_choice){
+          setScore(score + 1);
+          setChoice("")
+          console.log(score)
+    // I track the user's current score here.
+    }
+
     return (
         <div>
-            {/* We will be grabbing this info from the database, but for right now, it is being hardcoded with this image of Rihanna  */}   
+            {/* Someone needs to make the button green or red when a choice is picked. We also need to display an ending page. */}
     <div>
     {/* <Grid container className={cardClasses.root}>
       <Grid item xs={12}>
@@ -149,7 +188,7 @@ function PlayChallenge() {
       </Card>
 
       <Card className={classes.root}>
-        <CardMedia 
+        <CardMedia
         className={classes.media}
         image="https://i.pinimg.com/474x/3f/8e/b5/3f8eb5aba691de25ec03458d5614246b--playlist-rihanna.jpg"
         title="Paella dish"
@@ -179,37 +218,37 @@ function PlayChallenge() {
         </CardContent>
       </Card>
     </Card>
-    
+
     </div>
 
     <div className = {questionclasses.root}>
     <Typography variant="h5" gutterBottom className={spaceclasses.root}>
-        Choose the correct singer and song Title?  
-        <Button variant="outlined" color="primary"> {/* Needs to go to the next song, need to right the code to do that  */}
+        Choose the correct singer and song Title?
+        <Button variant="outlined" color="primary" onClick={() => set_i(i + 1)}>
          Next
-        </Button>  
+        </Button>
       </Typography>
 
     </div>
     <div className ={playclasses.root}>
-    <Button variant="outlined" color="primary">
+    <Button variant="outlined" color="primary" onClick={start}>
         Play Song
       </Button>
       </div>
         <div className = {optionclasses.root}>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} >
-                Option Artist 1, Song 1 
+            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_A)} >
+               {choice_A}
             </Button>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root}>
-                Option Artist 2, Song 2
+            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_B)}>
+               {choice_B}
             </Button>
         </div>
         <div className = {optionclasses.root}>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} >
-                Option Artist 3, Song 3 
+            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_C)} >
+               {choice_C}
             </Button>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root}>
-                Option Artist 4, Song 4
+            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_D)}>
+                {choice_D}
             </Button>
         </div>
       </div>

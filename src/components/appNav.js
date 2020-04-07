@@ -139,6 +139,12 @@ export default function MenuAppBar() {
               to="/contact"
               component={Link}
             />
+            <Tab
+              label="Play"
+              {...a11yProps(4)}
+              to="/playchallenge"
+              component={Link}
+            />
           </Tabs>
           {auth && (
             <div>
@@ -185,6 +191,9 @@ export default function MenuAppBar() {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <Link to="/contact"></Link>
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <Link to="/playchallenge"></Link>
       </TabPanel>
     </div>
   );

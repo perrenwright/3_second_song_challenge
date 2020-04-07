@@ -6,6 +6,7 @@ import './App.css';
 import MenuAppBar from './components/appNav';
 import globalleaderboard from './components/globalleaderboard';
 import challenges from './components/challenges';
+import playchallenge from './components/playChallenge';
 import about from './components/about';
 import contact from './components/contact';
 import authenticate from './authenticate';
@@ -14,6 +15,7 @@ import SpotifyWebApi from 'spotify-web-api-js';
 import getToken from './GetToken';
 import getPlaylistInfo from './getPlaylistInfo';
 import { Route, Switch } from 'react-router-dom';
+import FetchData from './components/fetchChallengeData';
 
 const StyledButton = withStyles({
   root: {
@@ -45,9 +47,10 @@ export default function App() {
           <Route path="/challenges" component={challenges} />
           <Route path="/about" component={about} />
           <Route path="/contact" component={contact} />
+          <Route path="/playchallenge" component={FetchData} />
         </Switch>
       </header>
     </div>
-    
+
   );
 }
