@@ -126,13 +126,15 @@ function PlayChallenge(data) {
 
 
     var questions = data["data"]
+    console.log(questions)
     // Questions contains the challenge passed into from data.
     var choice_A = questions[i]["choice_A"]
     var choice_B = questions[i]["choice_B"]
     var choice_C = questions[i]["choice_C"]
     var choice_D = questions[i]["choice_D"]
     var right_choice = questions[i]["right_choice"]
-    var url = "https://p.scdn.co/mp3-preview/7d7b21c22e4408cab450115286c248a84196bac8?cid=9a9b0b83d79a4ece84e608715bc5e114";
+    var http = "https://"
+    var url = http.concat(questions[i]["track_id"])
     var playlist_image = "Not in database"
     // We extract the necessary components we would like to display. Playlist image and preview_url are not in the database.
     var sound = new Howl({

@@ -14,7 +14,7 @@ const FetchData = () => {
   const [data, updateData] = useState();
   useEffect(() => {
     const getData = async () => {
-      const json = await getChallengeUtil("04so2Aac35PwjTTH5z1wlL")
+      const json = await getChallengeUtil("6bnfXsKx2VA8Mx8kheMuhj")
       updateData(json);
     }
     getData();

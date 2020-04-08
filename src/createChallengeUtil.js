@@ -66,21 +66,34 @@ export default function createChallengeUtil(playlist_id) {
 
   spotifyApi.getPlaylistTracks(playlist_id).then(function(data) {
     var playlist_ref = data['items'];
+
     console.log('Playlist ref in createChallengeUtil', playlist_ref);
-    if (playlist_ref.length < 20) {
+    var playlist_store = []
+    for (var playlist in playlist_ref){
+      console.log(playlist_ref[playlist])
+      if (playlist_ref[playlist].track !== null && playlist_ref[playlist].track.preview_url !== null){
+        playlist_store.push(playlist_ref[playlist])
+      }
+    }
+    if (playlist_store.length < 20) {
       alert('Less than 20 songs.');
       return;
     }
+    console.log(playlist_store)
     var all_tracks_ids = [];
     var all_start_times = [];
     var all_choices_A = [];
+    let track_id = ''
     for (let i = 0; i < 20; i++) {
-      let track_id = playlist_ref[i].track.id;
+      console.log(playlist_store[i].track.preview_url)
+      let track_id_temp = playlist_store[i].track.preview_url;
+      let track_id = track_id_temp.slice(8);
       let start_time = 0;
-      let choice_A = playlist_ref[i].track.name;
+      let choice_A = playlist_store[i].track.name;
       all_tracks_ids.push(track_id);
       all_start_times.push(start_time);
       all_choices_A.push(choice_A);
+
     }
     console.log(all_tracks_ids);
     console.log(all_start_times);
@@ -118,7 +131,7 @@ export default function createChallengeUtil(playlist_id) {
       all_choices_D
     );
     console.log('All unique_track_ids', all_unique_track_ids);
-    // Replace challenge_name with actual playlist_name later
+    //Replace challenge_name with actual playlist_name later
     firestoreRef
       .collection('challenge_test')
       .doc(playlist_id)
