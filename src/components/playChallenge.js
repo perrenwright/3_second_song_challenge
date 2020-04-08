@@ -12,6 +12,8 @@ import Grid from '@material-ui/core/Grid';
 import playsong from './playsong.js'
 import { getChallengeUtil } from '../getChallengeUtil';
 import {useState,useEffect} from 'react';
+import {GAME_STATE} from '../gamestate_enum.js';
+import EndPage from  './endChallenge.js'
 
 
 const spaceStyles = makeStyles(theme => ({
@@ -120,6 +122,8 @@ function PlayChallenge(data) {
     const [i, set_i] = useState(0);
     const [choice, setChoice] = useState("");
     const [score, setScore] = useState(0);
+    const [gameState, setGameState] = useState(GAME_STATE.IN_PROGRESS);
+
 
     var questions = data["data"]
     // Questions contains the challenge passed into from data.
@@ -149,11 +153,25 @@ function PlayChallenge(data) {
           console.log(score)
     // I track the user's current score here.
     }
+    if (i + 1 > 5)
+    {
+      setGameState(GAME_STATE.ENDED)
+      set_i(0)
+    }
 
     return (
-        <div>
-            {/* Someone needs to make the button green or red when a choice is picked. We also need to display an ending page. */}
+
+
+ <div>
+ { gameState === GAME_STATE.ENDED &&
+   <div>
+    <EndPage score={score}/>
+    </div>
+}
+          {/* Someone needs to make the button green or red when a choice is picked. We also need to display an ending page. */}
+    { gameState === GAME_STATE.IN_PROGRESS &&
     <div>
+
     {/* <Grid container className={cardClasses.root}>
       <Grid item xs={12}>
         <Grid container justify="center">
@@ -220,7 +238,8 @@ function PlayChallenge(data) {
     </Card>
 
     </div>
-
+}
+{ gameState === GAME_STATE.IN_PROGRESS &&
     <div className = {questionclasses.root}>
     <Typography variant="h5" gutterBottom className={spaceclasses.root}>
         Choose the correct singer and song Title?
@@ -230,11 +249,15 @@ function PlayChallenge(data) {
       </Typography>
 
     </div>
+  }
+  { gameState === GAME_STATE.IN_PROGRESS &&
     <div className ={playclasses.root}>
     <Button variant="outlined" color="primary" onClick={start}>
         Play Song
       </Button>
       </div>
+}
+{ gameState === GAME_STATE.IN_PROGRESS &&
         <div className = {optionclasses.root}>
             <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_A)} >
                {choice_A}
@@ -243,6 +266,8 @@ function PlayChallenge(data) {
                {choice_B}
             </Button>
         </div>
+}
+{ gameState === GAME_STATE.IN_PROGRESS &&
         <div className = {optionclasses.root}>
             <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_C)} >
                {choice_C}
@@ -251,7 +276,10 @@ function PlayChallenge(data) {
                 {choice_D}
             </Button>
         </div>
+}
       </div>
+
+
     );
   }
   export default PlayChallenge;
