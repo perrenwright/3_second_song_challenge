@@ -22,6 +22,7 @@ const StyledButton = withStyles({
 })(Button);
 
 function EndPage({score}) {
+  // Send Score and Player to Database
   return (
     <div className="LandingPage">
       <font color="black">
