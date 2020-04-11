@@ -6,6 +6,9 @@ import PlayChallenge from './playChallenge.js';
 import {useState,useEffect} from 'react';
 import SpotifyWebApi from 'spotify-web-api-js';
 import { getLocalToken } from '../token';
+import firestoreRef from '../firebase';
+import Swal from 'sweetalert2'
+
 
 const StyledButton = withStyles({
   root: {
@@ -25,9 +28,9 @@ const StyledButton = withStyles({
   },
 })(Button);
 
-function EndPage({score}) {
+function EndPage({score, high_score}) {
   // Send Score and Player to Database
-  const [username, updateUsername] = useState("Anonymus");
+  const [username, updateUsername] = useState("");
   useEffect(() => {
     const getUsername = async () => {
       var token = getLocalToken();
@@ -40,6 +43,24 @@ function EndPage({score}) {
     }
     getUsername();
   }, []);
+
+  if (score > high_score && username != "")
+  {
+    Swal.fire({
+    title: 'Sweet!',
+    text: username.concat(', You have the HIGH SCORE'),
+    imageUrl: 'https://unsplash.it/400/200',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+  })
+    console.log(username)
+    firestoreRef.collection('challenge_test').doc("1YmciBrzRjf6HHT0IjEHYt").update({
+      highest_score: score ,
+      highest_scorer: username,
+    });
+  }
+  // I provide a nice looking alert if the user gets the high score and we update the challenge high scorer.
   return (
     <div className="LandingPage">
       <font color="black">

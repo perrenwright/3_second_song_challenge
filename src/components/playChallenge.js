@@ -124,18 +124,18 @@ function PlayChallenge(data) {
     const [score, setScore] = useState(0);
     const [gameState, setGameState] = useState(GAME_STATE.IN_PROGRESS);
 
-
-    var questions = data["data"]
-    console.log(questions)
+    var all_challenge_data = data["data"]
+    var questions = all_challenge_data["challenge_questions"]
     // Questions contains the challenge passed into from data.
     var choice_A = questions[i]["choice_A"]
     var choice_B = questions[i]["choice_B"]
     var choice_C = questions[i]["choice_C"]
     var choice_D = questions[i]["choice_D"]
     var right_choice = questions[i]["right_choice"]
-    var http = "https://"
-    var url = http.concat(questions[i]["track_id"])
-    var playlist_image = "Not in database"
+    var url = questions[i]["preview_url"]
+    var playlist_image = all_challenge_data["challenge_image"]
+    var playlist_name = all_challenge_data["challenge_name"]
+    var high_score = all_challenge_data["highest_score"]
     // We extract the necessary components we would like to display. Playlist image and preview_url are not in the database.
     var sound = new Howl({
       src: [url],
@@ -167,7 +167,7 @@ function PlayChallenge(data) {
  <div>
  { gameState === GAME_STATE.ENDED &&
    <div>
-    <EndPage score={score}/>
+    <EndPage score={score} high_score={high_score}/>
     </div>
 }
           {/* Someone needs to make the button green or red when a choice is picked. We also need to display an ending page. */}
@@ -210,8 +210,8 @@ function PlayChallenge(data) {
       <Card className={classes.root}>
         <CardMedia
         className={classes.media}
-        image="https://i.pinimg.com/474x/3f/8e/b5/3f8eb5aba691de25ec03458d5614246b--playlist-rihanna.jpg"
-        title="Paella dish"
+        image={playlist_image}
+        title={playlist_name}
       />
       </Card>
 
