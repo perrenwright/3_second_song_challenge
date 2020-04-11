@@ -24,7 +24,12 @@ export default function FetchData() {
   const isCancelled = useRef(false);
 
     useEffect(() => {
+    if (!isCancelled.current) {
     setTimeout(() => setDone(true), 7000)
+  }
+  return () => {
+      isCancelled.current = true;
+    };
   }, []);
   // This piece of code prevents the interface from displaying until all the data is loaded.
   useEffect(() => {
