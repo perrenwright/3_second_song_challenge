@@ -1,7 +1,11 @@
 import React from 'react';
 import {Button,withStyles} from '@material-ui/core';
 import authenticate from '../authenticate';
-
+import { getChallengeUtil } from '../getChallengeUtil';
+import PlayChallenge from './playChallenge.js';
+import {useState,useEffect} from 'react';
+import SpotifyWebApi from 'spotify-web-api-js';
+import { getLocalToken } from '../token';
 
 const StyledButton = withStyles({
   root: {
@@ -23,10 +27,23 @@ const StyledButton = withStyles({
 
 function EndPage({score}) {
   // Send Score and Player to Database
+  const [username, updateUsername] = useState("Anonymus");
+  useEffect(() => {
+    const getUsername = async () => {
+      var token = getLocalToken();
+      var spotifyApi = new SpotifyWebApi();
+      spotifyApi.setAccessToken(token);
+      console.log("this is me", spotifyApi.getMe())
+      const username = await spotifyApi.getMe()
+      updateUsername(username["id"]);
+      console.log(username["id"])
+    }
+    getUsername();
+  }, []);
   return (
     <div className="LandingPage">
       <font color="black">
-      <h1> {score} </h1>
+      <h1> {username} your score is {score} </h1>
       </font>
     </div>
   );
