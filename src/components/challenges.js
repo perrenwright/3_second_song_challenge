@@ -19,14 +19,24 @@ const StyledButton = withStyles({
     width: 144,
     padding: '0 30px',
     boxShadow: '0 3px 5px 2px rgba(250, 250, 250, 250)',
-    right: '575px'
+    right: '575px',
   },
   label: {
-    textTransform: 'capitalize'
-  }
+    textTransform: 'capitalize',
+  },
 })(Button);
 
 function Challenges() {
+  // Uncomment the following async function to test getChallengeUtil function
+  // async function test_print_challenge_json() {
+  //   let challenge_json = await getChallengeUtil('1oKgdPSoIaAHrZzYDVClnS');
+  //   console.log(
+  //     'Challenge JSON returned from getChallengeUtil.js',
+  //     challenge_json
+  //   );
+  // }
+  // test_print_challenge_json();
+
   console.log('Challenge function called');
   const [valid_playlists, setValidPlaylists] = useState({});
 
@@ -38,7 +48,7 @@ function Challenges() {
   useEffect(() => {
     async function setValidPlaylistsFn() {
       let updatedValidPlaylists = [];
-      await spotifyApi.getUserPlaylists().then(function(data) {
+      await spotifyApi.getUserPlaylists().then(function (data) {
         console.log('User playlists', data['items']);
         console.log('spotifyApi.getUserPlaylists');
         for (var i in data['items']) {
@@ -65,7 +75,7 @@ function Challenges() {
         <div className="about-headerText">
           <h2> Challenges you can add</h2>
           <hr />
-          {Object.keys(valid_playlists).map(key => (
+          {Object.keys(valid_playlists).map((key) => (
             <Button onClick={() => handleclick(key)}>
               {valid_playlists[key]}
             </Button>

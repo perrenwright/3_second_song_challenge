@@ -35,7 +35,8 @@ function getRandomChoices(right_choice, all_songs) {
 // TODO: start time will be randomized later
 function populateTracksInfo(
   all_unique_track_ids,
-  tracks_info,
+  all_track_ids,
+  all_preview_urls,
   choices_A,
   choices_B,
   choices_C,
@@ -46,15 +47,16 @@ function populateTracksInfo(
       .collection('UniqueTracks')
       .doc(all_unique_track_ids[i])
       .set({
-        track_id: tracks_info[i],
+        track_id: all_track_ids[i],
         start_time: 0,
+        preview_url: all_preview_urls[i],
         choice_A: choices_A[i],
         choice_B: choices_B[i],
         choice_C: choices_C[i],
         choice_D: choices_D[i],
       })
       .then(function () {
-        console.log('Finished populating all unique track info in Firestore');
+        console.log('Finished populating a unique track info in Firestore');
       });
   }
 }
@@ -65,46 +67,47 @@ export default function createChallengeUtil(playlist_id) {
   spotifyApi.setAccessToken(token);
 
   spotifyApi.getPlaylist(playlist_id).then(function (data) {
-    // TODO: playlist_ref is a bad name here. It a list of all tracks in the playlist.
-    // 'data' is the actual vaiable that has all the information about the playlist.
-    var playlist_ref = data.tracks['items'];
+    // 'data' is the vaiable that has all the information about the playlist.
+    var all_tracks_info = data.tracks['items'];
     var playlist_name = data.name;
     var playlist_owner = data.owner.display_name;
     var playlist_image = data.images[0].url;
 
-    console.log('Playlist ref in createChallengeUtil', playlist_ref);
-    var playlist_store = [];
-    for (var playlist in playlist_ref) {
-      console.log(playlist_ref[playlist]);
+    console.log('All tracks info in createChallengeUtil', all_tracks_info);
+    // tracks_store has all the tracks from the playlist that have preview_url
+    var tracks_store = [];
+    for (var track_info in all_tracks_info) {
+      // console.log(all_tracks_info[track_info]);
       if (
-        playlist_ref[playlist].track !== null &&
-        playlist_ref[playlist].track.preview_url !== null
+        all_tracks_info[track_info].track !== null &&
+        all_tracks_info[track_info].track.preview_url !== null
       ) {
-        playlist_store.push(playlist_ref[playlist]);
+        tracks_store.push(all_tracks_info[track_info]);
       }
     }
-    if (playlist_store.length < 20) {
+    if (tracks_store.length < 20) {
       alert('Less than 20 songs.');
       return;
     }
-    console.log(playlist_store);
+    console.log(tracks_store);
     var all_tracks_ids = [];
     var all_start_times = [];
     var all_choices_A = [];
-    let track_id = '';
+    var all_preview_urls = [];
     for (let i = 0; i < 20; i++) {
-      console.log(playlist_store[i].track.preview_url);
-      let track_id_temp = playlist_store[i].track.preview_url;
-      let track_id = track_id_temp.slice(8);
+      let track_id = tracks_store[i].track.id;
       let start_time = 0;
-      let choice_A = playlist_store[i].track.name;
+      let choice_A = tracks_store[i].track.name;
+      let preview_url = tracks_store[i].track.preview_url;
       all_tracks_ids.push(track_id);
       all_start_times.push(start_time);
       all_choices_A.push(choice_A);
+      all_preview_urls.push(preview_url);
     }
     console.log(all_tracks_ids);
     console.log(all_start_times);
     console.log(all_choices_A);
+    console.log(all_preview_urls);
 
     var all_choices_B = [];
     var all_choices_C = [];
@@ -114,12 +117,12 @@ export default function createChallengeUtil(playlist_id) {
     for (let track_index = 0; track_index < 20; track_index++) {
       let B_C_D = getRandomChoices(all_choices_A[track_index], all_choices_A);
       all_unique_track_ids.push(playlist_id + all_tracks_ids[track_index]);
-      while (B_C_D == undefined) {
+      while (B_C_D === undefined) {
         B_C_D = getRandomChoices(all_choices_A[track_index], all_choices_A);
       }
       // console.log('Track index: ', track_index);
       // console.log('Other choices for songs: ', B_C_D);
-      if (B_C_D.length == 3) {
+      if (B_C_D.length === 3) {
         all_choices_B.push(B_C_D[0]);
         all_choices_C.push(B_C_D[1]);
         all_choices_D.push(B_C_D[2]);
@@ -132,6 +135,7 @@ export default function createChallengeUtil(playlist_id) {
     populateTracksInfo(
       all_unique_track_ids,
       all_tracks_ids,
+      all_preview_urls,
       all_choices_A,
       all_choices_B,
       all_choices_C,
