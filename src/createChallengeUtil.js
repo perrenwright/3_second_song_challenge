@@ -51,9 +51,9 @@ function populateTracksInfo(
         choice_A: choices_A[i],
         choice_B: choices_B[i],
         choice_C: choices_C[i],
-        choice_D: choices_D[i]
+        choice_D: choices_D[i],
       })
-      .then(function() {
+      .then(function () {
         console.log('Finished populating all unique track info in Firestore');
       });
   }
@@ -64,28 +64,36 @@ export default function createChallengeUtil(playlist_id) {
   var spotifyApi = new SpotifyWebApi();
   spotifyApi.setAccessToken(token);
 
-  spotifyApi.getPlaylistTracks(playlist_id).then(function(data) {
-    var playlist_ref = data['items'];
+  spotifyApi.getPlaylist(playlist_id).then(function (data) {
+    // TODO: playlist_ref is a bad name here. It a list of all tracks in the playlist.
+    // 'data' is the actual vaiable that has all the information about the playlist.
+    var playlist_ref = data.tracks['items'];
+    var playlist_name = data.name;
+    var playlist_owner = data.owner.display_name;
+    var playlist_image = data.images[0].url;
 
     console.log('Playlist ref in createChallengeUtil', playlist_ref);
-    var playlist_store = []
-    for (var playlist in playlist_ref){
-      console.log(playlist_ref[playlist])
-      if (playlist_ref[playlist].track !== null && playlist_ref[playlist].track.preview_url !== null){
-        playlist_store.push(playlist_ref[playlist])
+    var playlist_store = [];
+    for (var playlist in playlist_ref) {
+      console.log(playlist_ref[playlist]);
+      if (
+        playlist_ref[playlist].track !== null &&
+        playlist_ref[playlist].track.preview_url !== null
+      ) {
+        playlist_store.push(playlist_ref[playlist]);
       }
     }
     if (playlist_store.length < 20) {
       alert('Less than 20 songs.');
       return;
     }
-    console.log(playlist_store)
+    console.log(playlist_store);
     var all_tracks_ids = [];
     var all_start_times = [];
     var all_choices_A = [];
-    let track_id = ''
+    let track_id = '';
     for (let i = 0; i < 20; i++) {
-      console.log(playlist_store[i].track.preview_url)
+      console.log(playlist_store[i].track.preview_url);
       let track_id_temp = playlist_store[i].track.preview_url;
       let track_id = track_id_temp.slice(8);
       let start_time = 0;
@@ -93,7 +101,6 @@ export default function createChallengeUtil(playlist_id) {
       all_tracks_ids.push(track_id);
       all_start_times.push(start_time);
       all_choices_A.push(choice_A);
-
     }
     console.log(all_tracks_ids);
     console.log(all_start_times);
@@ -131,13 +138,15 @@ export default function createChallengeUtil(playlist_id) {
       all_choices_D
     );
     console.log('All unique_track_ids', all_unique_track_ids);
-    //Replace challenge_name with actual playlist_name later
-    firestoreRef
-      .collection('challenge_test')
-      .doc(playlist_id)
-      .set({
-        challenge_name: playlist_id,
-        unique_tracks_info: all_unique_track_ids
-      });
+
+    // TODO: Challenge creator is not necessarily the playlist_owner, might have to replace with the current user in session
+    firestoreRef.collection('challenge_test').doc(playlist_id).set({
+      challenge_name: playlist_name,
+      highest_scorer: '',
+      highest_score: 0,
+      challenge_creator: playlist_owner,
+      challenge_image: playlist_image,
+      unique_tracks_info: all_unique_track_ids,
+    });
   });
 }
