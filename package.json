@@ -19,6 +19,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-fade-in": "^0.1.8",
+    "react-flexview": "^4.0.4",
     "react-loading": "^2.0.3",
     "react-loading-screen": "0.0.17",
     "react-lottie": "^1.2.3",

@@ -28,9 +28,9 @@ const StyledButton = withStyles({
   },
 })(Button);
 
-function EndPage({score, high_score}) {
+function EndPage({score, high_score, challenge_id}) {
   // Send Score and Player to Database
-  const [username, updateUsername] = useState("");
+  const [username, updateUsername] = useState(undefined);
   useEffect(() => {
     const getUsername = async () => {
       var token = getLocalToken();
@@ -43,8 +43,11 @@ function EndPage({score, high_score}) {
     }
     getUsername();
   }, []);
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
-  if (score > high_score && username != "")
+  if (score > high_score && username)
   {
     Swal.fire({
     title: 'Sweet!',
@@ -55,14 +58,19 @@ function EndPage({score, high_score}) {
     imageAlt: 'Custom image',
   })
     console.log(username)
-    firestoreRef.collection('challenge_test').doc("1YmciBrzRjf6HHT0IjEHYt").update({
+    if (challenge_id){
+    firestoreRef.collection('challenge_test').doc(challenge_id.toString()).update({
       highest_score: score ,
       highest_scorer: username,
     });
   }
+  }
   // I provide a nice looking alert if the user gets the high score and we update the challenge high scorer.
   return (
     <div className="LandingPage">
+      <Button  onClick={refreshPage}>
+        Return to challenges
+      </Button>
       <font color="black">
       <h1> {username} your score is {score} </h1>
       </font>

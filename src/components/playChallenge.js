@@ -109,7 +109,7 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
-function PlayChallenge(data) {
+function PlayChallenge(data, challenge_id) {
     const classes = useStyles();
     const playclasses = playStyles();
     const questionclasses = questionStyles();
@@ -167,7 +167,7 @@ function PlayChallenge(data) {
  <div>
  { gameState === GAME_STATE.ENDED &&
    <div>
-    <EndPage score={score} high_score={high_score}/>
+    <EndPage score={score} high_score={high_score} challenge_id={challenge_id}/>
     </div>
 }
           {/* Someone needs to make the button green or red when a choice is picked. We also need to display an ending page. */}

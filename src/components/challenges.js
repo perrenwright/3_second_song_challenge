@@ -3,6 +3,12 @@ import React,{useState,useEffect} from 'react';
 import CardComponent from './card-component';
 //import firebaseRef from 'firebase';
 import firestoreRef from '../firebase';
+import {GAME_STATE} from '../gamestate_enum.js';
+import { useRef } from "react";
+import './challenges.css'
+import FlexView from 'react-flexview';
+
+
 export default function Challenges()
 {
 
@@ -12,6 +18,13 @@ export default function Challenges()
     const [playlist,setPlaylsit] = useState([])
     const [image,setImage] = useState('noImage');
     const [creator,setCreator] = useState('noCreator');
+    const [P_gameState, P_setGameState] = useState(null);
+
+
+    const P_wrapperSetGameState = val =>
+    {
+        P_setGameState(val);
+    };
 
     useEffect(() => {
         /**
@@ -34,21 +47,42 @@ export default function Challenges()
         getPlaylists();
 
     },[]);
+
     return(
-        <div>
+        <div id="class1">
             <header>
                 {console.log("rendering component...")}
-                {playlist.map((row)=> (
+                {playlist.map((row)=> {
+                        if (row[3] != P_gameState && P_gameState != null)
+                        {
+                            return null;
+                        }
+                        else
+                        {
 
-                        <CardComponent key={row[0]}
+
+                        return  <CardComponent key={row[0]}
                                        name={row[0]}
                                        image={row[1]}
                                        creator={row[2]}
                                        challengeID={row[3]}
+                                       P_gameState={P_gameState}
+                                       P_gameStateSetter={P_wrapperSetGameState}
+
+
                         />
 
-                )
-                )
+                        /* Since we are determining which card is clicked inside the cardComponent
+                        I had to find away to hide the other components in the challanges.js file
+                        This was achieved by passing the challenge_id back as P_gamestate and
+                        using that to determine which component to render. We have a slight cosmetic issue
+                        The images render on top of each other instead of side by side, someone may need
+                        to fix that.
+                        */
+
+                }
+
+               })
 }
 
             </header>

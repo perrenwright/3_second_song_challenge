@@ -140,12 +140,12 @@ export default function MenuAppBar() {
               component={Link}
             />
             <Tab
-              label="Play"
-              {...a11yProps(4)}
-              to="/playchallenge"
+              label="Add"
+              {...a11yProps(3)}
+              to="/addchallenge"
               component={Link}
             />
-          </Tabs>
+             </Tabs>
           {auth && (
             <div>
               <IconButton

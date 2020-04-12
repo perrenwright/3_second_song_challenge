@@ -16,6 +16,8 @@ import getToken from './GetToken';
 import getPlaylistInfo from './getPlaylistInfo';
 import { Route, Switch } from 'react-router-dom';
 import FetchData from './components/fetchChallengeData';
+import addchallenge from './components/addChallenge';
+
 
 const StyledButton = withStyles({
   root: {
@@ -47,7 +49,7 @@ export default function App() {
           <Route path="/challenges" component={challenges} />
           <Route path="/about" component={about} />
           <Route path="/contact" component={contact} />
-          <Route path="/playchallenge" component={FetchData} />
+          <Route path="/addchallenge" component={addchallenge} />
         </Switch>
       </header>
     </div>

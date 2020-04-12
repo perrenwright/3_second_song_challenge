@@ -18,7 +18,7 @@ preserveAspectRatio: "xMidYMid slice"
 }
 }
 
-export default function FetchData() {
+export default function FetchData(props) {
   const [done, setDone] = useState(undefined);
   const [data, updateData] = useState(null);
   const isCancelled = useRef(false);
@@ -35,7 +35,7 @@ export default function FetchData() {
   useEffect(() => {
     const getData = async () => {
       if (!isCancelled.current) {
-      const json = await getChallengeUtil("1YmciBrzRjf6HHT0IjEHYt")
+      const json = await getChallengeUtil(props.challengeID)
       updateData(json);
       }
     }
@@ -64,7 +64,7 @@ export default function FetchData() {
         </FadeIn>
         ) :
       (
-            <PlayChallenge data={data} />
+            <PlayChallenge data={data} challenge_id={props.challengeID}/>
          )}
     </div>
   );

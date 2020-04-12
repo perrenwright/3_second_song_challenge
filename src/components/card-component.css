@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 .card-component {
-    display: inline-block;
+    display: table;
     padding-right: 30px;
-    
+    float:left;
+
 }
 .playlist-image {
     border-radius: 20px;
@@ -18,4 +19,8 @@
     color: #19869E;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
+}
+.class-float
+{
+    float:left;
 }
