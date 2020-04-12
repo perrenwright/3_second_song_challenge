@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+.card-component {
+    display: inline-block;
+    padding-right: 30px;
+    
+}
+.playlist-image {
+    border-radius: 20px;
+    height: 250px;
+    width: 250px;
+}
+.playlist-title {
+    color: #19869E;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+.playlist-creator-text {
+    color: #19869E;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
