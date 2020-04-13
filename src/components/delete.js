@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState, useEffect} from 'react';
 // import PlayChallenge from './ChallengePage';
 import {Button} from '@material-ui/core';
 import CardComponent from './card-component';
@@ -66,7 +66,7 @@ function Delete()
         console.log(playlist_name)
         let db = firebase.firestore();
         let collectionRef = db.collection('challenge_test');
-        collectionRef.where('challenge_name', '==', playlist_name) && collectionRef.where('challenge_creator', '==', username)
+        collectionRef.where('challenge_name', '==', playlist_name).where('challenge_creator', '==', username)
         .get()
         .then(querySnapshot => {
         querySnapshot.forEach((doc) => {

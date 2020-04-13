@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button,withStyles} from '@material-ui/core';
+import {Button, withStyles} from '@material-ui/core';
 import LandingPage from './components/landingPage';
 // import logo from './logo.svg';
 import './App.css';
@@ -8,7 +8,7 @@ import globalleaderboard from './components/globalleaderboard';
 import challenges from './components/challenges';
 import playchallenge from './components/playChallenge';
 import about from './components/about';
-import contact from './components/contact';
+import Contact from './components/contact';
 import authenticate from './authenticate';
 import LoginButton from './components/LoginButton';
 import SpotifyWebApi from 'spotify-web-api-js';
@@ -48,7 +48,7 @@ export default function App() {
           <Route path="/globalleaderboard" component={globalleaderboard} />
           <Route path="/challenges" component={challenges} />
           <Route path="/about" component={about} />
-          <Route path="/contact" component={contact} />
+          <Route path="/contact" component={Contact} />
           <Route path="/addchallenge" component={addchallenge} />
           <Route path="/delete" component={Delete} />
         </Switch>
