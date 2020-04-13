@@ -14,12 +14,12 @@ import FlexView from 'react-flexview';
 
 export default function Profile()
 {
-    
+
     console.log("calling function..")
     const [isFirebaseDone,setFirebaseDone] = useState(false);
     const [name,setName] = useState('noName');
     const [playlist,setPlaylsit] = useState([])
-    const [username, updateUsername] = useState(undefined);
+    // const [username, updateUsername] = useState(undefined);
     const [image,setImage] = useState('noImage');
     const [creator,setCreator] = useState('noCreator');
     const [P_gameState, P_setGameState] = useState(null);
@@ -30,18 +30,19 @@ export default function Profile()
         P_setGameState(val);
     };
 
-    useEffect(() => {
-        const getUsername = async () => {
+    // useEffect(() => {
+        async function getUsername(){
           var token = getLocalToken();
           var spotifyApi = new SpotifyWebApi();
           spotifyApi.setAccessToken(token);
-          const username = await spotifyApi.getMe()  
-          updateUsername(username["id"]);
+          const username = await spotifyApi.getMe()
+          // updateUsername(username["id"]);
           console.log(username["id"])
+          return username["display_name"]
         }
-        getUsername();
-      }, []);
-
+      //   getUsername();
+      // }, []);
+    // console.log(username)
     useEffect(() => {
         /**
          * Function that pulls data from firebase
@@ -49,14 +50,18 @@ export default function Profile()
          * more playlists to pull.
          */
         async function getPlaylists() {
+          var username = await getUsername()
+
            let querySnapshot =  await firestoreRef
             .collection('challenge_test')
             .get();
             querySnapshot.forEach(function(doc) {
-                if (doc.data().challenge_creator == "Aghogho.B"){
+
+                if (doc.data().challenge_creator == username){
                     playlist.push([doc.data().challenge_name,doc.data().challenge_image,doc.data().challenge_creator,doc.id]);
                     console.log(playlist)
-                }
+
+                  }
             });
 
             console.log('Getting playlists finished');
@@ -157,12 +162,12 @@ export default function Profile()
 //                  }
 
 //              });
- 
+
 //              console.log('Getting playlists finished');
 //              setFirebaseDone(true);
 //          }
 //          getPlaylists();
- 
+
 //      },[]);
 
 //      return(
