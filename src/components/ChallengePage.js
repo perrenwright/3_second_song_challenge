@@ -48,40 +48,40 @@ const playStyles = makeStyles({
     marginBottom: 25,
   },
 });
-const cardStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    height: 140,
-    width: 100,
-  },
-  media: {
-    paddingTop: '100%', // 16:9
-  },
-}));
+// const cardStyles = makeStyles((theme) => ({
+//   root: {
+//     flexGrow: 1,
+//   },
+//   paper: {
+//     height: 140,
+//     width: 100,
+//   },
+//   media: {
+//     paddingTop: '100%', // 16:9
+//   },
+// }));
 
-const GridStyles = makeStyles({
-  root: {
-    maxWidth: 275,
-    marginTop: 80,
-    marginLeft: 585,
-    marginBottom: 10,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-  media: {
-    paddingTop: '100%', // 16:9
-  },
-});
+// const GridStyles = makeStyles({
+//   root: {
+//     maxWidth: 275,
+//     marginTop: 80,
+//     marginLeft: 585,
+//     marginBottom: 10,
+//   },
+//   bullet: {
+//     display: 'inline-block',
+//     margin: '0 2px',
+//   },
+//   title: {
+//     fontSize: 14,
+//   },
+//   pos: {
+//     marginBottom: 12,
+//   },
+//   media: {
+//     paddingTop: '100%', // 16:9
+//   },
+// });
 
 const useStyles = makeStyles((theme) => ({
   root: {
