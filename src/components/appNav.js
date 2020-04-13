@@ -85,6 +85,7 @@ export default function MenuAppBar() {
     setAnchorEl(null);
   };
 
+
   return (
     <div className={classes.root}>
       <FormGroup>
@@ -145,7 +146,14 @@ export default function MenuAppBar() {
               to="/addchallenge"
               component={Link}
             />
+            <Tab
+              label="Profile"
+              {...a11yProps(3)}
+              to="/profile"
+              component={Link}
+            />
              </Tabs>
+          
           {auth && (
             <div>
               <IconButton
@@ -173,8 +181,9 @@ export default function MenuAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                {/* <MenuItem onClick={handleEvent} to="/profile" component={Link}> Profile</MenuItem> */}
+                <MenuItem onClick={handleClose}>My Account</MenuItem> 
+                {/* Should change Account to Sign Out... */}
               </Menu>
             </div>
           )}
@@ -194,6 +203,9 @@ export default function MenuAppBar() {
       </TabPanel>
       <TabPanel value={value} index={4}>
         <Link to="/playchallenge"></Link>
+      </TabPanel>
+      <TabPanel value={value} index={5}>
+        <Link to="/profile"></Link>
       </TabPanel>
     </div>
   );

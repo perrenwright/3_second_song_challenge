@@ -17,7 +17,7 @@ import getPlaylistInfo from './getPlaylistInfo';
 import { Route, Switch } from 'react-router-dom';
 import FetchData from './components/fetchChallengeData';
 import addchallenge from './components/addChallenge';
-
+import Profile from './components/profile';
 
 const StyledButton = withStyles({
   root: {
@@ -50,6 +50,7 @@ export default function App() {
           <Route path="/about" component={about} />
           <Route path="/contact" component={contact} />
           <Route path="/addchallenge" component={addchallenge} />
+          <Route path="/profile" component={Profile} />
         </Switch>
       </header>
     </div>

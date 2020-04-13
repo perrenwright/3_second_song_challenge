@@ -69,7 +69,6 @@ export default function Challenges()
                                        P_gameState={P_gameState}
                                        P_gameStateSetter={P_wrapperSetGameState}
 
-
                         />
 
                         /* Since we are determining which card is clicked inside the cardComponent

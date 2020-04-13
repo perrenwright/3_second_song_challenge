@@ -28,6 +28,16 @@ const StyledButton = withStyles({
   },
 })(Button);
 
+
+// spotifyApi.getPlaylist(playlist_id).then(function (data) {
+//   // 'data' is the vaiable that has all the information about the playlist.
+//   var all_tracks_info = data.tracks['items'];
+//   var playlist_name = data.name;
+//   var playlist_owner = data.owner.display_name;
+//   var playlist_image = data.images[0].url;
+
+
+
 function EndPage({score, high_score, challenge_id}) {
   // Send Score and Player to Database
   const [username, updateUsername] = useState(undefined);
@@ -37,7 +47,7 @@ function EndPage({score, high_score, challenge_id}) {
       var spotifyApi = new SpotifyWebApi();
       spotifyApi.setAccessToken(token);
       console.log("this is me", spotifyApi.getMe())
-      const username = await spotifyApi.getMe()
+      const username = await spotifyApi.getMe()  
       updateUsername(username["id"]);
       console.log(username["id"])
     }
