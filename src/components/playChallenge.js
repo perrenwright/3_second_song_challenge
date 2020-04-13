@@ -15,29 +15,28 @@ import {useState,useEffect} from 'react';
 import {GAME_STATE} from '../gamestate_enum.js';
 import EndPage from  './endChallenge.js'
 
-
-const spaceStyles = makeStyles(theme => ({
-    root: {
-      '& > *': {
-        marginLeft: theme.spacing(3),
-      },
+const spaceStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      marginLeft: theme.spacing(3),
     },
-  }));
+  },
+}));
 
-const questionStyles = makeStyles(theme => ({
-    root: {
-      '& < *': {
-        margin: theme.spacing(1),
-      },
+const questionStyles = makeStyles((theme) => ({
+  root: {
+    '& < *': {
+      margin: theme.spacing(1),
     },
-    // marginLeft: 585,
-  }));
+  },
+  // marginLeft: 585,
+}));
 
 const optionStyles = makeStyles({
-    root: {
-        marginLeft: 30,
-        marginTop: 10,
-    },
+  root: {
+    marginLeft: 30,
+    marginTop: 10,
+  },
 });
 
 const spaceOption = makeStyles(theme => ({
@@ -48,67 +47,65 @@ const spaceOption = makeStyles(theme => ({
         marginRight: theme.spacing(32),
       },
 
-    },
-  }));
-
 const playStyles = makeStyles({
-    root: {
-      marginTop: 20,
-      marginBottom: 25,
-    },
-});
-const cardStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-      },
-      paper: {
-        height: 140,
-        width: 100,
-      },
-    media: {
-        paddingTop: '100%', // 16:9
-      },
-  }));
-
-const GridStyles = makeStyles({
   root: {
-    maxWidth: 275,
-    marginTop: 80,
-    marginLeft: 585,
-    marginBottom: 10,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-  media: {
-    paddingTop: '100%', // 16:9
+    marginTop: 20,
+    marginBottom: 25,
   },
 });
+// const cardStyles = makeStyles((theme) => ({
+//   root: {
+//     flexGrow: 1,
+//   },
+//   paper: {
+//     height: 140,
+//     width: 100,
+//   },
+//   media: {
+//     paddingTop: '100%', // 16:9
+//   },
+// }));
 
-const useStyles = makeStyles(theme => ({
-    root: {
-      display: 'flex',
-      marginTop: 80,
-      marginLeft: 305,
-      marginRight: 309,
-      marginBottom: 30,
-      flexWrap: 'wrap',
-      '& > *': {
-        margin: theme.spacing(0),
-        marginLeft: theme.spacing(3),
-        width: theme.spacing(30),
-        height: theme.spacing(25),
-      },
+// const GridStyles = makeStyles({
+//   root: {
+//     maxWidth: 275,
+//     marginTop: 80,
+//     marginLeft: 585,
+//     marginBottom: 10,
+//   },
+//   bullet: {
+//     display: 'inline-block',
+//     margin: '0 2px',
+//   },
+//   title: {
+//     fontSize: 14,
+//   },
+//   pos: {
+//     marginBottom: 12,
+//   },
+//   media: {
+//     paddingTop: '100%', // 16:9
+//   },
+// });
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    marginTop: 80,
+    marginLeft: 305,
+    marginRight: 309,
+    marginBottom: 30,
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(0),
+      marginLeft: theme.spacing(3),
+      width: theme.spacing(30),
+      height: theme.spacing(25),
     },
-  }));
+  },
+}));
 
+<<<<<<< HEAD:src/components/playChallenge.js
 function PlayChallenge(data) {
     const classes = useStyles();
     const playclasses = playStyles();
@@ -176,6 +173,20 @@ function PlayChallenge(data) {
     <div>
 
     {/* <Grid container className={cardClasses.root}>
+=======
+function PlayChallenge() {
+  const classes = useStyles();
+  const playclasses = playStyles();
+  const questionclasses = questionStyles();
+  const spaceclasses = spaceStyles();
+  const optionclasses = optionStyles();
+  const spaceOptClasses = spaceOption();
+  return (
+    <div>
+      {/* We will be grabbing this info from the database, but for right now, it is being hardcoded with this image of Rihanna  */}
+      <div>
+        {/* <Grid container className={cardClasses.root}>
+>>>>>>> master:src/components/ChallengePage.js
       <Grid item xs={12}>
         <Grid container justify="center">
         </Grid>
@@ -184,6 +195,7 @@ function PlayChallenge(data) {
       </Grid>
     </Grid> */}
 
+<<<<<<< HEAD:src/components/playChallenge.js
 
       <Card className={classes.root}>
         <CardMedia
