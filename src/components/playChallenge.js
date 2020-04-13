@@ -46,47 +46,48 @@ const spaceOption = makeStyles(theme => ({
       '& > *': {
         marginRight: theme.spacing(32),
       },
+}}));
 
 const playStyles = makeStyles({
   root: {
     marginTop: 20,
     marginBottom: 25,
+ },
+});
+const cardStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height: 140,
+    width: 100,
+  },
+  media: {
+    paddingTop: '100%', // 16:9
+  },
+}));
+
+const GridStyles = makeStyles({
+  root: {
+    maxWidth: 275,
+    marginTop: 80,
+    marginLeft: 585,
+    marginBottom: 10,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+  media: {
+    paddingTop: '100%', // 16:9
   },
 });
-// const cardStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   paper: {
-//     height: 140,
-//     width: 100,
-//   },
-//   media: {
-//     paddingTop: '100%', // 16:9
-//   },
-// }));
-
-// const GridStyles = makeStyles({
-//   root: {
-//     maxWidth: 275,
-//     marginTop: 80,
-//     marginLeft: 585,
-//     marginBottom: 10,
-//   },
-//   bullet: {
-//     display: 'inline-block',
-//     margin: '0 2px',
-//   },
-//   title: {
-//     fontSize: 14,
-//   },
-//   pos: {
-//     marginBottom: 12,
-//   },
-//   media: {
-//     paddingTop: '100%', // 16:9
-//   },
-// });
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -105,7 +106,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-<<<<<<< HEAD:src/components/playChallenge.js
 function PlayChallenge(data) {
     const classes = useStyles();
     const playclasses = playStyles();
@@ -173,20 +173,7 @@ function PlayChallenge(data) {
     <div>
 
     {/* <Grid container className={cardClasses.root}>
-=======
-function PlayChallenge() {
-  const classes = useStyles();
-  const playclasses = playStyles();
-  const questionclasses = questionStyles();
-  const spaceclasses = spaceStyles();
-  const optionclasses = optionStyles();
-  const spaceOptClasses = spaceOption();
-  return (
-    <div>
-      {/* We will be grabbing this info from the database, but for right now, it is being hardcoded with this image of Rihanna  */}
-      <div>
-        {/* <Grid container className={cardClasses.root}>
->>>>>>> master:src/components/ChallengePage.js
+
       <Grid item xs={12}>
         <Grid container justify="center">
         </Grid>
@@ -195,7 +182,6 @@ function PlayChallenge() {
       </Grid>
     </Grid> */}
 
-<<<<<<< HEAD:src/components/playChallenge.js
 
       <Card className={classes.root}>
         <CardMedia

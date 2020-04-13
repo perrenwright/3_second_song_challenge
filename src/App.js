@@ -1,9 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
 import {Button, withStyles} from '@material-ui/core';
 import LandingPage from './components/landingPage';
-=======
->>>>>>> master
 // import logo from './logo.svg';
 import './App.css';
 import MenuAppBar from './components/appNav';
@@ -11,16 +8,10 @@ import globalleaderboard from './components/globalleaderboard';
 import challenges from './components/challenges';
 import playchallenge from './components/playChallenge';
 import about from './components/about';
-<<<<<<< HEAD
 import Contact from './components/contact';
 import authenticate from './authenticate';
 import LoginButton from './components/LoginButton';
 import SpotifyWebApi from 'spotify-web-api-js';
-=======
-import contact from './components/contact';
-// import authenticate from './authenticate';
-// import LoginButton from './components/LoginButton';
->>>>>>> master
 import getToken from './GetToken';
 import getPlaylistInfo from './getPlaylistInfo';
 import { Route, Switch } from 'react-router-dom';
@@ -62,9 +53,5 @@ export default function App() {
         </Switch>
       </header>
     </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
   );
 }
