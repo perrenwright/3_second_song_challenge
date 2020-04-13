@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import './about.css'
-
+import { Button, withStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,12 +28,18 @@ const useStyles = makeStyles((theme) => ({
   
 
 function Contact() {
-  
-//   const [value, setValue] = useState(0);
+    const [values, setValues] = React.useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        heading: '',
+        message: '',
+      });
 
-//   const handleChange = (event) => {
-//     setValue(event.target.value);
-//   };
+      const handleChange = (prop) => (event) => {
+        setValues({ ...values, [prop]: event.target.value });
+      };
+
   const classes = useStyles();
   return (
       <div>
@@ -45,15 +51,16 @@ function Contact() {
           id="outlined-multiline-flexible"
           label="First Name"
           multiline
-          rowsMax={4}
-        //   value={value}
-        //   onChange={handleChange}
+          value={values.firstName}
+          onChange={handleChange('firstName')}
           variant="outlined"
         />
         <TextField
           id="outlined-textarea"
           label="Last Name"
           multiline
+          value={values.lastName}
+          onChange={handleChange('lastName')}
           variant="outlined"
         />
         </div> 
@@ -64,12 +71,16 @@ function Contact() {
             label="Email"
             multiline
             variant="outlined"
+            value={values.email}
+            onChange={handleChange('email')}
           />
           <TextField
             id="outlined-textarea"
             label="Heading"
             multiline
             variant="outlined"
+            value={values.heading}
+            onChange={handleChange('heading')}
           />
           </div>
 
@@ -78,12 +89,16 @@ function Contact() {
               id="outlined-multiline-static"
               label="Message"
               multiline
-              rows={20}
+              value={values.message}
+              onChange={handleChange('message')}
+              rows={15}
               variant="outlined"
             />
       </div>
       </div>
     </form>
+    <Button variant="contained" color="primary" onSubmit={handleChange}>Submit</Button>
+    <hr/>
     </div>
   );
 }
