@@ -109,7 +109,7 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
-function PlayChallenge(data, challenge_id) {
+function PlayChallenge(data) {
     const classes = useStyles();
     const playclasses = playStyles();
     const questionclasses = questionStyles();
@@ -123,7 +123,7 @@ function PlayChallenge(data, challenge_id) {
     const [choice, setChoice] = useState("");
     const [score, setScore] = useState(0);
     const [gameState, setGameState] = useState(GAME_STATE.IN_PROGRESS);
-
+    console.log(data)
     var all_challenge_data = data["data"]
     var questions = all_challenge_data["challenge_questions"]
     // Questions contains the challenge passed into from data.
@@ -136,6 +136,7 @@ function PlayChallenge(data, challenge_id) {
     var playlist_image = all_challenge_data["challenge_image"]
     var playlist_name = all_challenge_data["challenge_name"]
     var high_score = all_challenge_data["highest_score"]
+    var challenge_id = all_challenge_data["challenge_id"]
     // We extract the necessary components we would like to display. Playlist image and preview_url are not in the database.
     var sound = new Howl({
       src: [url],
@@ -183,29 +184,6 @@ function PlayChallenge(data, challenge_id) {
       </Grid>
     </Grid> */}
 
-    <Card className={classes.root}>
-    <Card>
-        <CardContent>
-          <Typography>
-            BEST
-          </Typography>
-          <Typography>
-            Person 1
-          </Typography>
-          <Typography>
-            Person 2
-          </Typography>
-          <Typography>
-            Person 3
-          </Typography>
-          <Typography>
-            Person 4
-          </Typography>
-          <Typography>
-            Person 5
-          </Typography>
-        </CardContent>
-      </Card>
 
       <Card className={classes.root}>
         <CardMedia
@@ -215,29 +193,7 @@ function PlayChallenge(data, challenge_id) {
       />
       </Card>
 
-    <Card>
-        <CardContent>
-          <Typography>
-            Friends
-          </Typography>
-          <Typography>
-            Person 1
-          </Typography>
-          <Typography>
-            Person 2
-          </Typography>
-          <Typography>
-            Person 3
-          </Typography>
-          <Typography>
-            Person 4
-          </Typography>
-          <Typography>
-            Person 5
-          </Typography>
-        </CardContent>
-      </Card>
-    </Card>
+
 
     </div>
 }

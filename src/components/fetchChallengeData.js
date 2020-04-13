@@ -21,6 +21,7 @@ preserveAspectRatio: "xMidYMid slice"
 export default function FetchData(props) {
   const [done, setDone] = useState(undefined);
   const [data, updateData] = useState(null);
+  const [challenge_id, setChallenge_id] = useState(null);
   const isCancelled = useRef(false);
 
     useEffect(() => {
@@ -31,11 +32,13 @@ export default function FetchData(props) {
       isCancelled.current = true;
     };
   }, []);
+
   // This piece of code prevents the interface from displaying until all the data is loaded.
   useEffect(() => {
     const getData = async () => {
       if (!isCancelled.current) {
-      const json = await getChallengeUtil(props.challengeID)
+      var json = await getChallengeUtil(props.challengeID)
+      json["challenge_id"] = props.challengeID
       updateData(json);
       }
     }
@@ -64,7 +67,8 @@ export default function FetchData(props) {
         </FadeIn>
         ) :
       (
-            <PlayChallenge data={data} challenge_id={props.challengeID}/>
+
+            <PlayChallenge data={data}/>
          )}
     </div>
   );
