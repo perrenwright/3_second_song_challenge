@@ -147,9 +147,9 @@ export default function MenuAppBar() {
               component={Link}
             />
             <Tab
-              label="Profile"
+              label="Delete"
               {...a11yProps(3)}
-              to="/profile"
+              to="/delete"
               component={Link}
             />
              </Tabs>
@@ -205,7 +205,7 @@ export default function MenuAppBar() {
         <Link to="/playchallenge"></Link>
       </TabPanel>
       <TabPanel value={value} index={5}>
-        <Link to="/profile"></Link>
+        <Link to="/delete"></Link>
       </TabPanel>
     </div>
   );
