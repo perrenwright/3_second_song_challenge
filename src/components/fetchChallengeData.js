@@ -1,7 +1,7 @@
 import React from 'react';
 import { getChallengeUtil } from '../getChallengeUtil';
 import PlayChallenge from './playChallenge.js';
-import {useState,useEffect,useRef} from 'react';
+import {useState,useEffect} from 'react';
 import FadeIn from "react-fade-in";
 import Lottie from "react-lottie";
 import ReactLoading from "react-loading";
@@ -15,48 +15,26 @@ autoplay: true,
 animationData: logoloading.default,
 rendererSettings: {
 preserveAspectRatio: "xMidYMid slice"
-}
+  }
 }
 
 export default function FetchData(props) {
-  const [done, setDone] = useState(undefined);
   const [data, updateData] = useState(null);
   const [challenge_id, setChallenge_id] = useState(null);
-  const isCancelled = useRef(false);
 
-    useEffect(() => {
-    if (!isCancelled.current) {
-    setTimeout(() => setDone(true), 7000)
-  }
-  return () => {
-      isCancelled.current = true;
-    };
-  }, []);
 
   // This piece of code prevents the interface from displaying until all the data is loaded.
-  useEffect(() => {
-    const getData = async () => {
-      if (!isCancelled.current) {
+  useEffect( async() => {
       var json = await getChallengeUtil(props.challengeID)
       json["challenge_id"] = props.challengeID
+      json["time"] = props.time
+      json["challenge_length"] = props.challenge_length
       updateData(json);
-      }
-    }
-    getData();
-    return () => {
-      isCancelled.current = true;
-    };
-    // I believe this line of code is preventing a memory leak, I actually am not sure, but if you
-    // "get a no-op blah blah memory leak from useffect" error, then this did not work haha.
   }, []);
-
-
-  // This is where I get the playlist data I need to display in play challenge.
-  // We might have to also pass the leaderboard data into here.
 
   return (
     <div>
-      {!done ? (
+      {!data ? (
         <FadeIn>
           <div align="center" >
             <Lottie options={defaultOptions} height={200} width={200} />

@@ -6,8 +6,8 @@ import firestoreRef from '../firebase';
 import {GAME_STATE} from '../gamestate_enum.js';
 import { useRef } from "react";
 import './challenges.css'
-import FlexView from 'react-flexview';
-
+import Song_timer from './song_timer.js'
+import Challenge_length from './challenge_length.js'
 
 export default function Challenges()
 {
@@ -19,11 +19,20 @@ export default function Challenges()
     const [image,setImage] = useState('noImage');
     const [creator,setCreator] = useState('noCreator');
     const [P_gameState, P_setGameState] = useState(null);
-
+    const [gameTime, setgameTime] = useState(3000);
+    const [challenge_length, setChallenge_length] = useState(3000);
 
     const P_wrapperSetGameState = val =>
     {
         P_setGameState(val);
+    };
+    const wrappersetgameTime = val =>
+    {
+       setgameTime(val);
+    };
+    const wrappersetChallenge_length = val =>
+    {
+       setChallenge_length(val);
     };
 
     useEffect(() => {
@@ -50,8 +59,11 @@ export default function Challenges()
 
     return(
         <div id="class1">
+
             <header>
                 {console.log("rendering component...")}
+                <Challenge_length challenge_length={challenge_length} setChallenge_length={setChallenge_length} gameState={P_gameState}/>
+                <Song_timer gameTime={gameTime} setgameTime={setgameTime} gameState={P_gameState}/>
                 {playlist.map((row)=> {
                         if (row[3] != P_gameState && P_gameState != null)
                         {
@@ -68,6 +80,8 @@ export default function Challenges()
                                        challengeID={row[3]}
                                        P_gameState={P_gameState}
                                        P_gameStateSetter={P_wrapperSetGameState}
+                                       time = {gameTime}
+                                       challenge_length = {challenge_length}
 
                         />
 

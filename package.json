@@ -25,6 +25,8 @@
     "react-lottie": "^1.2.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-timeout": "^1.2.0",
+    "reactstrap": "^8.4.1",
     "simple-oauth2": "^3.3.0",
     "spotify-web-api-js": "^1.2.0",
     "sweetalert2": "^9.10.10"

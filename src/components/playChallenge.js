@@ -11,9 +11,10 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import playsong from './playsong.js'
 import { getChallengeUtil } from '../getChallengeUtil';
-import {useState,useEffect} from 'react';
+import {useState,useEffect,useCallback,useRef} from 'react';
 import {GAME_STATE} from '../gamestate_enum.js';
 import EndPage from  './endChallenge.js'
+
 
 const spaceStyles = makeStyles((theme) => ({
   root: {
@@ -120,6 +121,7 @@ function PlayChallenge(data) {
     const [choice, setChoice] = useState("");
     const [score, setScore] = useState(0);
     const [gameState, setGameState] = useState(GAME_STATE.IN_PROGRESS);
+
     console.log(data)
     var all_challenge_data = data["data"]
     var questions = all_challenge_data["challenge_questions"]
@@ -134,30 +136,52 @@ function PlayChallenge(data) {
     var playlist_name = all_challenge_data["challenge_name"]
     var high_score = all_challenge_data["highest_score"]
     var challenge_id = all_challenge_data["challenge_id"]
+    var challenge_length = all_challenge_data["challenge_length"]
     // We extract the necessary components we would like to display. Playlist image and preview_url are not in the database.
     var sound = new Howl({
       src: [url],
       html5: true,
       format: ['mp3', 'aac']
     });
+
     var count = 0
+
     const start = () => {
-      playsong(url,count,sound);
-      count = 1
+      sound.unload()
+      playsong(url,count,sound,all_challenge_data["time"]);
+      count = count + 1
       // This count stops the user from playing the sound more than once.
     }
 
-    if (choice === right_choice){
+
+    useEffect(() => {
+      sound.unload()
+      if (i < challenge_length){
+      start()
+      }
+    }, [i])
+
+    if (choice === right_choice && i < challenge_length){
           setScore(score + 1);
           setChoice("")
           console.log(score)
+
     // I track the user's current score here.
     }
-    if (i + 1 > 5)
+
+    if (i >= challenge_length && gameState != GAME_STATE.ENDED)
     {
+      playsong(url,count,sound,all_challenge_data["time"],true)
       setGameState(GAME_STATE.ENDED)
-      set_i(0)
+      sound.unload()
     }
+
+    if (choice)
+    {
+      console.log("This is right: ", right_choice)
+      console.log("You picked: ", choice)
+    }
+
 
     return (
 
@@ -182,7 +206,6 @@ function PlayChallenge(data) {
       </Grid>
     </Grid> */}
 
-
       <Card className={classes.root}>
         <CardMedia
         className={classes.media}
@@ -199,7 +222,7 @@ function PlayChallenge(data) {
     <div className = {questionclasses.root}>
     <Typography variant="h5" gutterBottom className={spaceclasses.root}>
         Choose the correct singer and song Title?
-        <Button variant="outlined" color="primary" onClick={() => set_i(i + 1)}>
+        <Button id="next" variant="outlined" color="primary" onClick={() => set_i(i+1)}>
          Next
         </Button>
       </Typography>

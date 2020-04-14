@@ -40,7 +40,7 @@ function CardComponent(props) {
                     <h4 className='playlist-creator-text'>Created by {props.creator}</h4>
                 </div>
             }
-         { gameState === GAME_STATE.IN_PROGRESS &&   <FetchData challengeID={props.challengeID}  />}
+         { gameState === GAME_STATE.IN_PROGRESS &&   <FetchData challengeID={props.challengeID}  time = {props.time} challenge_length={props.challenge_length} />}
         </div>
 
     )
