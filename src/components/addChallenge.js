@@ -6,7 +6,6 @@ import SpotifyWebApi from 'spotify-web-api-js';
 import createChallengeUtil from '../createChallengeUtil';
 import { getLocalToken } from '../token';
 import { getChallengeUtil } from '../getChallengeUtil';
-
 import './about.css';
 
 const StyledButton = withStyles({
@@ -70,10 +69,9 @@ function Challenges() {
   }
 
   return (
-    <div className="about">
-      <div className="about-header">
-        <div className="about-headerText">
-          <h2>CHALLENGES YOU CAN ADD</h2>
+    <div className="class1">
+    <div className="about-titleText">
+        <h2>Add Your Challenges</h2>
           <hr />
           {Object.keys(valid_playlists).map((key) => (
             <Button onClick={() => handleclick(key)}>
@@ -81,7 +79,6 @@ function Challenges() {
             </Button>
           ))}
         </div>
-      </div>
     </div>
   );
 }

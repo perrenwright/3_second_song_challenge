@@ -49,7 +49,7 @@ function Contact() {
 
   const classes = useStyles();
   return (
-      <div>
+    <div className="about">
         <h2> Contact Us Now</h2>
     <form noValidate autoComplete="off">
       <div>

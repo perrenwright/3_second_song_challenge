@@ -53,14 +53,18 @@ function a11yProps(index) {
     'aria-controls': `simple-tabpanel-${index}`
   };
 }
+const theme = createMuiTheme({
+  palette: {
+    primary: teal,
+    secondary: green,
+  },
+  status: {
+    danger: 'orange',
+  },
+});
 
 const useStyles = makeStyles(theme => ({
-    palette: {
-      primary: teal,
-      secondary: green,
-  },
   root: {
-    color: '#00838F',
     flexGrow: 1,
     width: '100%'
   },
@@ -110,7 +114,7 @@ export default function MenuAppBar() {
           label={auth ? 'Logout' : 'Login'}
         />
       </FormGroup>
-      <AppBar position="static" style={{ background: 'white', color: '#00838F', boxShadow: 'None', indicatorColor: '#00838F'}}>
+      <AppBar position="static" style={{ background: 'white', color: 'black', boxShadow: 'Light'}}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -124,7 +128,7 @@ export default function MenuAppBar() {
               alt="3 Second Logo"
             />
           </IconButton>
-          <Tabs
+          <Tabs 
             value={value}
             onChange={handleEvent}
             aria-label="simple tabs example"
@@ -145,12 +149,6 @@ export default function MenuAppBar() {
             />
             <Tab label="About" {...a11yProps(2)} to="/about" component={Link} />
             <Tab
-              label="Contact Us"
-              {...a11yProps(3)}
-              to="/contact"
-              component={Link}
-            />
-            <Tab
               label="Add"
               {...a11yProps(3)}
               to="/addchallenge"
@@ -160,6 +158,12 @@ export default function MenuAppBar() {
               label="Delete"
               {...a11yProps(3)}
               to="/delete"
+              component={Link}
+            />
+            <Tab
+              label="Contact Us"
+              {...a11yProps(3)}
+              to="/contact"
               component={Link}
             />
              </Tabs>
