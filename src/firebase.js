@@ -7,9 +7,9 @@ const firebaseConfig = {
   projectId: 'secondsongchallenge',
   storageBucket: 'secondsongchallenge.appspot.com',
   messagingSenderId: '578310806195',
-  appId: '1:578310806195:web:cd29ef97e3654327286ec6'
+  appId: '1:578310806195:web:cd29ef97e3654327286ec6',
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 const firestoreRef = firebase.firestore();
 export default firestoreRef;
