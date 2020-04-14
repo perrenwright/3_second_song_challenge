@@ -73,7 +73,7 @@ function Challenges() {
     <div className="about">
       <div className="about-header">
         <div className="about-headerText">
-          <h2> Challenges you can add</h2>
+          <h2>CHALLENGES YOU CAN ADD</h2>
           <hr />
           {Object.keys(valid_playlists).map((key) => (
             <Button onClick={() => handleclick(key)}>

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
-
 .about {
     text-align: center;
 }
@@ -26,10 +25,11 @@
     position: absolute;
     color: #19869E;
     text-align: left;
-    font-family: 'Inter', sans-serif;
-    left: 80px;  
+    font-family: 'Roboto';
+    left: 120px;  
     line-height: 0.25;
     top: 250px;
+    bottom: 10px;
     font-size: 20px;
 }
   
@@ -48,7 +48,7 @@
     height: 300px;
     width: 300px; 
     right: 80px;
-    top: 200px;
+    top: 190px;
     display: inline-block;
 }
 
@@ -58,16 +58,18 @@
     width: 100%;
     position: absolute;
     right: 0px; 
-    top: 600px;
+    top: 571px;
 }
 
 .about-titleText {
     color: #19869E;
-    font-family: 'Inter', sans-serif;
+    /* font-family: 'Inter', sans-serif; */
     position: absolute;
-    left: 80px;
+    left: 120px;
     top: 140px;
     font-size: 36px;
     display: inline-block;
 }
-  
+h2{
+    color: #19869E;
+}

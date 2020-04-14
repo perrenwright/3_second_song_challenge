@@ -87,7 +87,7 @@ function Delete()
     //  <div className="about">
        <div className="class1">
         <div className="about-headerText">
-            <h2> Challenges you can delete</h2>
+            <h2>CHALLENGES YOU CAN DELETE</h2>
             <hr/>
             <header>
                 {console.log("rendering component...")}

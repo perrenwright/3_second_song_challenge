@@ -18,6 +18,11 @@ import Menu from '@material-ui/core/Menu';
 import { Link } from 'react-router-dom';
 import './appNav.css';
 // import { sizing } from '@material-ui/system';
+import { createMuiTheme } from '@material-ui/core/styles';
+import teal from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -50,7 +55,12 @@ function a11yProps(index) {
 }
 
 const useStyles = makeStyles(theme => ({
+    palette: {
+      primary: teal,
+      secondary: green,
+  },
   root: {
+    color: '#00838F',
     flexGrow: 1,
     width: '100%'
   },
@@ -100,7 +110,7 @@ export default function MenuAppBar() {
           label={auth ? 'Logout' : 'Login'}
         />
       </FormGroup>
-      <AppBar position="static" style={{ background: 'white', color: 'black' }}>
+      <AppBar position="static" style={{ background: 'white', color: '#00838F', boxShadow: 'None', indicatorColor: '#00838F'}}>
         <Toolbar>
           <IconButton
             edge="start"

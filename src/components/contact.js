@@ -4,12 +4,19 @@ import TextField from '@material-ui/core/TextField';
 import './about.css'
 import { Button, withStyles } from '@material-ui/core';
 
+import teal from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
 const useStyles = makeStyles((theme) => ({
+  
+    palette: {
+      primary: teal,
+      secondary: green,
+    },
+    
     root: {
       '& .MuiTextField-root': {
         margin: theme.spacing(1),
         width: '25ch',
-        color: 'teal',
       },
     },
       heading:{
@@ -72,6 +79,7 @@ function Contact() {
             multiline
             variant="outlined"
             value={values.email}
+            color = "primary"
             onChange={handleChange('email')}
           />
           <TextField
@@ -97,7 +105,7 @@ function Contact() {
       </div>
       </div>
     </form>
-    <Button variant="contained" color="primary" onSubmit={handleChange}>Submit</Button>
+    <Button variant="outlined" color="19869E" onSubmit={handleChange}>Submit</Button>
     <hr/>
     </div>
   );
