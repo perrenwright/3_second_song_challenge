@@ -11,7 +11,6 @@ import FlexView from 'react-flexview';
 
 export default function Challenges()
 {
-
     console.log("calling function..")
     const [isFirebaseDone,setFirebaseDone] = useState(false);
     const [name,setName] = useState('noName');

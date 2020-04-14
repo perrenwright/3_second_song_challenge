@@ -2,6 +2,7 @@ import React from 'react';
 import {Howl, Howler} from 'howler';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
+
 import CardMedia from '@material-ui/core/CardMedia';
 // import CardActions from '@material-ui/core/CardActions';
 // import CardContent from '@material-ui/core/CardContent';
@@ -15,39 +16,47 @@ import {useState,useEffect} from 'react';
 import {GAME_STATE} from '../gamestate_enum.js';
 import EndPage from  './endChallenge.js'
 
-
+// spacing 
 const spaceStyles = makeStyles(theme => ({
     root: {
+      color: '#19869E',
       '& > *': {
         marginLeft: theme.spacing(3),
+        color: '#19869E',
       },
     },
   }));
 
+//question styles 
 const questionStyles = makeStyles(theme => ({
     root: {
+      color: '#19869E',
       '& < *': {
         margin: theme.spacing(1),
+        color: '#19869E',
       },
     },
-    // marginLeft: 585,
+
   }));
+
 
 const optionStyles = makeStyles({
     root: {
-        marginLeft: 30,
+        color: '#19869E',
         marginTop: 10,
     },
 });
 
 const spaceOption = makeStyles(theme => ({
     root: {
+       color: '#19869E',
        marginLeft: 20,
        marginBottom: 10,
       '& > *': {
-        marginRight: theme.spacing(32),
+        color: '#19869E',
+        marginRight: 30,
       },
-
+      width: 480,
     },
   }));
 
@@ -55,16 +64,10 @@ const playStyles = makeStyles({
     root: {
       marginTop: 20,
       marginBottom: 25,
+      color: '#19869E',
     },
 });
 const cardStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-      },
-      paper: {
-        height: 140,
-        width: 100,
-      },
     media: {
         paddingTop: '100%', // 16:9
       },
@@ -72,9 +75,7 @@ const cardStyles = makeStyles(theme => ({
 
 const GridStyles = makeStyles({
   root: {
-    maxWidth: 275,
-    marginTop: 80,
-    marginLeft: 585,
+    color: '#19869E',
     marginBottom: 10,
   },
   bullet: {
@@ -83,28 +84,36 @@ const GridStyles = makeStyles({
   },
   title: {
     fontSize: 14,
+    color: '#19869E',
   },
   pos: {
     marginBottom: 12,
+    color: '#19869E',
   },
   media: {
-    paddingTop: '100%', // 16:9
+    paddingTop: '100%', 
+    borderRadius: 20,
+    height: 250,
+    width: 250, // 16:9
+    color: '#19869E',
   },
 });
 
 const useStyles = makeStyles(theme => ({
     root: {
-      display: 'flex',
-      marginTop: 80,
-      marginLeft: 305,
-      marginRight: 309,
+      display: 'table',
+      marginTop: 20,
+      marginLeft: 360,
+      marginRight: 200,
       marginBottom: 30,
+      color: '#19869E',
       flexWrap: 'wrap',
       '& > *': {
         margin: theme.spacing(0),
-        marginLeft: theme.spacing(3),
-        width: theme.spacing(30),
-        height: theme.spacing(25),
+        marginLeft: theme.spacing(0),
+        width: theme.spacing(40),
+        height: theme.spacing(40),
+        color: '#19869E',
       },
     },
   }));
@@ -175,16 +184,6 @@ function PlayChallenge(data) {
     { gameState === GAME_STATE.IN_PROGRESS &&
     <div>
 
-    {/* <Grid container className={cardClasses.root}>
-      <Grid item xs={12}>
-        <Grid container justify="center">
-        </Grid>
-      </Grid>
-      <Grid item xs={12}>
-      </Grid>
-    </Grid> */}
-
-
       <Card className={classes.root}>
         <CardMedia
         className={classes.media}
@@ -201,7 +200,7 @@ function PlayChallenge(data) {
     <div className = {questionclasses.root}>
     <Typography variant="h5" gutterBottom className={spaceclasses.root}>
         Choose the correct singer and song Title?
-        <Button variant="outlined" color="primary" onClick={() => set_i(i + 1)}>
+        <Button variant="outlined" onClick={() => set_i(i + 1)}>
          Next
         </Button>
       </Typography>
@@ -210,31 +209,31 @@ function PlayChallenge(data) {
   }
   { gameState === GAME_STATE.IN_PROGRESS &&
     <div className ={playclasses.root}>
-    <Button variant="outlined" color="primary" onClick={start}>
+    <Button variant="outlined" onClick={start} >
         Play Song
       </Button>
       </div>
 }
 { gameState === GAME_STATE.IN_PROGRESS &&
         <div className = {optionclasses.root}>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_A)} >
+            <Button variant="outlined"  className = {spaceOptClasses.root} onClick={() => setChoice(choice_A)} >
                {choice_A}
             </Button>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_B)}>
+            <Button variant="outlined" className = {spaceOptClasses.root} onClick={() => setChoice(choice_B)}>
                {choice_B}
             </Button>
         </div>
 }
 { gameState === GAME_STATE.IN_PROGRESS &&
         <div className = {optionclasses.root}>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_C)} >
+            <Button variant="outlined"  className = {spaceOptClasses.root} onClick={() => setChoice(choice_C)} >
                {choice_C}
             </Button>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_D)}>
+            <Button variant="outlined"  className = {spaceOptClasses.root} onClick={() => setChoice(choice_D)}>
                 {choice_D}
             </Button>
         </div>
-}
+} <hr/>
       </div>
 
 
