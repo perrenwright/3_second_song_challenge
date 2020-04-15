@@ -1,7 +1,7 @@
 import React from 'react';
 import { getChallengeUtil } from '../getChallengeUtil';
 import PlayChallenge from './playChallenge.js';
-import {useState,useEffect} from 'react';
+import {useState,useEffect,useRef} from 'react';
 import FadeIn from "react-fade-in";
 import Lottie from "react-lottie";
 import ReactLoading from "react-loading";
@@ -21,15 +21,26 @@ preserveAspectRatio: "xMidYMid slice"
 export default function FetchData(props) {
   const [data, updateData] = useState(null);
   const [challenge_id, setChallenge_id] = useState(null);
-
+  const isCancelled = useRef(false);
 
   // This piece of code prevents the interface from displaying until all the data is loaded.
-  useEffect( async() => {
+
+  useEffect(() => {
+    const getData = async () => {
+      if (!isCancelled.current) {
       var json = await getChallengeUtil(props.challengeID)
       json["challenge_id"] = props.challengeID
       json["time"] = props.time
       json["challenge_length"] = props.challenge_length
       updateData(json);
+      }
+    }
+    getData();
+    return () => {
+      isCancelled.current = true;
+    };
+    // I believe this line of code is preventing a memory leak, I actually am not sure, but if you
+    // "get a no-op blah blah memory leak from useffect" error, then this did not work haha.
   }, []);
 
   return (
