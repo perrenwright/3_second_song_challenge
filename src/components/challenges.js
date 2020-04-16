@@ -1,10 +1,6 @@
 import React,{useState,useEffect} from 'react';
-// import PlayChallenge from './ChallengePage';
 import CardComponent from './card-component';
-//import firebaseRef from 'firebase';
 import firestoreRef from '../firebase';
-import {GAME_STATE} from '../gamestate_enum.js';
-import { useRef } from "react";
 import './challenges.css'
 import Song_timer from './song_timer.js'
 import Challenge_length from './challenge_length.js'
@@ -13,11 +9,8 @@ export default function Challenges()
 {
 
     console.log("calling function..")
-    const [isFirebaseDone,setFirebaseDone] = useState(false);
-    const [name,setName] = useState('noName');
+    // eslint-disable-next-line
     const [playlist,setPlaylsit] = useState([])
-    const [image,setImage] = useState('noImage');
-    const [creator,setCreator] = useState('noCreator');
     const [P_gameState, P_setGameState] = useState(null);
     const [gameTime, setgameTime] = useState(3000);
     const [challenge_length, setChallenge_length] = useState(3000);
@@ -26,10 +19,12 @@ export default function Challenges()
     {
         P_setGameState(val);
     };
+    // eslint-disable-next-line
     const wrappersetgameTime = val =>
     {
        setgameTime(val);
     };
+    // eslint-disable-next-line
     const wrappersetChallenge_length = val =>
     {
        setChallenge_length(val);
@@ -51,21 +46,22 @@ export default function Challenges()
             });
 
             console.log('Getting playlists finished');
-            setFirebaseDone(true);
         }
         getPlaylists();
 
-    },[]);
+    },[playlist]);
 
     return(
         <div id="class1">
 
             <header>
                 {console.log("rendering component...")}
+                {/*eslint-disable-next-line*/}
                 <Challenge_length challenge_length={challenge_length} setChallenge_length={setChallenge_length} gameState={P_gameState}/>
+                {/*eslint-disable-next-line*/}
                 <Song_timer gameTime={gameTime} setgameTime={setgameTime} gameState={P_gameState}/>
                 {playlist.map((row)=> {
-                        if (row[3] != P_gameState && P_gameState != null)
+                        if (row[3] !== P_gameState && P_gameState != null)
                         {
                             return null;
                         }

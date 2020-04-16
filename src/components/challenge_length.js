@@ -11,7 +11,7 @@ const Challenge_length = (props) => {
   const toggle = () => setOpen(!dropdownOpen);
   useEffect(() => {
         props.setChallenge_length(challenge_length);
-    }, [challenge_length]);
+    }, [challenge_length, props]);
 
 
   function onclick(challenge_length)

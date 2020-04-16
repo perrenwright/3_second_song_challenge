@@ -11,7 +11,7 @@ const Song_timer = (props) => {
   const toggle = () => setOpen(!dropdownOpen);
   useEffect(() => {
         props.setgameTime(gameTime);
-    }, [gameTime]);
+    }, [gameTime, props]);
 
 
   function onclick(time)

@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import './about.css'
-import { Button, withStyles } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
           margin: theme.spacing(1),
           width: '25ch',
       },
-    }, 
+    },
       message:{
         '& .MuiTextField-root': {
           margin: theme.spacing(1),
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
   }));
-  
+
 
 function Contact() {
     const [values, setValues] = React.useState({
@@ -63,7 +63,7 @@ function Contact() {
           onChange={handleChange('lastName')}
           variant="outlined"
         />
-        </div> 
+        </div>
 
         <div className={classes.heading}>
           <TextField

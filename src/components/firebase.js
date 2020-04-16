@@ -1,5 +1,6 @@
-import firebase from 'firebase'; 
+import firebase from 'firebase';
 
+// eslint-disable-next-line
 const firebaseConfig = {
     apiKey: "AIzaSyD2Cgk-IWFs4T3NdG93L5lp1bsStfb9xWA",
     authDomain: "secondsongchallenge.firebaseapp.com",
@@ -12,4 +13,4 @@ const firebaseConfig = {
   if (!firebase.apps.length) {
     firebase.initializeApp({});
  }
-//   const firebaseApp = firebase.initializeApp(firebaseConfig); 
+//   const firebaseApp = firebase.initializeApp(firebaseConfig);

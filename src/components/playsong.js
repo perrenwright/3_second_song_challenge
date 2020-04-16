@@ -1,7 +1,3 @@
-import SpotifyWebApi from 'spotify-web-api-js';
-import React from 'react';
-import {Howl, Howler} from 'howler';
-
 // I used the howler library because it had more functionalty and documentation than the  standard
 // HTML audio library function.
 let lastAudio
