@@ -1,4 +1,3 @@
-import SpotifyWebApi from 'spotify-web-api-js';
 import { setLocalToken, getLocalToken } from './token';
 
 

@@ -3,21 +3,15 @@ import React,{useState,useEffect} from 'react';
 import CardComponent from './card-component';
 //import firebaseRef from 'firebase';
 import firestoreRef from '../firebase';
-import {GAME_STATE} from '../gamestate_enum.js';
-import { useRef } from "react";
 import './challenges.css'
-import FlexView from 'react-flexview';
 
 
 export default function Challenges()
 {
 
     console.log("calling function..")
-    const [isFirebaseDone,setFirebaseDone] = useState(false);
-    const [name,setName] = useState('noName');
+    // eslint-disable-next-line
     const [playlist,setPlaylsit] = useState([])
-    const [image,setImage] = useState('noImage');
-    const [creator,setCreator] = useState('noCreator');
     const [P_gameState, P_setGameState] = useState(null);
 
 
@@ -42,18 +36,17 @@ export default function Challenges()
             });
 
             console.log('Getting playlists finished');
-            setFirebaseDone(true);
         }
         getPlaylists();
 
-    },[]);
+    },[playlist]);
 
     return(
         <div id="class1">
             <header>
                 {console.log("rendering component...")}
                 {playlist.map((row)=> {
-                        if (row[3] != P_gameState && P_gameState != null)
+                        if (row[3] !== P_gameState && P_gameState != null)
                         {
                             return null;
                         }

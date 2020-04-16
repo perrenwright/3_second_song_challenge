@@ -4,7 +4,6 @@ import PlayChallenge from './playChallenge.js';
 import {useState,useEffect,useRef} from 'react';
 import FadeIn from "react-fade-in";
 import Lottie from "react-lottie";
-import ReactLoading from "react-loading";
 import "bootstrap/dist/css/bootstrap.css";
 import * as logoloading from "../11123-music.json"
 import './fetchChallengeData.css'
@@ -21,7 +20,6 @@ preserveAspectRatio: "xMidYMid slice"
 export default function FetchData(props) {
   const [done, setDone] = useState(undefined);
   const [data, updateData] = useState(null);
-  const [challenge_id, setChallenge_id] = useState(null);
   const isCancelled = useRef(false);
 
     useEffect(() => {
@@ -48,7 +46,7 @@ export default function FetchData(props) {
     };
     // I believe this line of code is preventing a memory leak, I actually am not sure, but if you
     // "get a no-op blah blah memory leak from useffect" error, then this did not work haha.
-  }, []);
+  }, [props.challengeID]);
 
 
   // This is where I get the playlist data I need to display in play challenge.

@@ -1,17 +1,12 @@
 import React from 'react';
-import {Howl, Howler} from 'howler';
+import {Howl} from 'howler';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import CardContent from '@material-ui/core/CardContent';
-import Grid from '@material-ui/core/Grid';
 import playsong from './playsong.js'
-import { getChallengeUtil } from '../getChallengeUtil';
-import {useState,useEffect} from 'react';
+import {useState} from 'react';
 import {GAME_STATE} from '../gamestate_enum.js';
 import EndPage from  './endChallenge.js'
 
@@ -58,40 +53,7 @@ const playStyles = makeStyles({
     marginBottom: 25,
   },
 });
-const cardStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    height: 140,
-    width: 100,
-  },
-  media: {
-    paddingTop: '100%', // 16:9
-  },
-}));
 
-const GridStyles = makeStyles({
-  root: {
-    maxWidth: 275,
-    marginTop: 80,
-    marginLeft: 585,
-    marginBottom: 10,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-  media: {
-    paddingTop: '100%', // 16:9
-  },
-});
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -117,8 +79,6 @@ function PlayChallenge(data) {
     const spaceclasses = spaceStyles();
     const optionclasses = optionStyles();
     const spaceOptClasses = spaceOption();
-    const cardClasses = cardStyles();
-    const gridClasses = GridStyles();
 
     const [i, set_i] = useState(0);
     const [choice, setChoice] = useState("");
