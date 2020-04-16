@@ -47,8 +47,7 @@ export default function Leaderboard() {
         {Object.keys(highest_scores).map((key) => (
           <div>
             <div>
-              {highest_scores[key][1]}: {highest_scores[key][0]} (
-              {Object.keys(score_to_user)[key]})
+              {highest_scores[key][1]}: {highest_scores[key][0]}
             </div>
           </div>
         ))}
