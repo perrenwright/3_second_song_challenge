@@ -139,7 +139,13 @@ export default function MenuAppBar() {
               to="/contact"
               component={Link}
             />
-          </Tabs>
+            <Tab
+              label="Add"
+              {...a11yProps(3)}
+              to="/addchallenge"
+              component={Link}
+            />
+             </Tabs>
           {auth && (
             <div>
               <IconButton
@@ -185,6 +191,9 @@ export default function MenuAppBar() {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <Link to="/contact"></Link>
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <Link to="/playchallenge"></Link>
       </TabPanel>
     </div>
   );

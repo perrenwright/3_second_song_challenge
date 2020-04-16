@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.center {
+  width: 800px;
+}
+.menu{
+        height: 20px;
+        line-height: 20px;
+        padding: 15px;
+        border: 1px solid #666;
+    }

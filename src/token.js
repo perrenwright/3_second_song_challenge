@@ -1,3 +1,5 @@
+// Store user's token after login
+
 var local_token = '';
 
 function setLocalToken(new_token) {
