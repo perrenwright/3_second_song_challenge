@@ -6,6 +6,25 @@ import { Button, withStyles } from '@material-ui/core';
 
 import teal from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
+
+const StyledButton = withStyles({
+  root: {
+    background: '#19869E',
+    borderRadius: 10,
+    border: 0,
+    color: 'white',
+    height: 48,
+    width: 144,
+    padding: '0 30px',
+    boxShadow: '0 3px 5px 2px rgba(250, 250, 250, 250)',
+    top: '38px',
+    // right: '530px'
+  },
+  label: {
+    textTransform: 'capitalize'
+  }
+})(Button);
+
 const useStyles = makeStyles((theme) => ({
   
     palette: {

@@ -61,12 +61,23 @@ function populateTracksInfo(
   }
 }
 
-export default function createChallengeUtil(playlist_id) {
+async function getUsername() {
+    var token = getLocalToken();
+    var spotifyApi = new SpotifyWebApi();
+    spotifyApi.setAccessToken(token);
+    var username = await spotifyApi.getMe();
+    return username["display_name"];
+    }
+
+
+async function createChallengeUtil(playlist_id) {
   var token = getLocalToken();
   var spotifyApi = new SpotifyWebApi();
   spotifyApi.setAccessToken(token);
+  var username = await getUsername()
 
   spotifyApi.getPlaylist(playlist_id).then(function (data) {
+
     // 'data' is the vaiable that has all the information about the playlist.
     var all_tracks_info = data.tracks['items'];
     var playlist_name = data.name;
@@ -144,13 +155,18 @@ export default function createChallengeUtil(playlist_id) {
     console.log('All unique_track_ids', all_unique_track_ids);
 
     // TODO: Challenge creator is not necessarily the playlist_owner, might have to replace with the current user in session
+  
+
     firestoreRef.collection('challenge_test').doc(playlist_id).set({
       challenge_name: playlist_name,
       highest_scorer: '',
       highest_score: 0,
       challenge_creator: playlist_owner,
+      playlist_creator: username,
       challenge_image: playlist_image,
       unique_tracks_info: all_unique_track_ids,
-    });
+    })
+    
   });
 }
+export default createChallengeUtil;
