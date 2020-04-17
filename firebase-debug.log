@@ -349,3 +349,186 @@ INFO: Detected non-HTTP/2 connection.
 [debug] [2020-04-17T23:39:03.721Z] Apr 17, 2020 7:39:03 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
 INFO: channel closed
 
+[debug] [2020-04-17T23:43:59.420Z] Apr 17, 2020 7:43:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:43:59.436Z] Apr 17, 2020 7:43:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:43:59.483Z] Apr 17, 2020 7:43:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:05.810Z] Apr 17, 2020 7:44:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:05.881Z] Apr 17, 2020 7:44:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:05.894Z] Apr 17, 2020 7:44:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:05.933Z] Apr 17, 2020 7:44:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:05.946Z] Apr 17, 2020 7:44:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:05.984Z] Apr 17, 2020 7:44:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:05.997Z] Apr 17, 2020 7:44:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.038Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.047Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.091Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.098Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.145Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.154Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.198Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.208Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.247Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.258Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.299Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.309Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.349Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.360Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.401Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.411Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.453Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.462Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.508Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.519Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.562Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.572Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.614Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.625Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.666Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.676Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.717Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.727Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.767Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.777Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.821Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.831Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.875Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.886Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:06.927Z] Apr 17, 2020 7:44:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:16.367Z] Apr 17, 2020 7:44:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:16.384Z] Apr 17, 2020 7:44:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:16.459Z] Apr 17, 2020 7:44:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:19.227Z] Apr 17, 2020 7:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:19.309Z] Apr 17, 2020 7:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:23.673Z] Apr 17, 2020 7:44:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:23.709Z] Apr 17, 2020 7:44:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:23.709Z] Apr 17, 2020 7:44:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:23.721Z] Apr 17, 2020 7:44:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:23.730Z] Apr 17, 2020 7:44:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:25.410Z] Apr 17, 2020 7:44:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:44:25.447Z] Apr 17, 2020 7:44:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:45:23.829Z] Apr 17, 2020 7:45:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:45:23.832Z] Apr 17, 2020 7:45:23 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+
+[debug] [2020-04-17T23:45:25.436Z] Apr 17, 2020 7:45:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2020-04-17T23:45:25.438Z] Apr 17, 2020 7:45:25 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+
