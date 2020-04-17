@@ -24,7 +24,6 @@ function Challenges() {
 
   var spotifyApi = new SpotifyWebApi();
   spotifyApi.setAccessToken(token);
-  console.log(token)
 
   useEffect(() => {
     async function setValidPlaylistsFn() {
@@ -44,6 +43,7 @@ function Challenges() {
     }
 
     setValidPlaylistsFn();
+    // eslint-disable-next-line
   }, []);
 
   function handleclick(key) {
