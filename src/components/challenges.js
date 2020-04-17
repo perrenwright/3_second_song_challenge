@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import CardComponent from './card-component';
+import {Button} from '@material-ui/core';
 import firestoreRef from '../firebase';
 import './challenges.css'
 import Song_timer from './song_timer.js'
@@ -55,10 +56,11 @@ export default function Challenges()
 
             <header>
                 {console.log("rendering component...")}
-                {/*eslint-disable-next-line*/}
-                <Challenge_length challenge_length={challenge_length} setChallenge_length={setChallenge_length} gameState={P_gameState}/>
-                {/*eslint-disable-next-line*/}
-                <Song_timer gameTime={gameTime} setgameTime={setgameTime} gameState={P_gameState}/>
+                <div>
+                    <Button><Challenge_length challenge_length={challenge_length} setChallenge_length={setChallenge_length} gameState={P_gameState}/></Button>
+                    <Button><Song_timer gameTime={gameTime} setgameTime={setgameTime} gameState={P_gameState}/></Button>
+
+                </div>
                 {playlist.map((row)=> {
                         if (row[3] !== P_gameState && P_gameState != null)
                         {

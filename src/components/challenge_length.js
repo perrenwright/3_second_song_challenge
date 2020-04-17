@@ -6,8 +6,6 @@ const Challenge_length = (props) => {
   const [dropdownOpen, setOpen] = useState(false);
   const [challenge_length, setChallenge_length] = useState(5);
 
-
-
   const toggle = () => setOpen(!dropdownOpen);
   useEffect(() => {
         props.setChallenge_length(challenge_length);

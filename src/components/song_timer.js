@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
-
 const Song_timer = (props) => {
   const [dropdownOpen, setOpen] = useState(false);
   const [gameTime, setgameTime] = useState(3000);
-
-
-
   const toggle = () => setOpen(!dropdownOpen);
   useEffect(() => {
         props.setgameTime(gameTime);
     }, [gameTime, props]);
-
 
   function onclick(time)
   {

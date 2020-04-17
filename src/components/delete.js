@@ -34,25 +34,21 @@ function Delete()
          */
         async function getPlaylists() {
           var username = await getUsername()
-
            let querySnapshot =  await firestoreRef
             .collection('challenge_test')
             .get();
             querySnapshot.forEach(function(doc) {
-
                 if (doc.data().challenge_creator === username){
                     playlist.push([doc.data().challenge_name,doc.data().challenge_image,doc.data().challenge_creator,doc.id]);
                     console.log(playlist)
                   }
             });
-
             console.log('Getting playlists finished');
         }
         getPlaylists();
-
     },[playlist]);
 
-    async function deleteChallenge(playlist_name, username) {
+    function deleteChallenge(playlist_name, username) {
         console.log(playlist_name)
         let db = firebase.firestore();
         let collectionRef = db.collection('challenge_test');
@@ -80,11 +76,9 @@ function Delete()
             <h2>Delete Your Challenges</h2>
             <hr/>
             <header>
-                {console.log("rendering component...")}
                 {Object.keys(playlist).map((key) => (
-                    <Button onClick={()=> deleteChallenge(playlist[key][0], playlist[key][2])}>
+                    <Button onClick={ ()=> deleteChallenge(playlist[key][0], playlist[key][2])}>
                     {playlist[key][0]}
-
                     </Button>
           ))}
             </header>
