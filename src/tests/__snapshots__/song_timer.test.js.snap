@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Song timer component Matches the snapshot 1`] = `<div />`;
