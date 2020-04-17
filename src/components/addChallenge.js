@@ -41,7 +41,6 @@ function Challenges() {
         setValidPlaylists(updatedValidPlaylists);
       });
     }
-
     setValidPlaylistsFn();
   }, [spotifyApi]);
 
