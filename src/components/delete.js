@@ -16,7 +16,7 @@ function Delete()
 {
     console.log("calling function..")
     // eslint-disable-next-line
-    const [playlist,setPlaylsit] = useState([])
+    const [playlist,setPlaylist] = useState([])
         async function getUsername(){
           var token = getLocalToken();
           var spotifyApi = new SpotifyWebApi();
@@ -34,23 +34,22 @@ function Delete()
          */
         async function getPlaylists() {
           var username = await getUsername()
-
+          let newPlaylist = [];
            let querySnapshot =  await firestoreRef
             .collection('challenge_test')
             .get();
             querySnapshot.forEach(function(doc) {
 
                 if (doc.data().challenge_creator === username){
-                    playlist.push([doc.data().challenge_name,doc.data().challenge_image,doc.data().challenge_creator,doc.id]);
-                    console.log(playlist)
+                    newPlaylist.push([doc.data().challenge_name,doc.data().challenge_image,doc.data().challenge_creator,doc.id]);
                   }
             });
-
+            setPlaylist(newPlaylist);
             console.log('Getting playlists finished');
         }
         getPlaylists();
 
-    },[playlist]);
+    },[]);
 
     async function deleteChallenge(playlist_name, username) {
         console.log(playlist_name)

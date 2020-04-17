@@ -24,6 +24,7 @@ function Challenges() {
 
   var spotifyApi = new SpotifyWebApi();
   spotifyApi.setAccessToken(token);
+  console.log(token)
 
   useEffect(() => {
     async function setValidPlaylistsFn() {
@@ -43,7 +44,7 @@ function Challenges() {
     }
 
     setValidPlaylistsFn();
-  }, [spotifyApi]);
+  }, []);
 
   function handleclick(key) {
     return createChallengeUtil(key);

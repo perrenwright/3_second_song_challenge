@@ -10,7 +10,7 @@ export default function Challenges()
 
     console.log("calling function..")
     // eslint-disable-next-line
-    const [playlist,setPlaylsit] = useState([])
+    const [playlist,setPlaylist] = useState([])
     const [P_gameState, P_setGameState] = useState(null);
     const [gameTime, setgameTime] = useState(3000);
     const [challenge_length, setChallenge_length] = useState(3000);
@@ -37,19 +37,22 @@ export default function Challenges()
          * more playlists to pull.
          */
         async function getPlaylists() {
-           let querySnapshot =  await firestoreRef
-            .collection('challenge_test')
-            .get();
-            querySnapshot.forEach(function(doc) {
-                playlist.push([doc.data().challenge_name,doc.data().challenge_image,doc.data().challenge_creator,doc.id]);
-                console.log(playlist)
+            let newPlaylist = [];
+            let querySnapshot = await firestoreRef
+                .collection('challenge_test')
+                .get();
+                querySnapshot.forEach(function(doc) {
+                newPlaylist.push([doc.data().challenge_name,doc.data().challenge_image,doc.data().challenge_creator,doc.id]);
+
             });
 
-            console.log('Getting playlists finished');
-        }
-        getPlaylists();
+            setPlaylist(newPlaylist);
 
-    },[playlist]);
+            console.log('Getting playlists finished');
+            }
+            getPlaylists();
+    // eslint-disable-next-line
+    },[]);
 
     return(
         <div id="class1">

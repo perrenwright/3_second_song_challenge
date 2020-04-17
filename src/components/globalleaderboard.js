@@ -13,9 +13,10 @@ export default function Leaderboard() {
         .collection('challenge_test')
         .get()
         .then(function (querySnapshot) {
+          var temp_scores_array = [...highest_scores];
+          var temp_score_to_user = {...score_to_user};
           querySnapshot.forEach(function (doc) {
-            var temp_scores_array = highest_scores;
-            var temp_score_to_user = score_to_user;
+
             if (doc.data().highest_score > 0) {
               var temp_score = doc.data().highest_score;
               var temp_scorer = doc.data().highest_scorer;
@@ -37,7 +38,8 @@ export default function Leaderboard() {
       console.log('getHighestScores call finished.');
     }
     getHighestScores();
-  });
+  // eslint-disable-next-line
+  }, []);
 
   return (
     <div className="about">
