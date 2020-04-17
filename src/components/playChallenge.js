@@ -121,12 +121,21 @@ function PlayChallenge(data) {
       // eslint-disable-next-line
     }, [i])
 
+
     if (choice === right_choice && i < challenge_length){
           setScore(score + 1);
           setChoice("")
+          setTimeout(() => { set_i(i+1)}, 1000);
           console.log(score)
 
     // I track the user's current score here.
+    }
+    else if(choice)
+    {
+      console.log("This is right: ", right_choice)
+      console.log("You picked: ", choice)
+      setTimeout(() => { set_i(i+1)}, 1000);
+      setChoice("")
     }
 
     if (i >= challenge_length && gameState !== GAME_STATE.ENDED)
@@ -134,12 +143,6 @@ function PlayChallenge(data) {
       playsong(url,count,sound,all_challenge_data["time"],true)
       setGameState(GAME_STATE.ENDED)
       sound.unload()
-    }
-
-    if (choice)
-    {
-      console.log("This is right: ", right_choice)
-      console.log("You picked: ", choice)
     }
 
 
@@ -156,16 +159,6 @@ function PlayChallenge(data) {
     { gameState === GAME_STATE.IN_PROGRESS &&
     <div>
 
-    {/* <Grid container className={cardClasses.root}>
-
-      <Grid item xs={12}>
-        <Grid container justify="center">
-        </Grid>
-      </Grid>
-      <Grid item xs={12}>
-      </Grid>
-    </Grid> */}
-
       <Card className={classes.root}>
         <CardMedia
         className={classes.media}
@@ -173,18 +166,12 @@ function PlayChallenge(data) {
         title={playlist_name}
       />
       </Card>
-
-
-
     </div>
 }
 { gameState === GAME_STATE.IN_PROGRESS &&
     <div className = {questionclasses.root}>
     <Typography variant="h5" gutterBottom className={spaceclasses.root}>
         Choose the correct singer and song Title?
-        <Button id="next" variant="outlined" color="primary" onClick={() => set_i(i+1)}>
-         Next
-        </Button>
       </Typography>
 
     </div>
