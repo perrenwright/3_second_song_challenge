@@ -8,7 +8,7 @@ function getRandomChoices(right_choice, all_songs) {
   let three_choices = [];
   let while_loop_counts = 0;
   let new_random_choice = all_songs[Math.floor(Math.random() * 20)];
-  while (new_random_choice != right_choice) {
+  while (new_random_choice !== right_choice) {
     if (while_loop_counts >= 10) {
       // console.log('While loop count exceeded.');
       return [];

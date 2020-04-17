@@ -1,29 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Button, withStyles } from '@material-ui/core';
-import GetToken from '../GetToken';
-import authenticate from '../authenticate';
+import { Button } from '@material-ui/core';
 import SpotifyWebApi from 'spotify-web-api-js';
 import createChallengeUtil from '../createChallengeUtil';
 import { getLocalToken } from '../token';
-import { getChallengeUtil } from '../getChallengeUtil';
 import './about.css';
 
-const StyledButton = withStyles({
-  root: {
-    background: '#19869E',
-    borderRadius: 10,
-    border: 0,
-    color: 'white',
-    height: 48,
-    width: 144,
-    padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(250, 250, 250, 250)',
-    right: '575px',
-  },
-  label: {
-    textTransform: 'capitalize',
-  },
-})(Button);
 
 function Challenges() {
   // Uncomment the following async function to test getChallengeUtil function
@@ -62,7 +43,7 @@ function Challenges() {
     }
 
     setValidPlaylistsFn();
-  }, []);
+  }, [spotifyApi]);
 
   function handleclick(key) {
     return createChallengeUtil(key);

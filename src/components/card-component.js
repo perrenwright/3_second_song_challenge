@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from '@material-ui/core';
 import './card-component.css';
 import FetchData from './fetchChallengeData';
-import {useState,useEffect,useRef} from 'react';
+import {useState,useEffect} from 'react';
 import {GAME_STATE} from '../gamestate_enum.js';
 
 
@@ -15,7 +15,7 @@ function CardComponent(props) {
 
     useEffect(() => {
         props.P_gameStateSetter(challenge_id);
-    }, [challenge_id]);
+    }, [challenge_id, props]);
 
     const onClick = () => {
         setChallenge_id(props.challengeID)
@@ -40,7 +40,7 @@ function CardComponent(props) {
                     <h4 className='playlist-creator-text'>Created by {props.creator}</h4>
                 </div>
             }
-         { gameState === GAME_STATE.IN_PROGRESS &&   <FetchData challengeID={props.challengeID}  />}
+         { gameState === GAME_STATE.IN_PROGRESS &&   <FetchData challengeID={props.challengeID}  time = {props.time} challenge_length={props.challenge_length} />}
         </div>
 
     )
