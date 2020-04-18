@@ -12,6 +12,8 @@ import getToken from './GetToken';
 import getPlaylistInfo from './getPlaylistInfo';
 import { Route, Switch } from 'react-router-dom';
 import addchallenge from './components/addChallenge';
+// import PrivateRoute from './components/PrivateRoute';
+// import {getLocalToken} from './token';
 
 
 // const StyledButton = withStyles({
@@ -44,6 +46,13 @@ export default function App() {
           <Route path="/about" component={about} />
           <Route path="/contact" component={contact} />
           <Route path="/addchallenge" component={addchallenge} />
+          
+          {/* To activate authentication in each page, simply uncomment the PrivateRoute and comment the Route particular to that route. */}
+          {/* <PrivateRoute exact path="/globalleaderboard" redirectTo='/' component={globalleaderboard} user_token={getLocalToken()}/>
+          <PrivateRoute exact path="/challenges" redirectTo='/' component={challenges} user_token={getLocalToken()}/>
+          <PrivateRoute exact path="/about" redirectTo='/' component={about} user_token={getLocalToken()}/>
+          <PrivateRoute exact path="/contact" redirectTo='/' component={contact} user_token={getLocalToken()}/>
+          <PrivateRoute exact path="/addchallenge" redirectTo='/' component={addchallenge} user_token={getLocalToken()}/> */}
         </Switch>
       </header>
     </div>
