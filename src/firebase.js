@@ -13,16 +13,16 @@ const firebaseConfig = {
 // eslint-disable-next-line
 firebase.initializeApp(firebaseConfig);
 
-if (window.location.hostname === "localhost") {
-// To ensure the emulator is running at localhost:8080 run with:
-// firebase emulators:exec --only firestore 'npm start'
-const db = firebase.firestore();
-db.settings({
-host: "localhost:8080",
-ssl: false
-});
+// if (window.location.hostname === "localhost") {
+// // To ensure the emulator is running at localhost:8080 run with:
+// // firebase emulators:exec --only firestore 'npm start'
+// const db = firebase.firestore();
+// db.settings({
+// host: "localhost:8080",
+// ssl: false
+// });
 
-}
+// }
 
 const firestoreRef = firebase.firestore();
 export default firestoreRef;

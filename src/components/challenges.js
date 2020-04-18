@@ -4,6 +4,7 @@ import firestoreRef from '../firebase';
 import './challenges.css'
 import Song_timer from './song_timer.js'
 import Challenge_length from './challenge_length.js'
+import SearchBar from './searchbar.js'
 
 export default function Challenges()
 {
@@ -14,6 +15,7 @@ export default function Challenges()
     const [P_gameState, P_setGameState] = useState(null);
     const [gameTime, setgameTime] = useState(3000);
     const [challenge_length, setChallenge_length] = useState(3000);
+    const [searchValue, setSearchValue] = useState("");
 
     const P_wrapperSetGameState = val =>
     {
@@ -28,6 +30,10 @@ export default function Challenges()
     const wrappersetChallenge_length = val =>
     {
        setChallenge_length(val);
+    };
+    const wrappersetSearchValue = val =>
+    {
+       setSearchValue(val);
     };
 
     useEffect(() => {
@@ -56,7 +62,7 @@ export default function Challenges()
 
     return(
         <div id="class1">
-
+            <SearchBar searchValueSetter={wrappersetSearchValue} gameState={P_gameState}/>
             <header>
                 {console.log("rendering component...")}
                 {/*eslint-disable-next-line*/}
@@ -81,6 +87,7 @@ export default function Challenges()
                                        P_gameStateSetter={P_wrapperSetGameState}
                                        time = {gameTime}
                                        challenge_length = {challenge_length}
+                                       searchValue={searchValue}
 
                         />
 
@@ -98,6 +105,7 @@ export default function Challenges()
 }
 
             </header>
+
         </div>
 
     );
