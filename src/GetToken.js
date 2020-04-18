@@ -14,7 +14,13 @@ export default function getToken() {
     e = r.exec(q);
   }
 
-  const token = hashParams.access_token;
+  var token = hashParams.access_token;
+  if (token)
+  {
+    localStorage.setItem('localStorageKey', token);
+  }else{token = localStorage.getItem('localStorageKey');}
+
+
   setLocalToken(token);
   console.log('Token: ', token);
   var local_token = getLocalToken();

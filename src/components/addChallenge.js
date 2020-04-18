@@ -4,6 +4,7 @@ import SpotifyWebApi from 'spotify-web-api-js';
 import createChallengeUtil from '../createChallengeUtil';
 import { getLocalToken } from '../token';
 import './about.css';
+import './addChallenge.css'
 
 
 function Challenges() {
@@ -19,6 +20,7 @@ function Challenges() {
 
   console.log('Challenge function called');
   const [valid_playlists, setValidPlaylists] = useState({});
+   const [valid_playlists_img, setValidPlaylists_img] = useState({});
 
   var token = getLocalToken();
 
@@ -28,21 +30,25 @@ function Challenges() {
   useEffect(() => {
     async function setValidPlaylistsFn() {
       let updatedValidPlaylists = [];
+      let updatedValidPlaylists_img = [];
       await spotifyApi.getUserPlaylists().then(function (data) {
         console.log('User playlists', data['items']);
         console.log('spotifyApi.getUserPlaylists');
         for (var i in data['items']) {
           // console.log(data['items'][i]);
           var playlist_info = data['items'][i];
+          updatedValidPlaylists_img[playlist_info['id']] = playlist_info['images'][0]['url']
           updatedValidPlaylists[playlist_info['id']] = playlist_info['name'];
           console.log(playlist_info['id'], playlist_info['name']);
         }
         // state does not actually update until the end of useEffect, you can't update
         setValidPlaylists(updatedValidPlaylists);
+        setValidPlaylists_img(updatedValidPlaylists_img)
       });
     }
     setValidPlaylistsFn();
-  }, [spotifyApi]);
+    // eslint-disable-next-line
+  }, []);
 
   function handleclick(key) {
     return createChallengeUtil(key);
@@ -54,7 +60,9 @@ function Challenges() {
         <h2>Add Your Challenges</h2>
           <hr />
           {Object.keys(valid_playlists).map((key) => (
+
             <Button onClick={() => handleclick(key)}>
+              <img className="photo" src={valid_playlists_img[key]} alt='img' />
               {valid_playlists[key]}
             </Button>
           ))}

@@ -158,13 +158,32 @@ function PlayChallenge(data) {
       // This count stops the user from playing the sound more than once.
     }
 
-    if (choice === right_choice){
+
+    useEffect(() => {
+      sound.unload()
+      if (i < challenge_length){
+      start()
+      }
+      // eslint-disable-next-line
+    }, [i])
+
+
+    if (choice === right_choice && i < challenge_length){
           setScore(score + 1);
           setChoice("")
+          setTimeout(() => { set_i(i+1)}, 1000);
           console.log(score)
     // I track the user's current score here.
     }
-    if (i + 1 > 5)
+    else if(choice)
+    {
+      console.log("This is right: ", right_choice)
+      console.log("You picked: ", choice)
+      setTimeout(() => { set_i(i+1)}, 1000);
+      setChoice("")
+    }
+
+    if (i >= challenge_length && gameState !== GAME_STATE.ENDED)
     {
       setGameState(GAME_STATE.ENDED)
       set_i(0)
@@ -190,18 +209,12 @@ function PlayChallenge(data) {
         title={playlist_name}
       />
       </Card>
-
-
-
     </div>
 }
 { gameState === GAME_STATE.IN_PROGRESS &&
     <div className = {questionclasses.root}>
     <Typography variant="h5" gutterBottom className={spaceclasses.root}>
         Choose the correct singer and song Title?
-        <Button variant="outlined" onClick={() => set_i(i + 1)}>
-         Next
-        </Button>
       </Typography>
 
     </div>

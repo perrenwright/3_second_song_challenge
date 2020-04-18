@@ -12,19 +12,15 @@ import {GAME_STATE} from '../gamestate_enum.js';
 import { useRef } from "react";
 import './about.css';
 import './challenges.css';
-import FlexView from 'react-flexview';
+import './delete.css'
 
 
 
 function Delete()
 {
     console.log("calling function..")
-    const [isFirebaseDone,setFirebaseDone] = useState(false);
-    const [name,setName] = useState('noName');
-    const [playlist,setPlaylsit] = useState([])
-    // const [username, updateUsername] = useState(undefined);
-    const [image,setImage] = useState('noImage');
-    const [creator,setCreator] = useState('noCreator');
+    // eslint-disable-next-line
+    const [playlist,setPlaylist] = useState([])
         async function getUsername(){
           var token = getLocalToken();
           var spotifyApi = new SpotifyWebApi();
@@ -43,18 +39,17 @@ function Delete()
          */
         async function getPlaylists() {
           var username = await getUsername()
-
+          let newPlaylist = [];
            let querySnapshot =  await firestoreRef
             .collection('challenge_test')
             .get();
             querySnapshot.forEach(function(doc) {
 
-                if (doc.data().challenge_creator == username){
-                    playlist.push([doc.data().challenge_name,doc.data().challenge_image,doc.data().challenge_creator,doc.id]);
-                    console.log(playlist)
+                if (doc.data().challenge_creator === username){
+                    newPlaylist.push([doc.data().challenge_name,doc.data().challenge_image,doc.data().challenge_creator,doc.id]);
                   }
             });
-
+            setPlaylist(newPlaylist);
             console.log('Getting playlists finished');
             setFirebaseDone(true);
         }
@@ -92,7 +87,8 @@ function Delete()
             <header>
                 {console.log("rendering component...")}
                 {Object.keys(playlist).map((key) => (
-                    <Button onClick={()=> deleteChallenge(playlist[key][0], playlist[key][2])}>            
+                    <Button onClick={()=> deleteChallenge(playlist[key][0], playlist[key][2])}>
+                    <img className="photo" src={playlist[key][1]} alt='img' />
                     {playlist[key][0]}
                     
                     </Button>
