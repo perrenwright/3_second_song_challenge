@@ -9,6 +9,7 @@ import { getLocalToken } from '../token';
 import SpotifyWebApi from 'spotify-web-api-js';
 import './about.css';
 import './challenges.css';
+import './delete.css'
 
 
 
@@ -82,6 +83,7 @@ function Delete()
                 {console.log("rendering component...")}
                 {Object.keys(playlist).map((key) => (
                     <Button onClick={()=> deleteChallenge(playlist[key][0], playlist[key][2])}>
+                    <img className="photo" src={playlist[key][1]} alt='img' />
                     {playlist[key][0]}
 
                     </Button>
