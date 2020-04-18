@@ -16,7 +16,7 @@ function Delete()
 {
     console.log("calling function..")
     // eslint-disable-next-line
-    const [playlist,setPlaylsit] = useState([])
+    const [playlist,setPlaylist] = useState([])
         async function getUsername(){
           var token = getLocalToken();
           var spotifyApi = new SpotifyWebApi();
@@ -39,7 +39,9 @@ function Delete()
             .get();
             querySnapshot.forEach(function(doc) {
                 if (doc.data().challenge_creator === username){
+                    let temp_playlist = playlist;
                     playlist.push([doc.data().challenge_name,doc.data().challenge_image,doc.data().challenge_creator,doc.id]);
+                    setPlaylist(temp_playlist);
                     console.log(playlist)
                   }
             });
@@ -58,6 +60,15 @@ function Delete()
         querySnapshot.forEach((doc) => {
             doc.ref.delete().then(() => {
             console.log("Document successfully deleted!");
+            // TODO: This should cause react to re-render, but there is the same "two-click" bug that we have been facing
+            for (var playlist_index = 0; playlist_index < playlist.length; playlist_index++) {
+                if (playlist_name === playlist[playlist_index][0]) {
+                    var temp_playlist = playlist;
+                    temp_playlist.splice(playlist_index, 1);
+                    break;
+                }
+            }
+            setPlaylist(temp_playlist);
             }).catch(function(error) {
             console.error("Error removing document: ", error);
             });
