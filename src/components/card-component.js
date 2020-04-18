@@ -10,9 +10,6 @@ import {GAME_STATE} from '../gamestate_enum.js';
 function CardComponent(props) {
     const [gameState, setGameState] = useState(GAME_STATE.BEFORE);
     const [challenge_id,setChallenge_id] = useState(null);
-
-
-
     useEffect(() => {
         props.P_gameStateSetter(challenge_id);
     }, [challenge_id, props]);
@@ -22,13 +19,14 @@ function CardComponent(props) {
         setGameState(GAME_STATE.IN_PROGRESS)
     };
 
+
     // We need to pass the challange id to the parent component.
     // So that we can determine which component to display in the parent.
     // This is why I set the challange id and pass it back.
 
     return (
         <div>
-            { gameState === GAME_STATE.BEFORE &&
+            { gameState === GAME_STATE.BEFORE && props.name.includes(props.searchValue) &&
                 <div className='card-component'>
                     <Button onClick={() => onClick()}>
                         <img
