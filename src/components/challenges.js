@@ -1,10 +1,11 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useReducer} from 'react';
 import CardComponent from './card-component';
 import firestoreRef from '../firebase';
 import './challenges.css'
 import Song_timer from './song_timer.js'
 import Challenge_length from './challenge_length.js'
 import SearchBar from './searchbar.js'
+
 
 export default function Challenges()
 {
@@ -16,6 +17,7 @@ export default function Challenges()
     const [gameTime, setgameTime] = useState(3000);
     const [challenge_length, setChallenge_length] = useState(3000);
     const [searchValue, setSearchValue] = useState("");
+    const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
 
     const P_wrapperSetGameState = val =>
     {
@@ -60,9 +62,20 @@ export default function Challenges()
     // eslint-disable-next-line
     },[]);
 
+    function sort_playlist(){
+        var temp_playlist
+        temp_playlist = playlist
+        console.log(temp_playlist)
+        setPlaylist(temp_playlist.sort(function (a, b) {return a.toString().toLowerCase().localeCompare(b.toString().toLowerCase());}))
+        forceUpdate();
+    }
+
     return(
         <div id="class1">
             <SearchBar searchValueSetter={wrappersetSearchValue} gameState={P_gameState}/>
+            <button onClick={sort_playlist}>
+            sort
+            </button>
             <header>
                 {console.log("rendering component...")}
                 {/*eslint-disable-next-line*/}
