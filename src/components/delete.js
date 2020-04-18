@@ -26,17 +26,11 @@ function Delete()
           var spotifyApi = new SpotifyWebApi();
           spotifyApi.setAccessToken(token);
           const username = await spotifyApi.getMe()
-          // updateUsername(username["id"]);
           console.log(username["id"])
           return username["display_name"]
         }
 
     useEffect(() => {
-        /**
-         * Function that pulls data from firebase
-         * There may be a way to clean this up more when we get
-         * more playlists to pull.
-         */
         async function getPlaylists() {
           var username = await getUsername()
           let newPlaylist = [];
@@ -44,19 +38,32 @@ function Delete()
             .collection('challenge_test')
             .get();
             querySnapshot.forEach(function(doc) {
-
                 if (doc.data().challenge_creator === username){
                     newPlaylist.push([doc.data().challenge_name,doc.data().challenge_image,doc.data().challenge_creator,doc.id]);
                   }
             });
             setPlaylist(newPlaylist);
             console.log('Getting playlists finished');
-            setFirebaseDone(true);
         }
         getPlaylists();
-
     },[]);
 
+    // function rerender()
+    // {
+    //     return window.location.reload();
+    // }
+        function deleteButton(playlist_key)
+        {
+            Object.keys(playlist).forEach(function(key){
+                if (key === playlist_key)
+                {
+                    deleteChallenge(playlist[playlist_key][0], playlist[playlist_key][2])
+                    delete playlist[playlist_key]
+                }
+            });
+            // return rerender();
+        }
+    
     async function deleteChallenge(playlist_name, username) {
         console.log(playlist_name)
         let db = firebase.firestore();
@@ -75,7 +82,7 @@ function Delete()
         .catch(function(error) {
         console.log("Error getting documents: ", error);
         });
-        return alert('Document Deleted.')
+        alert('Document Deleted.') 
     }
 
     return(
@@ -87,12 +94,13 @@ function Delete()
             <header>
                 {console.log("rendering component...")}
                 {Object.keys(playlist).map((key) => (
-                    <Button onClick={()=> deleteChallenge(playlist[key][0], playlist[key][2])}>
+                    <Button onClick={()=> deleteButton(key)}>
                     <img className="photo" src={playlist[key][1]} alt='img' />
                     {playlist[key][0]}
-                    
                     </Button>
+                    
           ))}
+          
             </header>
         </div>
         </div>
@@ -100,3 +108,4 @@ function Delete()
     );
 }
 export default Delete;
+

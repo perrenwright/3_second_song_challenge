@@ -13,7 +13,8 @@ import playsong from './playsong.js'
 import { getChallengeUtil } from '../getChallengeUtil';
 import {useState,useEffect} from 'react';
 import {GAME_STATE} from '../gamestate_enum.js';
-import EndPage from  './endChallenge.js'
+import EndPage from  './endChallenge.js';
+import challenge_length from './challenge_length';
 
 // spacing 
 const spaceStyles = makeStyles(theme => ({

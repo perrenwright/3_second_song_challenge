@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const SearchBar = (props) => {
   const [searchValue, setSearchValue] = useState("");
 

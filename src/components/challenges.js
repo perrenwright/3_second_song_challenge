@@ -72,17 +72,18 @@ export default function Challenges()
 
     return(
         <div id="class1">
-            <SearchBar searchValueSetter={wrappersetSearchValue} gameState={P_gameState}/>
-            <button onClick={sort_playlist}>
-            sort
-            </button>
             <header>
                 {console.log("rendering component...")}
                 <div>
+                <SearchBar searchValueSetter={wrappersetSearchValue} gameState={P_gameState} />
+                <br/>
+                <Button onClick={sort_playlist} variant="outlined">
+                sort alphabetically
+                </Button>
                     <Button><Challenge_length challenge_length={challenge_length} setChallenge_length={setChallenge_length} gameState={P_gameState}/></Button>
                     <Button><Song_timer gameTime={gameTime} setgameTime={setgameTime} gameState={P_gameState}/></Button>
-
                 </div>
+                <br/>
                 {playlist.map((row)=> {
                         if (row[3] !== P_gameState && P_gameState != null)
                         {
@@ -102,9 +103,8 @@ export default function Challenges()
                                        time = {gameTime}
                                        challenge_length = {challenge_length}
                                        searchValue={searchValue}
-
+                                       
                         />
-
                         /* Since we are determining which card is clicked inside the cardComponent
                         I had to find away to hide the other components in the challanges.js file
                         This was achieved by passing the challenge_id back as P_gamestate and

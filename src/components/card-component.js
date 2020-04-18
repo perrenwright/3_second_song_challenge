@@ -10,9 +10,6 @@ import {GAME_STATE} from '../gamestate_enum.js';
 function CardComponent(props) {
     const [gameState, setGameState] = useState(GAME_STATE.BEFORE);
     const [challenge_id,setChallenge_id] = useState(null);
-
-
-
     useEffect(() => {
         props.P_gameStateSetter(challenge_id);
     }, [challenge_id, props]);
