@@ -3,7 +3,6 @@ import React,{useState,useEffect} from 'react';
 import CardComponent from './card-component';
 //import firebaseRef from 'firebase';
 import firestoreRef from '../firebase';
-import './challenges.css'
 
 
 export default function Challenges()
@@ -42,8 +41,8 @@ export default function Challenges()
     },[playlist]);
 
     return(
-        <div id="class1">
-            <header>
+        <div>
+    
                 {console.log("rendering component...")}
                 {playlist.map((row)=> {
                         if (row[3] !== P_gameState && P_gameState != null)
@@ -65,20 +64,11 @@ export default function Challenges()
 
                         />
 
-                        /* Since we are determining which card is clicked inside the cardComponent
-                        I had to find away to hide the other components in the challanges.js file
-                        This was achieved by passing the challenge_id back as P_gamestate and
-                        using that to determine which component to render. We have a slight cosmetic issue
-                        The images render on top of each other instead of side by side, someone may need
-                        to fix that.
-                        */
-
                 }
 
                })
 }
 
-            </header>
         </div>
 
     );

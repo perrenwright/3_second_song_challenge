@@ -1,0 +1,90 @@
+[debug] [2020-04-18T19:57:07.112Z] ----------------------------------------------------------------------
+[debug] [2020-04-18T19:57:07.113Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:exec --only firestore npm start
+[debug] [2020-04-18T19:57:07.113Z] CLI Version:   7.12.1
+[debug] [2020-04-18T19:57:07.113Z] Platform:      darwin
+[debug] [2020-04-18T19:57:07.113Z] Node Version:  v13.6.0
+[debug] [2020-04-18T19:57:07.114Z] Time:          Sat Apr 18 2020 15:57:07 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-04-18T19:57:07.114Z] ----------------------------------------------------------------------
+[debug] [2020-04-18T19:57:07.114Z] 
+[debug] [2020-04-18T19:57:07.120Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-18T19:57:07.120Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: firestore
+[info] i  firestore: Serving ALL traffic (including WebChannel) on http://localhost:8080
+[warn] ⚠  firestore: Support for WebChannel on a separate port (8081) is DEPRECATED and will go away soon. Please use port above instead.
+[debug] [2020-04-18T19:57:07.155Z] Ignoring unsupported arg: projectId
+[debug] [2020-04-18T19:57:07.155Z] Ignoring unsupported arg: auto_download
+[debug] [2020-04-18T19:57:07.155Z] Starting emulator firestore with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/morange/.cache/firebase/emulators/cloud-firestore-emulator-v1.10.2.jar","--host","localhost","--port",8080,"--rules","/Users/morange/Documents/GitHub/3_second_song_challenge/firestore.rules","--webchannel_port",8081],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator"],"joinArgs":false}
+[info] i  firestore: Emulator logging to firestore-debug.log
+[debug] [2020-04-18T19:57:07.870Z] API endpoint: http://localhost:
+[debug] [2020-04-18T19:57:07.871Z] 8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8080
+
+Dev App Server is now running.
+
+
+[info] ✔  firestore: Emulator started at http://localhost:8080
+[info] i  firestore: For testing set FIRESTORE_EMULATOR_HOST=localhost:8080
+[info] i  Running script: npm start
+[debug] [2020-04-18T19:57:07.935Z] Running npm start with environment {"TERM_PROGRAM":"vscode","TERM":"xterm-256color","SHELL":"/bin/bash","TMPDIR":"/var/folders/yg/tmh63fvs1jdbcx_vt402gwn000mq4z/T/","TERM_PROGRAM_VERSION":"1.44.1","USER":"morange","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.DDjt5ZDUC3/Listeners","__CF_USER_TEXT_ENCODING":"0xA5C9F:0x0:0x0","SK_SIGNING_PLUGIN":"gnubbyagent","PATH":"/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.8/bin","PWD":"/Users/morange/Documents/GitHub/3_second_song_challenge","LANG":"en_US.UTF-8","LOCAL_GIT_DIRECTORY":"/private/var/folders/yg/tmh63fvs1jdbcx_vt402gwn000mq4z/T/AppTranslocation/D80ED648-3503-468C-BB68-146DD7771871/d/GitHub Desktop.app/Contents/Resources/app/git","XPC_FLAGS":"0x0","HISTCONTROL":"","XPC_SERVICE_NAME":"0","HOME":"/Users/morange","SHLVL":"3","APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL":"true","LOGNAME":"morange","COLORTERM":"truecolor","_":"/usr/local/bin/firebase","FIRESTORE_EMULATOR_HOST":"localhost:8080","FIREBASE_FIRESTORE_EMULATOR_ADDRESS":"localhost:8080"}
+[debug] [2020-04-18T20:09:49.632Z] ----------------------------------------------------------------------
+[debug] [2020-04-18T20:09:49.633Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:exec --only firestore npm start
+[debug] [2020-04-18T20:09:49.633Z] CLI Version:   7.12.1
+[debug] [2020-04-18T20:09:49.633Z] Platform:      darwin
+[debug] [2020-04-18T20:09:49.633Z] Node Version:  v13.6.0
+[debug] [2020-04-18T20:09:49.634Z] Time:          Sat Apr 18 2020 16:09:49 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-04-18T20:09:49.634Z] ----------------------------------------------------------------------
+[debug] [2020-04-18T20:09:49.634Z] 
+[debug] [2020-04-18T20:09:49.641Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-18T20:09:49.641Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: firestore
+[info] i  firestore: Serving ALL traffic (including WebChannel) on http://localhost:8080
+[warn] ⚠  firestore: Support for WebChannel on a separate port (8081) is DEPRECATED and will go away soon. Please use port above instead.
+[debug] [2020-04-18T20:09:49.674Z] Ignoring unsupported arg: projectId
+[debug] [2020-04-18T20:09:49.674Z] Ignoring unsupported arg: auto_download
+[debug] [2020-04-18T20:09:49.674Z] Starting emulator firestore with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/morange/.cache/firebase/emulators/cloud-firestore-emulator-v1.10.2.jar","--host","localhost","--port",8080,"--rules","/Users/morange/Documents/GitHub/3_second_song_challenge/firestore.rules","--webchannel_port",8081],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator"],"joinArgs":false}
+[info] i  firestore: Emulator logging to firestore-debug.log
+[debug] [2020-04-18T20:09:50.388Z] API endpoint: http://localhost:
+[debug] [2020-04-18T20:09:50.389Z] 8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8080
+
+Dev App Server is now running.
+
+
+[info] ✔  firestore: Emulator started at http://localhost:8080
+[info] i  firestore: For testing set FIRESTORE_EMULATOR_HOST=localhost:8080
+[info] i  Running script: npm start
+[debug] [2020-04-18T20:09:50.453Z] Running npm start with environment {"TERM_PROGRAM":"vscode","TERM":"xterm-256color","SHELL":"/bin/bash","TMPDIR":"/var/folders/yg/tmh63fvs1jdbcx_vt402gwn000mq4z/T/","TERM_PROGRAM_VERSION":"1.44.1","USER":"morange","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.DDjt5ZDUC3/Listeners","__CF_USER_TEXT_ENCODING":"0xA5C9F:0x0:0x0","SK_SIGNING_PLUGIN":"gnubbyagent","PATH":"/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.8/bin","PWD":"/Users/morange/Documents/GitHub/3_second_song_challenge","LANG":"en_US.UTF-8","LOCAL_GIT_DIRECTORY":"/private/var/folders/yg/tmh63fvs1jdbcx_vt402gwn000mq4z/T/AppTranslocation/D80ED648-3503-468C-BB68-146DD7771871/d/GitHub Desktop.app/Contents/Resources/app/git","XPC_FLAGS":"0x0","HISTCONTROL":"","XPC_SERVICE_NAME":"0","HOME":"/Users/morange","SHLVL":"3","APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL":"true","LOGNAME":"morange","COLORTERM":"truecolor","_":"/usr/local/bin/firebase","FIRESTORE_EMULATOR_HOST":"localhost:8080","FIREBASE_FIRESTORE_EMULATOR_ADDRESS":"localhost:8080"}
+[debug] [2020-04-18T20:15:19.430Z] ----------------------------------------------------------------------
+[debug] [2020-04-18T20:15:19.431Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:exec --only firestore npm start
+[debug] [2020-04-18T20:15:19.431Z] CLI Version:   7.12.1
+[debug] [2020-04-18T20:15:19.431Z] Platform:      darwin
+[debug] [2020-04-18T20:15:19.432Z] Node Version:  v13.6.0
+[debug] [2020-04-18T20:15:19.432Z] Time:          Sat Apr 18 2020 16:15:19 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-04-18T20:15:19.432Z] ----------------------------------------------------------------------
+[debug] [2020-04-18T20:15:19.432Z] 
+[debug] [2020-04-18T20:15:19.439Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-18T20:15:19.440Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: firestore
+[info] i  firestore: Serving ALL traffic (including WebChannel) on http://localhost:8080
+[warn] ⚠  firestore: Support for WebChannel on a separate port (8081) is DEPRECATED and will go away soon. Please use port above instead.
+[debug] [2020-04-18T20:15:19.471Z] Ignoring unsupported arg: projectId
+[debug] [2020-04-18T20:15:19.471Z] Ignoring unsupported arg: auto_download
+[debug] [2020-04-18T20:15:19.471Z] Starting emulator firestore with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/morange/.cache/firebase/emulators/cloud-firestore-emulator-v1.10.2.jar","--host","localhost","--port",8080,"--rules","/Users/morange/Documents/GitHub/3_second_song_challenge/firestore.rules","--webchannel_port",8081],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator"],"joinArgs":false}
+[info] i  firestore: Emulator logging to firestore-debug.log
+[debug] [2020-04-18T20:15:20.170Z] API endpoint: http://localhost:
+[debug] [2020-04-18T20:15:20.170Z] 8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8080
+
+Dev App Server is now running.
+
+
+[info] ✔  firestore: Emulator started at http://localhost:8080
+[info] i  firestore: For testing set FIRESTORE_EMULATOR_HOST=localhost:8080
+[info] i  Running script: npm start
+[debug] [2020-04-18T20:15:20.241Z] Running npm start with environment {"TERM_PROGRAM":"vscode","TERM":"xterm-256color","SHELL":"/bin/bash","TMPDIR":"/var/folders/yg/tmh63fvs1jdbcx_vt402gwn000mq4z/T/","TERM_PROGRAM_VERSION":"1.44.1","USER":"morange","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.DDjt5ZDUC3/Listeners","__CF_USER_TEXT_ENCODING":"0xA5C9F:0x0:0x0","SK_SIGNING_PLUGIN":"gnubbyagent","PATH":"/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.8/bin","PWD":"/Users/morange/Documents/GitHub/3_second_song_challenge","LANG":"en_US.UTF-8","LOCAL_GIT_DIRECTORY":"/private/var/folders/yg/tmh63fvs1jdbcx_vt402gwn000mq4z/T/AppTranslocation/D80ED648-3503-468C-BB68-146DD7771871/d/GitHub Desktop.app/Contents/Resources/app/git","XPC_FLAGS":"0x0","HISTCONTROL":"","XPC_SERVICE_NAME":"0","HOME":"/Users/morange","SHLVL":"3","APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL":"true","LOGNAME":"morange","COLORTERM":"truecolor","_":"/usr/local/bin/firebase","FIRESTORE_EMULATOR_HOST":"localhost:8080","FIREBASE_FIRESTORE_EMULATOR_ADDRESS":"localhost:8080"}
