@@ -55,15 +55,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Contact() {
 
-  const [open, setOpen] = React.useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
     const [values, setValues] = React.useState({
         firstName: '',
         lastName: '',
