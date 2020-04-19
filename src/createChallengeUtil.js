@@ -161,8 +161,8 @@ async function createChallengeUtil(playlist_id) {
       challenge_name: playlist_name,
       highest_scorer: '',
       highest_score: 0,
-      challenge_creator: playlist_owner,
-      playlist_creator: username,
+      challenge_creator: username,
+      playlist_creator: playlist_owner,
       challenge_image: playlist_image,
       unique_tracks_info: all_unique_track_ids,
     })

@@ -26,8 +26,6 @@ import './delete.css'
 function Delete()
 {
     console.log("calling function..")
-    // eslint-disable-next-lin
-            // return rerender();
     async function getUsername(){
     var token = getLocalToken();
     var spotifyApi = new SpotifyWebApi();
@@ -53,7 +51,10 @@ function Delete()
           setPlaylist(newPlaylist);
           console.log('Getting playlists finished');
       }
-
+      useEffect(() => {
+        getPlaylists()
+    },[]);
+    
     async function deleteChallenge(playlist_name, username) {
         console.log(playlist_name)
         let db = firebase.firestore();
@@ -74,13 +75,7 @@ function Delete()
         });
         alert('Document Deleted.')
         getPlaylists()
-        // window.location.reload(false);
-
     }
-
-    useEffect(() => {
-        getPlaylists()
-    },[playlist]);
 
     return(
        <div className="class1">

@@ -60,7 +60,6 @@ function Challenges() {
         <h2>Add Your Challenges</h2>
           <hr />
           {Object.keys(valid_playlists).map((key) => (
-
             <Button onClick={() => handleclick(key)}>
               <img className="photo" src={valid_playlists_img[key]} alt='img' />
               {valid_playlists[key]}
