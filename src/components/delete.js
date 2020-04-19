@@ -26,7 +26,7 @@ import './delete.css'
 function Delete()
 {
     console.log("calling function..")
-    // eslint-disable-next-lin         
+    // eslint-disable-next-lin
             // return rerender();
     async function getUsername(){
     var token = getLocalToken();
@@ -72,10 +72,16 @@ function Delete()
         .catch(function(error) {
         console.log("Error getting documents: ", error);
         });
-        alert('Document Deleted.') 
+        alert('Document Deleted.')
         getPlaylists()
+        // window.location.reload(false);
+
     }
-    getPlaylists()
+
+    useEffect(() => {
+        getPlaylists()
+    },[playlist]);
+
     return(
        <div className="class1">
         <div className="about-titleText">
@@ -92,7 +98,7 @@ function Delete()
             </header>
         </div>
         </div>
-        
+
     );
 }
 export default Delete;
