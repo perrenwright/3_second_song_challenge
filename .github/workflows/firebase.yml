@@ -12,7 +12,6 @@ on:
 jobs:
   deploy:
     name: Deploy
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -26,4 +25,4 @@ jobs:
         with:
           args: deploy --only hosting
         env:
-          FIREBASE_TOKEN: ${{ secrets.AIzaSyD2Cgk-IWFs4T3NdG93L5lp1bsStfb9xWA}}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN}}
