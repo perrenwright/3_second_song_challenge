@@ -86,7 +86,9 @@ export default function Challenges()
                 <Button onClick={sort_playlist} variant="outlined">
                 sort alphabetically
                 </Button>
+                {/*eslint-disable-next-line*/}
                 <Button><Challenge_length challenge_length={challenge_length} setChallenge_length={setChallenge_length} gameState={P_gameState}/></Button>
+                {/*eslint-disable-next-line*/}
                 <Button><Song_timer gameTime={gameTime} setgameTime={setgameTime} gameState={P_gameState}/></Button>
                 <br/>
                 <br/>
