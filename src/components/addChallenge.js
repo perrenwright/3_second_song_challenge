@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '@material-ui/core';
+import { Button,Snackbar } from '@material-ui/core';
+import MuiAlert from '@material-ui/lab/Alert';
 import SpotifyWebApi from 'spotify-web-api-js';
 import createChallengeUtil from '../createChallengeUtil';
 import { getLocalToken } from '../token';
-import './about.css';
-import './addChallenge.css'
+import './addChallenge.css';
+import './challenges.css';
 
 
 
 function Challenges() {
+  function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
   // Uncomment the following async function to test getChallengeUtil function
   // async function test_print_challenge_json() {
   //   let challenge_json = await getChallengeUtil('1oKgdPSoIaAHrZzYDVClnS');
@@ -21,9 +25,8 @@ function Challenges() {
 
   console.log('Challenge function called');
   const [valid_playlists, setValidPlaylists] = useState({});
-   const [valid_playlists_img, setValidPlaylists_img] = useState({});
-
-
+  const [open, setOpen] = useState(false);
+  const [message,setMessage] = useState('');
   var token = getLocalToken();
 
   var spotifyApi = new SpotifyWebApi();
@@ -32,48 +35,64 @@ function Challenges() {
   useEffect(() => {
     async function setValidPlaylistsFn() {
       let updatedValidPlaylists = [];
-      let updatedValidPlaylists_img = [];
-
       await spotifyApi.getUserPlaylists().then(function (data) {
         console.log('User playlists', data['items']);
         console.log('spotifyApi.getUserPlaylists');
         for (var i in data['items']) {
           // console.log(data['items'][i]);
           var playlist_info = data['items'][i];
-          updatedValidPlaylists_img[playlist_info['id']] = playlist_info['images'][0]['url']
-
-          updatedValidPlaylists[playlist_info['id']] = playlist_info['name'];
-          console.log(playlist_info['id'], playlist_info['name']);
+          updatedValidPlaylists[playlist_info['id']] = [playlist_info['name'],playlist_info['images'][0].url];
+          console.log(playlist_info['id'], playlist_info['name'],playlist_info['image']);
         }
         // state does not actually update until the end of useEffect, you can't update
         setValidPlaylists(updatedValidPlaylists);
-        setValidPlaylists_img(updatedValidPlaylists_img)
       });
     }
     setValidPlaylistsFn();
-    // eslint-disable-next-line
-  }, []);
+  },[] );
 
-
-  function handleclick(key) {
-    return createChallengeUtil(key);
+  function handleClick(key) {
+    console.log("Calledin create Challenge Util")
+    setOpen(true);
+    createChallengeUtil(key).then(message => {
+      setMessage(message);
+    })
+    console.log('Playlist: ', valid_playlists[key][0])
+    console.log("Message: ", message)
+    return message;
   }
+  
+  function handleClose(event, reason){
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   return (
     <div className="class1">
-    <div className="about-titleText">
-        <h2>Add Your Challenges</h2>
+    <div className="about-titleText2">
+          <h2> Add Your Challenges</h2>
           <hr />
           {Object.keys(valid_playlists).map((key) => (
-            <Button onClick={() => handleclick(key)}>
-              <img className="photo" src={valid_playlists_img[key]} alt='img' />
-
-              {valid_playlists[key]}
+            <div style={{display: 'inline-block'}} className="content">
+            <Button onClick={() => handleClick(key)}>
+            <img className="addChallenge-image" src={valid_playlists[key][1]} alt={valid_playlists[key][0]}/>
             </Button>
-          ))}
-        </div>
+            <h6>{valid_playlists[key][0]}</h6>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={message === 'Success!' ? 'success' : 'error'}>
+          {message}
+        </Alert>
+      </Snackbar>
+            </div>
 
-    </div>
+          ))}
+          
+        </div>
+      </div>
+    // </div>
   );
 }
 export default Challenges;

@@ -1,3 +1,4 @@
+
 import SpotifyWebApi from 'spotify-web-api-js';
 import { getLocalToken } from './token';
 import firestoreRef from './firebase';
@@ -62,23 +63,33 @@ function populateTracksInfo(
 }
 
 async function getUsername() {
-    var token = getLocalToken();
-    var spotifyApi = new SpotifyWebApi();
-    spotifyApi.setAccessToken(token);
-    var username = await spotifyApi.getMe();
-    return username["display_name"];
-    }
-
-
-async function createChallengeUtil(playlist_id) {
+  var token = getLocalToken();
+  var spotifyApi = new SpotifyWebApi();
+  spotifyApi.setAccessToken(token);
+  var username = await spotifyApi.getMe();
+  return username["display_name"];
+  }
+    // function checkPlaylist(playlist_id) {
+  //   let db = firebase.firestore()
+  //   let docRef = db.collection('challenge_test').doc(playlist_id);
+  //   docRef.get().then(function(doc) {
+  //     if (doc.exists) {
+  //         return true;
+  //     } else {
+  //         // doc.data() will be undefined in this case
+  //         return false;
+  //     }
+  //   }).catch(function(error) {
+  //       console.log("Error getting document:", error);
+  //   });
+  // }
+export default async function createChallengeUtil(playlist_id) {
+  let message = "";
   var token = getLocalToken();
   var spotifyApi = new SpotifyWebApi();
   spotifyApi.setAccessToken(token);
   var username = await getUsername()
-
-  spotifyApi.getPlaylist(playlist_id).then(function (data) {
-
-
+  let data = await spotifyApi.getPlaylist(playlist_id);
     // 'data' is the vaiable that has all the information about the playlist.
     var all_tracks_info = data.tracks['items'];
     var playlist_name = data.name;
@@ -98,9 +109,34 @@ async function createChallengeUtil(playlist_id) {
       }
     }
     if (tracks_store.length < 20) {
-      alert('Less than 20 songs.');
-      return;
+      //alert("Playlist must have at least 20 songs")
+      message = "Playlist must have at least 20 songs";
+      //console.log(message)
+      return message;
     }
+    else {
+      message = 'Success!';
+      //console.log(message)
+    }
+
+        // if (checkPlaylist(data.id) === true) 
+    // {
+    //   message = "Playlist has already been added!";
+    //   //console.log(message)
+    //   return message;
+    // }
+    // if (tracks_store.length < 20) {
+    //   //alert("Playlist must have at least 20 songs")
+    //   message = "Playlist must have at least 20 songs";
+    //   //console.log(message)
+    //   return message;
+    // }
+    // else {
+    //   message = 'Success!';
+    //   //console.log(message)
+    //   return message;
+    // }
+
     console.log(tracks_store);
     var all_tracks_ids = [];
     var all_start_times = [];
@@ -156,9 +192,6 @@ async function createChallengeUtil(playlist_id) {
     console.log('All unique_track_ids', all_unique_track_ids);
 
     // TODO: Challenge creator is not necessarily the playlist_owner, might have to replace with the current user in session
-
-
-
     firestoreRef.collection('challenge_test').doc(playlist_id).set({
       challenge_name: playlist_name,
       highest_scorer: '',
@@ -167,9 +200,10 @@ async function createChallengeUtil(playlist_id) {
       playlist_creator: playlist_owner,
       challenge_image: playlist_image,
       unique_tracks_info: all_unique_track_ids,
-    })
+    });
 
-  });
+  //console.log(message)
+  return message;
 }
-export default createChallengeUtil;
+
 

@@ -7,8 +7,7 @@ import { getLocalToken } from '../token';
 import SpotifyWebApi from 'spotify-web-api-js';
 import './about.css';
 import './challenges.css';
-import './delete.css'
-
+import './addChallenge.css'
 
 function Delete()
 {
@@ -66,19 +65,25 @@ function Delete()
     }
 
     return(
-       <div className="class1">
-        <div className="about-titleText">
+    <div className="class1">
+        <div className="about-titleText2">
             <h2>Delete Your Challenges</h2>
             <hr/>
-            <header>
+            
                 {console.log("rendering component...")}
+                
                 {Object.keys(playlist).map((key) => (
+                    <div style={{display: 'inline-block'}} className="content">
                     <Button onClick={()=>  deleteChallenge(playlist[key][0], playlist[key][2]) }>
-                    <img className="photo" src={playlist[key][1]} alt='img' />
-                    {playlist[key][0]}
+                    <img className="addChallenge-image" src={playlist[key][1]} alt='img' />
                     </Button>
+                    <h6>{playlist[key][0]}</h6>
+                   
+                    
+                    
+                    </div>
           ))}
-            </header>
+          
         </div>
         </div>
 

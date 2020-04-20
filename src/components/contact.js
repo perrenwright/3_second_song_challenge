@@ -86,6 +86,7 @@ function Contact() {
   return (
     <div className="about">
         <h2>Contact Us Now</h2>
+        <hr/>
     <form noValidate autoComplete="on" id="contactForm">
       <div>
       <div className={classes.root}>
