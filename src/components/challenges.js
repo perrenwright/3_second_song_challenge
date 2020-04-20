@@ -8,6 +8,7 @@ import SearchBar from './searchbar.js'
 import {Button} from '@material-ui/core';
 
 
+
 export default function Challenges()
 {
 
@@ -20,6 +21,7 @@ export default function Challenges()
     const [searchValue, setSearchValue] = useState("");
     // eslint-disable-next-line
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+
 
     const P_wrapperSetGameState = val =>
     {
@@ -39,6 +41,7 @@ export default function Challenges()
     {
        setSearchValue(val);
     };
+
 
     useEffect(() => {
         /**
@@ -88,8 +91,9 @@ export default function Challenges()
                 <br/>
                 <br/>
                 </div>
-            }     
+            }
                 </div>
+
                 {playlist.map((row)=> {
                         if (row[3] !== P_gameState && P_gameState != null)
                         {
@@ -97,6 +101,7 @@ export default function Challenges()
                         }
                         else
                         {
+
                         return  <CardComponent key={row[0]}
                                        name={row[0]}
                                        image={row[1]}
@@ -118,6 +123,7 @@ export default function Challenges()
                         to fix that.
                         */
 
+
                 }
 
                })
@@ -125,6 +131,7 @@ export default function Challenges()
 
             </header>
             <br/>
+
         </div>
 
     );

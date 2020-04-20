@@ -7,6 +7,7 @@ import './about.css';
 import './addChallenge.css'
 
 
+
 function Challenges() {
   // Uncomment the following async function to test getChallengeUtil function
   // async function test_print_challenge_json() {
@@ -22,6 +23,7 @@ function Challenges() {
   const [valid_playlists, setValidPlaylists] = useState({});
    const [valid_playlists_img, setValidPlaylists_img] = useState({});
 
+
   var token = getLocalToken();
 
   var spotifyApi = new SpotifyWebApi();
@@ -31,6 +33,7 @@ function Challenges() {
     async function setValidPlaylistsFn() {
       let updatedValidPlaylists = [];
       let updatedValidPlaylists_img = [];
+
       await spotifyApi.getUserPlaylists().then(function (data) {
         console.log('User playlists', data['items']);
         console.log('spotifyApi.getUserPlaylists');
@@ -38,6 +41,7 @@ function Challenges() {
           // console.log(data['items'][i]);
           var playlist_info = data['items'][i];
           updatedValidPlaylists_img[playlist_info['id']] = playlist_info['images'][0]['url']
+
           updatedValidPlaylists[playlist_info['id']] = playlist_info['name'];
           console.log(playlist_info['id'], playlist_info['name']);
         }
@@ -49,6 +53,7 @@ function Challenges() {
     setValidPlaylistsFn();
     // eslint-disable-next-line
   }, []);
+
 
   function handleclick(key) {
     return createChallengeUtil(key);
@@ -62,10 +67,12 @@ function Challenges() {
           {Object.keys(valid_playlists).map((key) => (
             <Button onClick={() => handleclick(key)}>
               <img className="photo" src={valid_playlists_img[key]} alt='img' />
+
               {valid_playlists[key]}
             </Button>
           ))}
         </div>
+
     </div>
   );
 }

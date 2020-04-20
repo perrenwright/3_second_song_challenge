@@ -128,7 +128,7 @@ export default function MenuAppBar() {
               alt="3 Second Logo"
             />
           </IconButton>
-          <Tabs 
+          <Tabs
             value={value}
             onChange={handleEvent}
             aria-label="simple tabs example"
@@ -167,7 +167,8 @@ export default function MenuAppBar() {
               component={Link}
             />
              </Tabs>
-          
+
+
           {auth && (
             <div>
               <IconButton
@@ -196,7 +197,7 @@ export default function MenuAppBar() {
                 onClose={handleClose}
               >
                 {/* <MenuItem onClick={handleEvent} to="/profile" component={Link}> Profile</MenuItem> */}
-                <MenuItem onClick={handleClose}>My Account</MenuItem> 
+                <MenuItem onClick={handleClose}>My Account</MenuItem>
                 {/* Should change Account to Sign Out... */}
               </Menu>
             </div>
@@ -221,6 +222,7 @@ export default function MenuAppBar() {
       <TabPanel value={value} index={5}>
         <Link to="/delete"></Link>
       </TabPanel>
+
     </div>
   );
 }

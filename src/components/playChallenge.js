@@ -17,11 +17,12 @@ const spaceStyles = makeStyles(theme => ({
     '& > *': {
       marginLeft: theme.spacing(3),
       color: '#19869E',
+
     },
   },
 }));
 
-//question styles 
+//question styles
 const questionStyles = makeStyles(theme => ({
   root: {
     color: '#19869E',
@@ -38,6 +39,7 @@ const optionStyles = makeStyles({
   root: {
       color: '#19869E',
       marginTop: 10,
+
   },
 });
 
@@ -52,6 +54,7 @@ const spaceOption = makeStyles(theme => ({
     },
     width: 480,
   },
+
 }));
 
 const playStyles = makeStyles({
@@ -85,7 +88,7 @@ pos: {
   color: '#19869E',
 },
 media: {
-  paddingTop: '100%', 
+  paddingTop: '100%',
   borderRadius: 20,
   height: 250,
   width: 250, // 16:9
@@ -108,56 +111,202 @@ const useStyles = makeStyles(theme => ({
       width: theme.spacing(40),
       height: theme.spacing(40),
       color: '#19869E',
+
     },
   },
 }));
 
 function PlayChallenge(data) {
-    const classes = useStyles();
-    const playclasses = playStyles();
-    const questionclasses = questionStyles();
-    const spaceclasses = spaceStyles();
-    const optionclasses = optionStyles();
-    const spaceOptClasses = spaceOption();
+//     const classes = useStyles();
+//     const playclasses = playStyles();
+//     const questionclasses = questionStyles();
+//     const spaceclasses = spaceStyles();
+//     const optionclasses = optionStyles();
+//     const spaceOptClasses = spaceOption();
 
-    const [i, set_i] = useState(0);
-    const [choice, setChoice] = useState("");
-    const [score, setScore] = useState(0);
-    const [gameState, setGameState] = useState(GAME_STATE.IN_PROGRESS);
+//     const [colors,setColors] =useState(['','','',''])
+//     const [isDisabled, setDisabled] = useState(false)
+//     const [i, set_i] = useState(0);
+//     const [choice, setChoice] = useState("");
+//     const [score, setScore] = useState(0);
+//     const [gameState, setGameState] = useState(GAME_STATE.IN_PROGRESS);
 
-    console.log(data)
-    var all_challenge_data = data["data"]
-    var questions = all_challenge_data["challenge_questions"]
-    // Questions contains the challenge passed into from data.
-    var choice_A = questions[i]["choice_A"]
-    var choice_B = questions[i]["choice_B"]
-    var choice_C = questions[i]["choice_C"]
-    var choice_D = questions[i]["choice_D"]
-    var right_choice = questions[i]["right_choice"]
-    var url = questions[i]["preview_url"]
-    var playlist_image = all_challenge_data["challenge_image"]
-    var playlist_name = all_challenge_data["challenge_name"]
-    var high_score = all_challenge_data["highest_score"]
-    var challenge_id = all_challenge_data["challenge_id"]
-    var challenge_length = all_challenge_data["challenge_length"]
-    // We extract the necessary components we would like to display. Playlist image and preview_url are not in the database.
-    var sound = new Howl({
-      src: [url],
-      html5: true,
-      format: ['mp3', 'aac']
-    });
+//     console.log(data)
+//     var all_challenge_data = data["data"]
+//     var questions = all_challenge_data["challenge_questions"]
+//     // Questions contains the challenge passed into from data.
+//     var choice_A = questions[i]["choice_A"]
+//     var choice_B = questions[i]["choice_B"]
+//     var choice_C = questions[i]["choice_C"]
+//     var choice_D = questions[i]["choice_D"]
+//     var right_choice = questions[i]["right_choice"]
+//     var url = questions[i]["preview_url"]
+//     var playlist_image = all_challenge_data["challenge_image"]
+//     var playlist_name = all_challenge_data["challenge_name"]
+//     var high_score = all_challenge_data["highest_score"]
+//     var challenge_id = all_challenge_data["challenge_id"]
+//     var challenge_length = all_challenge_data["challenge_length"]
+//     // We extract the necessary components we would like to display. Playlist image and preview_url are not in the database.
+//     var sound = new Howl({
+//       src: [url],
+//       html5: true,
+//       format: ['mp3', 'aac']
+//     });
 
-    var count = 0
+//     var count = 0
 
-    const start = () => {
-      sound.unload()
-      playsong(url,count,sound,all_challenge_data["time"]);
-      count = count + 1
-      // This count stops the user from playing the sound more than once.
-    }
+//     const start = () => {
+//       sound.unload()
+//       playsong(url,count,sound,all_challenge_data["time"]);
+//       count = count + 1
+//       // This count stops the user from playing the sound more than once.
+//     }
 
 
-    useEffect(() => {
+//     useEffect(() => {
+//       sound.unload()
+//       if (i < challenge_length){
+//       start()
+//       }
+//       // eslint-disable-next-line
+//     }, [i])
+
+
+//     if (choice === right_choice && i < challenge_length){
+//           setScore(score + 1);
+//           setChoice("")
+//           setTimeout(() => { set_i(i+1)}, 1000);
+//           console.log(score)
+
+//     // I track the user's current score here.
+//     }
+//     else if(choice)
+//     {
+//       console.log("This is right: ", right_choice)
+//       console.log("You picked: ", choice)
+//       setTimeout(() => { set_i(i+1)}, 1000);
+//       setChoice("")
+//     }
+
+//     if (i >= challenge_length && gameState !== GAME_STATE.ENDED)
+//     {
+//       playsong(url,count,sound,all_challenge_data["time"],true)
+//       setGameState(GAME_STATE.ENDED)
+//       sound.unload()
+//     }
+
+//     function refreshPage() {
+//     window.location.reload(false);
+//     }
+//     return (
+
+
+//  <div marginTop>
+//  { gameState === GAME_STATE.ENDED &&
+//    <div className="class1">
+//     <EndPage score={score} high_score={high_score} challenge_id={challenge_id}/>
+//     </div>
+// }
+//           {/* Someone needs to make the button green or red when a choice is picked. We also need to display an ending page. */}
+//     { gameState === GAME_STATE.IN_PROGRESS &&
+//     <div>
+//     <Button variant="outlined" onClick={refreshPage}>
+//         Quit Game
+//       </Button>
+//       <Card className={classes.root}>
+//         <CardMedia
+//         className={classes.media}
+//         image={playlist_image}
+//         title={playlist_name}
+//       />
+//       </Card>
+//     </div>
+// }
+// { gameState === GAME_STATE.IN_PROGRESS &&
+//     <div className = {questionclasses.root}>
+//     <Typography variant="h5" gutterBottom className={spaceclasses.root}>
+//         Choose the correct singer and song Title?
+//       </Typography>
+
+//     </div>
+//   }
+//   { gameState === GAME_STATE.IN_PROGRESS &&
+//     <div className ={playclasses.root}>
+//     <Button variant="outlined" color="primary" onClick={start}>
+//         Play Song
+//       </Button>
+//       </div>
+// }
+// { gameState === GAME_STATE.IN_PROGRESS &&
+//         <div className = {optionclasses.root}>
+//             <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_A)} >
+//                {choice_A}
+//             </Button>
+//             <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_B)}>
+//                {choice_B}
+//             </Button>
+//         </div>
+// }
+// { gameState === GAME_STATE.IN_PROGRESS &&
+//         <div className = {optionclasses.root}>
+//             <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_C)} >
+//                {choice_C}
+//             </Button>
+//             <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_D)}>
+//                 {choice_D}
+//             </Button>
+//         </div>
+// }
+//       </div>
+
+
+//     );
+//   }
+//   export default PlayChallenge;
+
+
+  const classes = useStyles();
+  const playclasses = playStyles();
+  const questionclasses = questionStyles();
+  const spaceclasses = spaceStyles();
+  const optionclasses = optionStyles();
+  const spaceOptClasses = spaceOption();
+  const [colors,setColors] =useState(['','','',''])
+  const [i, set_i] = useState(0);
+  const [choice, setChoice] = useState("");
+  const [isDisabled, setDisabled] = useState(false)
+  const [score, setScore] = useState(0);
+  const [gameState, setGameState] = useState(GAME_STATE.IN_PROGRESS);
+  console.log(data)
+  var all_challenge_data = data["data"]
+
+  var questions = all_challenge_data["challenge_questions"]
+  // Questions contains the challenge passed into from data.
+  var choice_A = questions[i]["choice_A"]
+  var choice_B = questions[i]["choice_B"]
+  var choice_C = questions[i]["choice_C"]
+  var choice_D = questions[i]["choice_D"]
+
+  var right_choice = questions[i]["right_choice"]
+  var url = questions[i]["preview_url"]
+  var playlist_image = all_challenge_data["challenge_image"]
+  var playlist_name = all_challenge_data["challenge_name"]
+  var high_score = all_challenge_data["highest_score"]
+  var challenge_id = all_challenge_data["challenge_id"]
+  // We extract the necessary components we would like to display. Playlist image and preview_url are not in the database.
+  var sound = new Howl({
+    src: [url],
+    html5: true,
+    format: ['mp3', 'aac']
+  });
+  var count = 0
+  const start = () => {
+    playsong(url,count,sound);
+    count = 1
+    // This count stops the user from playing the sound more than once.
+  }
+
+   useEffect(() => {
       sound.unload()
       if (i < challenge_length){
       start()
@@ -165,95 +314,123 @@ function PlayChallenge(data) {
       // eslint-disable-next-line
     }, [i])
 
-
+  function checkAnswer(choice,index) {
+    setChoice(choice)
     if (choice === right_choice && i < challenge_length){
-          setScore(score + 1);
-          setChoice("")
-          setTimeout(() => { set_i(i+1)}, 1000);
-          console.log(score)
+      colors[index] = '#48BF84'
+      setColors(colors)
+      setDisabled(true);
+      console.log(colors)
+      setScore(score + 1);
+      setChoice("")
+      console.log(score)
+      changeQuestion();
 
     // I track the user's current score here.
-    }
-    else if(choice)
-    {
-      console.log("This is right: ", right_choice)
-      console.log("You picked: ", choice)
-      setTimeout(() => { set_i(i+1)}, 1000);
-      setChoice("")
-    }
-
     if (i >= challenge_length && gameState !== GAME_STATE.ENDED)
     {
       playsong(url,count,sound,all_challenge_data["time"],true)
       setGameState(GAME_STATE.ENDED)
       sound.unload()
     }
+    return true
+    }
+    else if(choice){
+      colors[index] = '#D80032'
+      let choicesLst = [choice_A,choice_B,choice_C,choice_D];
+      for (let i = 0; i < 4; i++) {
+        if (right_choice === choicesLst[i]) {
+          colors[i] = '#48BF84';
+          break;
+        }
+      }
+      setColors(colors)
+      console.log(colors)
+      changeQuestion()
+      setChoice("")
+      }
 
-    function refreshPage() {
+    setDisabled(true);
+    return false;
+  }
+
+  function changeQuestion() {
+    setTimeout(() => { set_i(i+1)}, 1000);
+    setDisabled(false)
+    setColors(['','','',''])
+  }
+
+function refreshPage() {
     window.location.reload(false);
     }
-    return (
 
-
- <div marginTop>
- { gameState === GAME_STATE.ENDED &&
-   <div className="class1">
-    <EndPage score={score} high_score={high_score} challenge_id={challenge_id}/>
-    </div>
-}
-          {/* Someone needs to make the button green or red when a choice is picked. We also need to display an ending page. */}
-    { gameState === GAME_STATE.IN_PROGRESS &&
+  return (
     <div>
-    <Button variant="outlined" onClick={refreshPage}>
+      {
+        gameState === GAME_STATE.ENDED &&
+        <div>
+          <EndPage score={score} high_score={high_score} challenge_id={challenge_id}/>
+        </div>
+      }
+      {
+        gameState === GAME_STATE.IN_PROGRESS &&
+        <div>
+          <Button variant="outlined" onClick={refreshPage}>
         Quit Game
       </Button>
-      <Card className={classes.root}>
-        <CardMedia
-        className={classes.media}
-        image={playlist_image}
-        title={playlist_name}
-      />
-      </Card>
-    </div>
-}
-{ gameState === GAME_STATE.IN_PROGRESS &&
-    <div className = {questionclasses.root}>
-    <Typography variant="h5" gutterBottom className={spaceclasses.root}>
-        Choose the correct singer and song Title?
-      </Typography>
-
-    </div>
-  }
-  { gameState === GAME_STATE.IN_PROGRESS &&
-    <div className ={playclasses.root}>
-    <Button variant="outlined" color="primary" onClick={start}>
-        Play Song
-      </Button>
-      </div>
-}
-{ gameState === GAME_STATE.IN_PROGRESS &&
-        <div className = {optionclasses.root}>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_A)} >
+          <Card className={classes.root}>
+              <CardMedia
+              className={classes.media}
+              image={playlist_image}
+              title={playlist_name}
+            />
+          </Card>
+        </div>
+      }
+      {
+        gameState === GAME_STATE.IN_PROGRESS &&
+        <div className = {questionclasses.root}>
+          <Typography variant="h5" gutterBottom className={spaceclasses.root}>
+              Choose the correct singer and song Title?
+          </Typography>
+        </div>
+      }
+      {
+        gameState === GAME_STATE.IN_PROGRESS &&
+        <div className ={playclasses.root}>
+          <Button variant="outlined" color="primary" onClick={start}>
+              Play Song
+          </Button>
+        </div>
+      }
+      {
+        gameState === GAME_STATE.IN_PROGRESS &&
+          <div className = {optionclasses.root}>
+            <Button disabled={isDisabled} variant="outlined" color='primary' style={{ marginBottom: 40,marginLeft: 30,
+                marginTop: 10,background: colors[0]}} onClick={() => checkAnswer(choice_A,0)} >
                {choice_A}
             </Button>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_B)}>
+            <Button disabled={isDisabled} variant="outlined" color="primary" style= {{ marginBottom: 40,marginLeft: 30,
+                marginTop: 10,background: colors[1]}} onClick={() => checkAnswer(choice_B,1)}>
                {choice_B}
             </Button>
-        </div>
-}
-{ gameState === GAME_STATE.IN_PROGRESS &&
+          </div>
+      }
+      {
+        gameState === GAME_STATE.IN_PROGRESS &&
         <div className = {optionclasses.root}>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_C)} >
+            <Button disabled={isDisabled} variant="outlined" color='primary' style={{marginBottom: 40,marginLeft: 30,
+                marginTop: 10,background: colors[2]}}  onClick={() => checkAnswer(choice_C,2)} >
                {choice_C}
             </Button>
-            <Button variant="outlined" color="primary" className = {spaceOptClasses.root} onClick={() => setChoice(choice_D)}>
+            <Button disabled={isDisabled} variant="outlined" color="primary" style={{ marginBottom: 40,marginLeft: 30,
+                marginTop: 10,background: colors[3]}}onClick={() => checkAnswer(choice_D,3)}>
                 {choice_D}
             </Button>
         </div>
+      }
+    </div>
+  );
 }
-      </div>
-
-
-    );
-  }
   export default PlayChallenge;
+
