@@ -1,15 +1,17 @@
 import React,{useState,useEffect,useReducer} from 'react';
 import CardComponent from './card-component';
-import {Button} from '@material-ui/core';
 import firestoreRef from '../firebase';
 import './challenges.css'
 import Song_timer from './song_timer.js'
 import Challenge_length from './challenge_length.js'
 import SearchBar from './searchbar.js'
+import {Button} from '@material-ui/core';
+
 
 
 export default function Challenges()
 {
+
     console.log("calling function..")
     // eslint-disable-next-line
     const [playlist,setPlaylist] = useState([])
@@ -17,7 +19,9 @@ export default function Challenges()
     const [gameTime, setgameTime] = useState(3000);
     const [challenge_length, setChallenge_length] = useState(3000);
     const [searchValue, setSearchValue] = useState("");
+    // eslint-disable-next-line
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+
 
     const P_wrapperSetGameState = val =>
     {
@@ -37,6 +41,7 @@ export default function Challenges()
     {
        setSearchValue(val);
     };
+
 
     useEffect(() => {
         /**
@@ -72,18 +77,25 @@ export default function Challenges()
 
     return(
         <div id="class1">
+            <SearchBar searchValueSetter={wrappersetSearchValue} gameState={P_gameState}/>
             <header>
                 {console.log("rendering component...")}
                 <div>
-                <SearchBar searchValueSetter={wrappersetSearchValue} gameState={P_gameState} />
-                <br/>
+                { P_gameState === null &&
+                <div>
                 <Button onClick={sort_playlist} variant="outlined">
                 sort alphabetically
                 </Button>
-                    <Button><Challenge_length challenge_length={challenge_length} setChallenge_length={setChallenge_length} gameState={P_gameState}/></Button>
-                    <Button><Song_timer gameTime={gameTime} setgameTime={setgameTime} gameState={P_gameState}/></Button>
-                </div>
+                {/*eslint-disable-next-line*/}
+                <Button><Challenge_length challenge_length={challenge_length} setChallenge_length={setChallenge_length} gameState={P_gameState}/></Button>
+                {/*eslint-disable-next-line*/}
+                <Button><Song_timer gameTime={gameTime} setgameTime={setgameTime} gameState={P_gameState}/></Button>
                 <br/>
+                <br/>
+                </div>
+            }
+                </div>
+
                 {playlist.map((row)=> {
                         if (row[3] !== P_gameState && P_gameState != null)
                         {
@@ -91,7 +103,6 @@ export default function Challenges()
                         }
                         else
                         {
-
 
                         return  <CardComponent key={row[0]}
                                        name={row[0]}
@@ -103,8 +114,9 @@ export default function Challenges()
                                        time = {gameTime}
                                        challenge_length = {challenge_length}
                                        searchValue={searchValue}
-                                       
+
                         />
+
                         /* Since we are determining which card is clicked inside the cardComponent
                         I had to find away to hide the other components in the challanges.js file
                         This was achieved by passing the challenge_id back as P_gamestate and
@@ -113,12 +125,14 @@ export default function Challenges()
                         to fix that.
                         */
 
+
                 }
 
                })
 }
 
             </header>
+            <br/>
 
         </div>
 

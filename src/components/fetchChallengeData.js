@@ -23,6 +23,7 @@ export default function FetchData(props) {
 
   // This piece of code prevents the interface from displaying until all the data is loaded.
 
+
   useEffect(() => {
     const getData = async () => {
       if (!isCancelled.current) {
@@ -30,6 +31,7 @@ export default function FetchData(props) {
       json["challenge_id"] = props.challengeID
       json["time"] = props.time
       json["challenge_length"] = props.challenge_length
+
       updateData(json);
       }
     }
@@ -44,6 +46,7 @@ export default function FetchData(props) {
   return (
     <div>
       {!data ? (
+
         <FadeIn>
           <div align="center" >
             <Lottie options={defaultOptions} height={200} width={200} />

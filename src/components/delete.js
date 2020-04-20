@@ -1,26 +1,13 @@
 import React,{useState, useEffect} from 'react';
-// import PlayChallenge from './ChallengePage';
 import {Button} from '@material-ui/core';
-import CardComponent from './card-component';
 import './firebase.js';
-import firebase, { database } from 'firebase';
-// import firebase, {database} from './firebase.js'
+import firebase from 'firebase';
 import firestoreRef from '../firebase';
 import { getLocalToken } from '../token';
 import SpotifyWebApi from 'spotify-web-api-js';
-import {GAME_STATE} from '../gamestate_enum.js';
-import { useRef } from "react";
 import './about.css';
 import './challenges.css';
 import './delete.css'
-
-
-
-
-// useEffect(() => {
-
-// getPlaylists();
-// },[]);
 
 
 function Delete()
@@ -53,8 +40,9 @@ function Delete()
       }
       useEffect(() => {
         getPlaylists()
+        // eslint-disable-next-line
     },[]);
-    
+
     async function deleteChallenge(playlist_name, username) {
         console.log(playlist_name)
         let db = firebase.firestore();

@@ -6,6 +6,7 @@ import { getLocalToken } from '../token';
 import firestoreRef from '../firebase';
 import Swal from 'sweetalert2'
 
+
 function EndPage({score, high_score, challenge_id}) {
   // Send Score and Player to Database
   const [username, updateUsername] = useState(undefined);
@@ -15,9 +16,10 @@ function EndPage({score, high_score, challenge_id}) {
       var spotifyApi = new SpotifyWebApi();
       spotifyApi.setAccessToken(token);
       console.log("this is me", spotifyApi.getMe())
-      const username = await spotifyApi.getMe()  
+      const username = await spotifyApi.getMe()
       updateUsername(username["display_name"]);
       console.log(username["display_name"])
+
     }
     getUsername();
   }, []);

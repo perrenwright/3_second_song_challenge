@@ -8,16 +8,11 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { Link } from 'react-router-dom';
 import './appNav.css';
-// import { sizing } from '@material-ui/system';
 import { createMuiTheme } from '@material-ui/core/styles';
 import teal from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
@@ -53,6 +48,7 @@ function a11yProps(index) {
     'aria-controls': `simple-tabpanel-${index}`
   };
 }
+// eslint-disable-next-line
 const theme = createMuiTheme({
   palette: {
     primary: teal,
@@ -82,11 +78,12 @@ export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const [value, setValue] = React.useState(0);
+  const createHistory = require("history").createBrowserHistory;
 
   const handleEvent = (event, newValue) => {
     setValue(newValue);
   };
-
+  // eslint-disable-next-line
   const handleChange = event => {
     setAuth(event.target.checked);
   };
@@ -96,24 +93,21 @@ export default function MenuAppBar() {
   };
 
   const handleClose = () => {
+    localStorage.clear();
+    let history = createHistory();
+    history.push("/about");
+    let pathUrl = window.location.href;
+    window.location.href = pathUrl;
+  };
+
+  const handleOut = () => {
     setAnchorEl(null);
   };
 
 
   return (
     <div className={classes.root}>
-      <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? 'Logout' : 'Login'}
-        />
-      </FormGroup>
+
       <AppBar position="static" style={{ background: 'white', color: 'black', boxShadow: 'Light'}}>
         <Toolbar>
           <IconButton
@@ -128,7 +122,7 @@ export default function MenuAppBar() {
               alt="3 Second Logo"
             />
           </IconButton>
-          <Tabs 
+          <Tabs
             value={value}
             onChange={handleEvent}
             aria-label="simple tabs example"
@@ -167,7 +161,8 @@ export default function MenuAppBar() {
               component={Link}
             />
              </Tabs>
-          
+
+
           {auth && (
             <div>
               <IconButton
@@ -193,10 +188,10 @@ export default function MenuAppBar() {
                   horizontal: 'right'
                 }}
                 open={open}
-                onClose={handleClose}
+                onClose={handleOut}
               >
                 {/* <MenuItem onClick={handleEvent} to="/profile" component={Link}> Profile</MenuItem> */}
-                <MenuItem onClick={handleClose}>My Account</MenuItem> 
+                <MenuItem onClick={handleClose}>Sign Out</MenuItem>
                 {/* Should change Account to Sign Out... */}
               </Menu>
             </div>
@@ -221,6 +216,7 @@ export default function MenuAppBar() {
       <TabPanel value={value} index={5}>
         <Link to="/delete"></Link>
       </TabPanel>
+
     </div>
   );
 }

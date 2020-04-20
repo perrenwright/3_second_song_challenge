@@ -12,6 +12,7 @@ import { Route, Switch } from 'react-router-dom';
 import addchallenge from './components/addChallenge';
 import Delete from './components/delete';
 
+
 // const StyledButton = withStyles({
 //   root: {
 //     background: '#19869E',
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/addchallenge" component={addchallenge} />
           <Route path="/delete" component={Delete} />
+
         </Switch>
       </header>
     </div>

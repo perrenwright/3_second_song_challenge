@@ -35,8 +35,8 @@ describe("Challenge length component", () => {
 //   });
 //   expect(container.textContent).toBe("Hey, stranger");
 
-describe("Challenge length component", () => {
-  const setchal_length = jest.fn().mockImplementation
-  const { container, getByText } = render(<Challenge_length setChallenge_length={setchal_length}/>)
-  expect(getByText('5 Songs')).toBeInTheDocument()
-})
+// describe("Challenge length component", () => {
+//   const setchal_length = jest.fn().mockImplementation
+//   const { container, getByText } = render(<Challenge_length setChallenge_length={setchal_length}/>)
+//   expect(getByText('5 Songs')).toBeInTheDocument()
+// })

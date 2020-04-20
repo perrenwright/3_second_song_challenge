@@ -10,6 +10,7 @@ import {GAME_STATE} from '../gamestate_enum.js';
 function CardComponent(props) {
     const [gameState, setGameState] = useState(GAME_STATE.BEFORE);
     const [challenge_id,setChallenge_id] = useState(null);
+
     useEffect(() => {
         props.P_gameStateSetter(challenge_id);
     }, [challenge_id, props]);
@@ -27,6 +28,7 @@ function CardComponent(props) {
     return (
         <div>
             { gameState === GAME_STATE.BEFORE && props.name.includes(props.searchValue) &&
+
                 <div className='card-component'>
                     <Button onClick={() => onClick()}>
                         <img
@@ -39,6 +41,7 @@ function CardComponent(props) {
                 </div>
             }
          { gameState === GAME_STATE.IN_PROGRESS &&   <FetchData challengeID={props.challengeID}  time = {props.time} challenge_length={props.challenge_length} />}
+
         </div>
 
     )

@@ -78,6 +78,7 @@ async function createChallengeUtil(playlist_id) {
 
   spotifyApi.getPlaylist(playlist_id).then(function (data) {
 
+
     // 'data' is the vaiable that has all the information about the playlist.
     var all_tracks_info = data.tracks['items'];
     var playlist_name = data.name;
@@ -155,7 +156,8 @@ async function createChallengeUtil(playlist_id) {
     console.log('All unique_track_ids', all_unique_track_ids);
 
     // TODO: Challenge creator is not necessarily the playlist_owner, might have to replace with the current user in session
-  
+
+
 
     firestoreRef.collection('challenge_test').doc(playlist_id).set({
       challenge_name: playlist_name,
@@ -166,7 +168,8 @@ async function createChallengeUtil(playlist_id) {
       challenge_image: playlist_image,
       unique_tracks_info: all_unique_track_ids,
     })
-    
+
   });
 }
 export default createChallengeUtil;
+
