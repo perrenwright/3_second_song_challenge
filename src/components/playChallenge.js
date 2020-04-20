@@ -146,7 +146,7 @@ function PlayChallenge(data) {
 //     var playlist_name = all_challenge_data["challenge_name"]
 //     var high_score = all_challenge_data["highest_score"]
 //     var challenge_id = all_challenge_data["challenge_id"]
-//     var challenge_length = all_challenge_data["challenge_length"]
+    // var challenge_length = all_challenge_data["challenge_length"]
 //     // We extract the necessary components we would like to display. Playlist image and preview_url are not in the database.
 //     var sound = new Howl({
 //       src: [url],
@@ -154,14 +154,14 @@ function PlayChallenge(data) {
 //       format: ['mp3', 'aac']
 //     });
 
-//     var count = 0
+    // var count = 0
 
-//     const start = () => {
-//       sound.unload()
-//       playsong(url,count,sound,all_challenge_data["time"]);
-//       count = count + 1
-//       // This count stops the user from playing the sound more than once.
-//     }
+    // const start = () => {
+    //   sound.unload()
+    //   playsong(url,count,sound,all_challenge_data["time"]);
+    //   count = count + 1
+    //   // This count stops the user from playing the sound more than once.
+    // }
 
 
 //     useEffect(() => {
@@ -294,6 +294,8 @@ function PlayChallenge(data) {
   var playlist_name = all_challenge_data["challenge_name"]
   var high_score = all_challenge_data["highest_score"]
   var challenge_id = all_challenge_data["challenge_id"]
+  var challenge_length = all_challenge_data["challenge_length"]
+
   // We extract the necessary components we would like to display. Playlist image and preview_url are not in the database.
   var sound = new Howl({
     src: [url],
@@ -301,11 +303,13 @@ function PlayChallenge(data) {
     format: ['mp3', 'aac']
   });
   var count = 0
-  const start = () => {
-    playsong(url,count,sound);
-    count = 1
-    // This count stops the user from playing the sound more than once.
-  }
+
+    const start = () => {
+      sound.unload()
+      playsong(url,count,sound,all_challenge_data["time"]);
+      count = count + 1
+      // This count stops the user from playing the sound more than once.
+    }
 
    useEffect(() => {
       sound.unload()
