@@ -9,9 +9,6 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { Link } from 'react-router-dom';
@@ -51,6 +48,7 @@ function a11yProps(index) {
     'aria-controls': `simple-tabpanel-${index}`
   };
 }
+// eslint-disable-next-line
 const theme = createMuiTheme({
   palette: {
     primary: teal,
@@ -85,7 +83,7 @@ export default function MenuAppBar() {
   const handleEvent = (event, newValue) => {
     setValue(newValue);
   };
-
+  // eslint-disable-next-line
   const handleChange = event => {
     setAuth(event.target.checked);
   };
@@ -95,9 +93,7 @@ export default function MenuAppBar() {
   };
 
   const handleClose = () => {
-    // setAnchorEl(null);
     localStorage.clear();
-    // window.location.reload(false);
     let history = createHistory();
     history.push("/about");
     let pathUrl = window.location.href;
