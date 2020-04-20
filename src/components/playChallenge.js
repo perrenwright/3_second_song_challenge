@@ -338,7 +338,7 @@ function PlayChallenge(data) {
       setGameState(GAME_STATE.ENDED)
       sound.unload()
     }
-    return true
+    // return true
     }
     else if(choice){
       colors[index] = '#D80032'
@@ -356,7 +356,7 @@ function PlayChallenge(data) {
       }
 
     setDisabled(true);
-    return false;
+    // return false;
   }
 
   function changeQuestion() {
