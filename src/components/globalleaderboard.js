@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import firestoreRef from '../firebase';
+import LeaderboardChip from './leaderboard_chip';
 import './globalleaderboard.css';
 
 export default function Leaderboard() {
@@ -37,21 +38,23 @@ export default function Leaderboard() {
     getHighestScores();
     // eslint-disable-next-line
   }, []);
-
-  return (
-    <div className="about">
-      <font color="black">
-        <h2>Global Leaderboard</h2>
-        <hr />
-        {console.log('Scores value test in render', scores_info)}
-        {scores_info.map((score_info) => {
-          return (
-            <p>
-              {score_info[0]} : {score_info[1]} : {score_info[2]}{' '}
-            </p>
-          );
-        })}
-      </font>
-    </div>
-  );
+  if(scores_info !== undefined){
+    return (
+      <div className="gbl">
+        <header className="gbl-header">
+          <h1>Global Leaderboard</h1>
+          <hr />
+        </header>
+        <div className="gbl-top3">
+          <LeaderboardChip border='gold' label={scores_info[0] === undefined ? " " : scores_info[0].join(' - ')}/>
+          <LeaderboardChip border='silver' label={scores_info[1] === undefined ? " " : scores_info[1].join(' - ')}/>
+          <LeaderboardChip border='bronze' label={scores_info[2] === undefined ? " " : scores_info[2].join(' - ')}/>
+        </div>
+        <div className="gbl-bottom2">
+          <LeaderboardChip border='green' label={scores_info[3] === undefined ? " " : scores_info[3].join(' - ')}/>
+          <LeaderboardChip label={scores_info[4] === undefined ? " " : scores_info[4].join(' - ')}/> 
+        </div>
+      </div>
+    );
+  }
 }

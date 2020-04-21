@@ -62,7 +62,7 @@ const theme = createMuiTheme({
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    width: '100%'
+    width: '100%',
   },
   menuButton: {
     marginRight: theme.spacing(2)
