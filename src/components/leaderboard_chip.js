@@ -3,7 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import {makeStyles} from '@material-ui/core';
 import Chip from '@material-ui/core/Chip';
 import { withStyles } from '@material-ui/styles';
-import { textAlign } from '@material-ui/system';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,7 +29,7 @@ const StyledChip = withStyles({
     borderRadius: 200/2,
     '& $avatar': {
       height: 50,
-      width: 50, 
+      width: 50,
     },
     label:{
       whiteSpace: 'normal',
@@ -48,8 +47,8 @@ export default function LeaderboardChip(props) {
       return(
         <div className={classes.root}>
           <StyledChip variant="outlined" avatar={<Avatar>Z</Avatar>} style={{border: '1px solid gold'}} label={<p className={classes.header}>{props.label}</p>}/>
-        </div> 
-      );          
+        </div>
+      );
     }
     else if (props.border === 'silver'){
       return(
