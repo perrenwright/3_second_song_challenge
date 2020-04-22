@@ -1,7 +1,5 @@
 import { setLocalToken, getLocalToken } from './token';
 
-
-
 export default function getToken() {
   // This function grabs the user's access token from the url so we can grab the information
   // about that user from the database.
@@ -15,7 +13,13 @@ export default function getToken() {
     e = r.exec(q);
   }
 
-  const token = hashParams.access_token;
+  var token = hashParams.access_token;
+  if (token)
+  {
+    localStorage.setItem('localStorageKey', token);
+  }else{token = localStorage.getItem('localStorageKey');}
+
+
   setLocalToken(token);
   console.log('Token: ', token);
   var local_token = getLocalToken();

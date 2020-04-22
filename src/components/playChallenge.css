@@ -1,0 +1,15 @@
+.Button {
+    margin-left: 20px;
+    margin-right: 32px;
+
+}
+.choiceIncorrect {
+    margin-left: 20px;
+    margin-right: 32px;
+    background: #D80032;
+}
+.choiceCorrect {
+    margin-left: 20px;
+    margin-right: 32px;
+    background: #48BF84;
+}

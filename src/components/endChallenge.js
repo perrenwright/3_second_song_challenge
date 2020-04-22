@@ -17,8 +17,9 @@ function EndPage({score, high_score, challenge_id}) {
       spotifyApi.setAccessToken(token);
       console.log("this is me", spotifyApi.getMe())
       const username = await spotifyApi.getMe()
-      updateUsername(username["id"]);
-      console.log(username["id"])
+      updateUsername(username["display_name"]);
+      console.log(username["display_name"])
+
     }
     getUsername();
   }, []);
