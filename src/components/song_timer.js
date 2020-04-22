@@ -35,7 +35,7 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 const Song_timer = (props) => {
-  const [dropdownOpen, setOpen] = useState(false);
+  // const [dropdownOpen, setOpen] = useState(false);
   const [gameTime, setgameTime] = useState(3000);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
