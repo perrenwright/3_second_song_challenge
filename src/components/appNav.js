@@ -8,16 +8,16 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { Link } from 'react-router-dom';
 import './appNav.css';
-// import { sizing } from '@material-ui/system';
+import { createMuiTheme } from '@material-ui/core/styles';
+import teal from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -48,11 +48,21 @@ function a11yProps(index) {
     'aria-controls': `simple-tabpanel-${index}`
   };
 }
+// eslint-disable-next-line
+const theme = createMuiTheme({
+  palette: {
+    primary: teal,
+    secondary: green,
+  },
+  status: {
+    danger: 'orange',
+  },
+});
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    width: '100%'
+    width: '100%',
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -68,11 +78,12 @@ export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const [value, setValue] = React.useState(0);
+  const createHistory = require("history").createBrowserHistory;
 
   const handleEvent = (event, newValue) => {
     setValue(newValue);
   };
-
+  // eslint-disable-next-line
   const handleChange = event => {
     setAuth(event.target.checked);
   };
@@ -82,24 +93,22 @@ export default function MenuAppBar() {
   };
 
   const handleClose = () => {
+    localStorage.clear();
+    let history = createHistory();
+    history.push("/about");
+    let pathUrl = window.location.href;
+    window.location.href = pathUrl;
+  };
+
+  const handleOut = () => {
     setAnchorEl(null);
   };
 
+
   return (
     <div className={classes.root}>
-      <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? 'Logout' : 'Login'}
-        />
-      </FormGroup>
-      <AppBar position="static" style={{ background: 'white', color: 'black' }}>
+
+      <AppBar position="static" style={{ background: 'white', color: 'black', boxShadow: 'Light'}}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -134,18 +143,26 @@ export default function MenuAppBar() {
             />
             <Tab label="About" {...a11yProps(2)} to="/about" component={Link} />
             <Tab
-              label="Contact Us"
-              {...a11yProps(3)}
-              to="/contact"
-              component={Link}
-            />
-            <Tab
               label="Add"
               {...a11yProps(3)}
               to="/addchallenge"
               component={Link}
             />
+            <Tab
+              label="Delete"
+              {...a11yProps(3)}
+              to="/delete"
+              component={Link}
+            />
+            <Tab
+              label="Contact Us"
+              {...a11yProps(3)}
+              to="/contact"
+              component={Link}
+            />
              </Tabs>
+
+
           {auth && (
             <div>
               <IconButton
@@ -171,10 +188,11 @@ export default function MenuAppBar() {
                   horizontal: 'right'
                 }}
                 open={open}
-                onClose={handleClose}
+                onClose={handleOut}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                {/* <MenuItem onClick={handleEvent} to="/profile" component={Link}> Profile</MenuItem> */}
+                <MenuItem onClick={handleClose}>Sign Out</MenuItem>
+                {/* Should change Account to Sign Out... */}
               </Menu>
             </div>
           )}
@@ -195,6 +213,10 @@ export default function MenuAppBar() {
       <TabPanel value={value} index={4}>
         <Link to="/playchallenge"></Link>
       </TabPanel>
+      <TabPanel value={value} index={5}>
+        <Link to="/delete"></Link>
+      </TabPanel>
+
     </div>
   );
 }

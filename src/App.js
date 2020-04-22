@@ -5,13 +5,12 @@ import MenuAppBar from './components/appNav';
 import globalleaderboard from './components/globalleaderboard';
 import challenges from './components/challenges';
 import about from './components/about';
-import contact from './components/contact';
-// import authenticate from './authenticate';
-// import LoginButton from './components/LoginButton';
+import Contact from './components/contact';
 import getToken from './GetToken';
 import getPlaylistInfo from './getPlaylistInfo';
 import { Route, Switch } from 'react-router-dom';
 import addchallenge from './components/addChallenge';
+import Delete from './components/delete';
 
 
 // const StyledButton = withStyles({
@@ -42,8 +41,10 @@ export default function App() {
           <Route path="/globalleaderboard" component={globalleaderboard} />
           <Route path="/challenges" component={challenges} />
           <Route path="/about" component={about} />
-          <Route path="/contact" component={contact} />
+          <Route path="/contact" component={Contact} />
           <Route path="/addchallenge" component={addchallenge} />
+          <Route path="/delete" component={Delete} />
+
         </Switch>
       </header>
     </div>

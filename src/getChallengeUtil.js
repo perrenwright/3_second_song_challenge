@@ -1,4 +1,6 @@
 import firestoreRef from './firebase';
+import shufflefunction from './shufflearray'
+
 
 function getChallenge(challenge_id) {
   return new Promise(function (resolve, reject) {
@@ -75,6 +77,8 @@ async function getChallengeUtil(challenge_id) {
     console.log('Track information: ', track_json);
     challenge_questions.push(track_json);
   }
+  shufflefunction(challenge_questions)
+
   challenge_json['challenge_name'] = challenge_data.challenge_name;
   challenge_json['challenge_image'] = challenge_data.challenge_image;
   challenge_json['challenge_creator'] = challenge_data.challenge_creator;
