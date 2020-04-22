@@ -35,11 +35,11 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 const Song_timer = (props) => {
-  // const [dropdownOpen, setOpen] = useState(false);
+  const [dropdownOpen, setOpen] = useState(false);
   const [gameTime, setgameTime] = useState(3000);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  // const toggle = () => setOpen(!dropdownOpen);
+  const toggle = () => setOpen(!dropdownOpen);
   useEffect(() => {
         props.setgameTime(gameTime);
     }, [gameTime, props]);
@@ -58,7 +58,9 @@ const Song_timer = (props) => {
 
 
   return (
+    
     <div>
+      { props.gameState === null &&
       <div>
         <Button
           aria-controls="customized-menu"
@@ -90,6 +92,7 @@ const Song_timer = (props) => {
           </StyledMenuItem>
         </StyledMenu>
         </div>
+}
     {/* { props.gameState === null &&
     <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
       <DropdownToggle caret >
