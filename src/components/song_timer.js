@@ -71,7 +71,7 @@ const Song_timer = (props) => {
           onClick={handleClick}
          
         >
-          Challenge Length
+          Song Length
         </Button>
 
         <StyledMenu
