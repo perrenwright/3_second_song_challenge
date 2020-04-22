@@ -101,7 +101,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'table',
     marginTop: 20,
-    marginLeft: 360,
+    marginLeft: 560,
     marginRight: 200,
     marginBottom: 30,
     color: '#19869E',
@@ -247,14 +247,14 @@ function PlayChallenge(data) {
         gameState === GAME_STATE.IN_PROGRESS &&
         <div className = {questionclasses.root}>
           <Typography variant="h5" gutterBottom className={spaceclasses.root}>
-              Choose the correct singer and song Title?
+              Choose the correct song title
           </Typography>
         </div>
       }
       {
         gameState === GAME_STATE.IN_PROGRESS &&
         <div className ={playclasses.root}>
-          <Button variant="outlined" color="primary" onClick={start}>
+          <Button variant="outlined" style={{color:'#19869E'}} onClick={start}>
               Play Song
           </Button>
         </div>
