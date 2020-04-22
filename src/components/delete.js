@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react';
-import {Button} from '@material-ui/core';
+import {Button,Snackbar} from '@material-ui/core';
+import MuiAlert from '@material-ui/lab/Alert';
 import './firebase.js';
 import firebase from 'firebase';
 import firestoreRef from '../firebase';
@@ -9,8 +10,13 @@ import './about.css';
 import './challenges.css';
 import './addChallenge.css'
 
+
+
 function Delete()
 {
+    function Alert(props) {
+        return <MuiAlert elevation={6} variant="filled" {...props} />;
+    }
     console.log("calling function..")
     async function getUsername(){
     var token = getLocalToken();
@@ -22,6 +28,9 @@ function Delete()
   }
 
     const [playlist, setPlaylist] = useState([])
+    const [message,setMessage] = useState('');
+    const [open, setOpen] = useState(false);
+
 
     async function getPlaylists() {
         var username = await getUsername()
@@ -60,28 +69,40 @@ function Delete()
         .catch(function(error) {
         console.log("Error getting documents: ", error);
         });
-        alert('Document Deleted.')
+        handleOpen()
         getPlaylists()
     }
+    function handleOpen() {
+        setOpen(true);
+        setMessage(' Deleted!');
+    }
+    function handleClose(event, reason){
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setOpen(false);
+      };
 
     return(
     <div className="class1">
         <div className="about-titleText2">
             <h2>Delete Your Challenges</h2>
             <hr/>
-            
                 {console.log("rendering component...")}
                 
                 {Object.keys(playlist).map((key) => (
                     <div style={{display: 'inline-block'}} className="content">
-                    <Button onClick={()=>  deleteChallenge(playlist[key][0], playlist[key][2]) }>
-                    <img className="addChallenge-image" src={playlist[key][1]} alt='img' />
-                    </Button>
-                    <h6>{playlist[key][0]}</h6>
-                   
-                    
-                    
-                    </div>
+                        <Button onClick={()=>  deleteChallenge(playlist[key][0], playlist[key][2]) }>
+                        <img className="addChallenge-image" src={playlist[key][1]} alt='img' />
+                        </Button>
+                        <h6>{playlist[key][0]}</h6>
+                        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                            <Alert onClose={handleClose} severity='success'>
+                            {message}
+                            </Alert>
+                        </Snackbar>
+                   </div>
           ))}
           
         </div>

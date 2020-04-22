@@ -111,7 +111,7 @@ function Challenges() {
           <hr />
           {unused_playlists.map((key) => {
           return (
-            <div style={{display: 'inline-block'}} className="content">
+            <div style={{display: 'inline-block',marginLeft: '20px'}} className="content">
             <Button onClick={() => handleClick(key)}>
             <img className="addChallenge-image" src={valid_playlists[key][1]} alt={valid_playlists[key][0]}/>
             </Button>
@@ -128,10 +128,8 @@ function Challenges() {
        <hr />
         {used_playlists.map((key) => {
           return (
-            <div style={{display: 'inline-block'}} className="content">
-            <Button>
+            <div style={{display: 'inline-block',marginLeft: '35px'}} className="content">
             <img className="addChallenge-image" src={valid_playlists[key][1]} alt={valid_playlists[key][0]}/>
-            </Button>
 
             <h6>{valid_playlists[key][0]}</h6>
             </div>

@@ -4,12 +4,14 @@
     padding-right: 30px;
     float:left;
     margin-bottom: 50px;
-    margin-left: 50px;
+    margin-left: 55px;
 }
 .playlist-image {
     border-radius: 20px;
     height: 250px;
     width: 250px;
+    box-shadow: 0 3px 5px 2px rgba(192, 192, 192, .7);
+
 }
 .playlist-title {
     color: #19869E;

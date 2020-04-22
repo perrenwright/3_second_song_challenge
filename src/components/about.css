@@ -107,7 +107,7 @@ h6 {
     color: #19869E;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     width: 90%;
     width: calc(100% - -1em);
     margin-bottom: 50px;

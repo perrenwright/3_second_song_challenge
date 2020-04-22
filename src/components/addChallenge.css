@@ -2,6 +2,14 @@
   text-align: center;
   float:left;
   display: flex;
+  width: 100%;
+}
+.addChallenge-challengeDiv {
+  display: inline-block;
+  /* margin-left: 20px; */
+  justify-content: center;
+  display: flex;
+  margin-left: 20px;
 }
 .addChallenge-headerText {
   color: #19869E;
@@ -11,13 +19,12 @@
   top: 180px;
   font-size: 36px;
   display: inline-block;
-  width: 1050px;
 }
 .addChallenge-header {
   background-color: white;
   min-height: 100vh;
   display: flex;
-  width: 1050px;
+  width: 100%;
   margin-left: auto;
   flex-direction: column;
   align-items: center;
@@ -32,7 +39,6 @@
   width: 250px;
   box-shadow: 0 3px 5px 2px rgba(192, 192, 192, .7);
   margin-bottom: 10px;
-  margin-left: 80px;
 }
 .addChallenge-title {
   color: #19869E;
