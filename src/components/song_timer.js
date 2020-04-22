@@ -39,7 +39,7 @@ const Song_timer = (props) => {
   const [gameTime, setgameTime] = useState(3000);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const toggle = () => setOpen(!dropdownOpen);
+  // const toggle = () => setOpen(!dropdownOpen);
   useEffect(() => {
         props.setgameTime(gameTime);
     }, [gameTime, props]);
