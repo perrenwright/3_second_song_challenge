@@ -12,7 +12,7 @@ export default function() {
 function redirectToSpotifyAuthentication() {
     const authEndpoint = 'https://accounts.spotify.com/authorize';
     const clientId = '9a9b0b83d79a4ece84e608715bc5e114';
-    const redirectUri = `${window.location.protocol}//${window.location.host}/`;
+    const redirectUri = `${window.location.protocol}//${window.location.host}/homepage`;
     let query = `client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`;
     window.location = `${authEndpoint}?${query}`;
 }
