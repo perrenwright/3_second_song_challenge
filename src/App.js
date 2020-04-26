@@ -39,7 +39,7 @@ export default function App() {
   const location = useLocation();
   getPlaylistInfo(token);
   useEffect(()=> {
-    if (location.pathname === "/homepage" ) {
+    if (location.pathname === "/homepage" || location.pathname === "challenges") {
       setloggedIn(true);
     }
   }, [location.pathname])
@@ -49,7 +49,7 @@ export default function App() {
         {loggedIn === true && <MenuAppBar />}
         <Switch>
           <Route path="/" exact component={about} />
-          <Route path="/homepage" exact component={Homepage} />
+          <Route path="/homepage" exact component={challenges} />
           <Route path="/globalleaderboard" component={globalleaderboard} />
           <Route path="/challenges" component={challenges} />
           <Route path="/about" component={about} />
