@@ -9,7 +9,6 @@ import Contact from './components/contact';
 import getToken from './GetToken';
 import getPlaylistInfo from './getPlaylistInfo';
 import { Route, Switch, useLocation } from 'react-router-dom';
-import Homepage from './components/homepage';
 import addchallenge from './components/addChallenge';
 // import PrivateRoute from './components/PrivateRoute';
 // import {getLocalToken} from './token';
@@ -39,7 +38,7 @@ export default function App() {
   const location = useLocation();
   getPlaylistInfo(token);
   useEffect(()=> {
-    if (location.pathname === "/homepage" || location.pathname === "challenges") {
+    if (location.pathname === "/homepage" || location.pathname === "/challenges") {
       setloggedIn(true);
     }
   }, [location.pathname])
