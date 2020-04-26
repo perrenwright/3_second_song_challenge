@@ -44,15 +44,13 @@ export default function App() {
           <Route path="/challenges" component={challenges} />
           <Route path="/about" component={about} />
           <Route path="/contact" component={Contact} />
-          <Route path="/addchallenge" component={addchallenge} />
-          
-          {/* To activate authentication in each page, simply uncomment the PrivateRoute and comment the Route particular to that route. */}
-          {/* <PrivateRoute exact path="/globalleaderboard" redirectTo='/' component={globalleaderboard} user_token={getLocalToken()}/>
-          <PrivateRoute exact path="/challenges" redirectTo='/' component={challenges} user_token={getLocalToken()}/>
-          <PrivateRoute exact path="/about" redirectTo='/' component={about} user_token={getLocalToken()}/>
-          <PrivateRoute exact path="/contact" redirectTo='/' component={contact} user_token={getLocalToken()}/>
-          <PrivateRoute exact path="/addchallenge" redirectTo='/' component={addchallenge} user_token={getLocalToken()}/> */}
-          <Route path="/delete" component={Delete} />
+         
+//           <PrivateRoute exact path="/globalleaderboard" redirectTo='/' component={globalleaderboard} user_token={getLocalToken()}/>
+//           <PrivateRoute exact path="/challenges" redirectTo='/' component={challenges} user_token={getLocalToken()}/>
+//           <PrivateRoute exact path="/about" redirectTo='/' component={about} user_token={getLocalToken()}/>
+//           <PrivateRoute exact path="/contact" redirectTo='/' component={contact} user_token={getLocalToken()}/>
+          <PrivateRoute exact path="/addchallenge" redirectTo='/' component={addchallenge} user_token={getLocalToken()}/>
+          <PrivateRoute exact path="/delete" redirectTo='/' component={Delete} user_token={getLocalToken()}/>
 
         </Switch>
       </header>
