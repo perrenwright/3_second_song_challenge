@@ -10,8 +10,8 @@ import getToken from './GetToken';
 import getPlaylistInfo from './getPlaylistInfo';
 import { Route, Switch } from 'react-router-dom';
 import addchallenge from './components/addChallenge';
-// import PrivateRoute from './components/PrivateRoute';
-// import {getLocalToken} from './token';
+import PrivateRoute from './components/PrivateRoute';
+import {getLocalToken} from './token';
 import Delete from './components/delete';
 
 
