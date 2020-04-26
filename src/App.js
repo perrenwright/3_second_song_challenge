@@ -44,11 +44,7 @@ export default function App() {
           <Route path="/challenges" component={challenges} />
           <Route path="/about" component={about} />
           <Route path="/contact" component={Contact} />
-         
-//           <PrivateRoute exact path="/globalleaderboard" redirectTo='/' component={globalleaderboard} user_token={getLocalToken()}/>
-//           <PrivateRoute exact path="/challenges" redirectTo='/' component={challenges} user_token={getLocalToken()}/>
-//           <PrivateRoute exact path="/about" redirectTo='/' component={about} user_token={getLocalToken()}/>
-//           <PrivateRoute exact path="/contact" redirectTo='/' component={contact} user_token={getLocalToken()}/>
+     
           <PrivateRoute exact path="/addchallenge" redirectTo='/' component={addchallenge} user_token={getLocalToken()}/>
           <PrivateRoute exact path="/delete" redirectTo='/' component={Delete} user_token={getLocalToken()}/>
 
