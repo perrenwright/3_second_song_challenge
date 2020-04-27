@@ -2,6 +2,8 @@
 import SpotifyWebApi from 'spotify-web-api-js';
 import { getLocalToken } from './token';
 import firestoreRef from './firebase';
+import shufflefunction from './shufflearray'
+
 
 // Given the right choice and all choices for 20 songs in the playlist or challenge
 // this function should return 3 other random choices
@@ -119,7 +121,7 @@ export default async function createChallengeUtil(playlist_id) {
       //console.log(message)
     }
 
-        // if (checkPlaylist(data.id) === true) 
+        // if (checkPlaylist(data.id) === true)
     // {
     //   message = "Playlist has already been added!";
     //   //console.log(message)
@@ -142,6 +144,7 @@ export default async function createChallengeUtil(playlist_id) {
     var all_start_times = [];
     var all_choices_A = [];
     var all_preview_urls = [];
+    shufflefunction(tracks_store)
     for (let i = 0; i < 20; i++) {
       let track_id = tracks_store[i].track.id;
       let start_time = 0;
