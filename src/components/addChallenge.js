@@ -95,7 +95,7 @@ function Challenges() {
     console.log("Message: ", message)
     return message;
   }
-  
+
   function handleClose(event, reason){
     if (reason === 'clickaway') {
       return;
@@ -139,5 +139,5 @@ function Challenges() {
     </div>
   );
 }
-  
+
 export default Challenges;
