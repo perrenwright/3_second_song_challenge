@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import MenuAppBar from './components/appNav';
@@ -8,7 +8,7 @@ import about from './components/about';
 import Contact from './components/contact';
 import getToken from './GetToken';
 import getPlaylistInfo from './getPlaylistInfo';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import addchallenge from './components/addChallenge';
 import PrivateRoute from './components/PrivateRoute';
 import {getLocalToken} from './token';
@@ -33,13 +33,22 @@ import Delete from './components/delete';
 // })(Button);
 
 export default function App() {
+  const [loggedIn, setloggedIn] = useState(false);
   const token = getToken();
+  const location = useLocation();
   getPlaylistInfo(token);
+  useEffect(()=> {
+    if (location.pathname !== '/') {
+      setloggedIn(true);
+    }
+  }, [location.pathname])
   return (
     <div className="App">
       <header className="App-header">
-        <MenuAppBar />
+        {loggedIn === true && <MenuAppBar />}
         <Switch>
+          <Route path="/" exact component={about} />
+          <Route path="/homepage" exact component={challenges} />
           <Route path="/globalleaderboard" component={globalleaderboard} />
           <Route path="/challenges" component={challenges} />
           <Route path="/about" component={about} />

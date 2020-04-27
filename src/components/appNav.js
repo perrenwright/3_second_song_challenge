@@ -95,7 +95,7 @@ export default function MenuAppBar() {
   const handleClose = () => {
     localStorage.clear();
     let history = createHistory();
-    history.push("/about");
+    history.push("/");
     let pathUrl = window.location.href;
     window.location.href = pathUrl;
   };
@@ -130,6 +130,7 @@ export default function MenuAppBar() {
             centered
           >
             <Tab
+              style={{marginRight: '40px'}}
               label="Challenges"
               {...a11yProps(0)}
               to="/challenges"
@@ -141,7 +142,7 @@ export default function MenuAppBar() {
               to="/globalleaderboard"
               component={Link}
             />
-            <Tab label="About" {...a11yProps(2)} to="/about" component={Link} />
+            {/* <Tab label="About" {...a11yProps(2)} to="/about" component={Link} /> */}
             <Tab
               label="Add"
               {...a11yProps(3)}
