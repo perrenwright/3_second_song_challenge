@@ -38,7 +38,7 @@ export default function App() {
   const location = useLocation();
   getPlaylistInfo(token);
   useEffect(()=> {
-    if (location.pathname === "/homepage" || location.pathname === "/challenges") {
+    if (location.pathname !== '/') {
       setloggedIn(true);
     }
   }, [location.pathname])
