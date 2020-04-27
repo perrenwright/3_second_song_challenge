@@ -95,7 +95,7 @@ export default function MenuAppBar() {
   const handleClose = () => {
     localStorage.clear();
     let history = createHistory();
-    history.push("/about");
+    history.push("/");
     let pathUrl = window.location.href;
     window.location.href = pathUrl;
   };
