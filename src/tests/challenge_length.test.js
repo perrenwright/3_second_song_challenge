@@ -1,42 +1,60 @@
 import React from "react";
-import { create } from "react-test-renderer";
+// import { create } from "react-test-renderer";
 import Challenge_length from "../components/challenge_length.js"
-import {unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
-import '@testing-library/jest-dom/extend-expect'
-import { render } from '@testing-library/react'
+import {GAME_STATE} from '../gamestate_enum.js';
+import { render, fireEvent, act, getByTestId, cleanup } from '@testing-library/react';
+import {BrowserRouter as Router} from 'react-router-dom';
 
+afterEach(cleanup)
 
+test('Challenge_length button sets length', () => {
 
-let container = null;
-beforeEach(() => {
-  // setup a DOM element as a render target
-  container = document.createElement("div");
-  document.body.appendChild(container);
+  let setChallenge_length = jest.fn();
+
+  const { getByTestId } = render(<Challenge_length challenge_length={5} setChallenge_length={setChallenge_length} gameState={null}/>);
+
+    act(() => {
+      fireEvent.click(getByTestId("button1"));
+    });
+
+    expect(setChallenge_length).toHaveBeenCalledWith(5);
 });
 
-afterEach(() => {
-  // cleanup on exiting
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
+test('Challenge_length button displays options', () => {
+
+  let setChallenge_length = jest.fn();
+
+  const { getByText, getByTestId } = render(<Challenge_length challenge_length={5} setChallenge_length={setChallenge_length} gameState={null}/>);
+
+    act(() => {
+      fireEvent.click(getByTestId("button1"));
+    });
+    const linkElement = getByText("5 Questions");
+    expect(linkElement).toBeInTheDocument();
 });
 
-describe("Challenge length component", () => {
-  test("Matches the snapshot", () => {
-    const chalength_button = create(<Challenge_length />);
-    expect(chalength_button.toJSON()).toMatchSnapshot();
-  });
+test('Challenge_length button displays options', () => {
+
+  let setChallenge_length = jest.fn();
+
+  const { getByText, getByTestId } = render(<Challenge_length challenge_length={5} setChallenge_length={setChallenge_length} gameState={null}/>);
+
+    act(() => {
+      fireEvent.click(getByTestId("button1"));
+    });
+    const linkElement = getByText("10 Questions");
+    expect(linkElement).toBeInTheDocument();
 });
 
-// it("renders with or without a name", () => {
-//   act(() => {
-//     render(<Challenge_length />, container);
-//   });
-//   expect(container.textContent).toBe("Hey, stranger");
+test('Challenge_length button displays options', () => {
 
-// describe("Challenge length component", () => {
-//   const setchal_length = jest.fn().mockImplementation
-//   const { container, getByText } = render(<Challenge_length setChallenge_length={setchal_length}/>)
-//   expect(getByText('5 Songs')).toBeInTheDocument()
-// })
+  let setChallenge_length = jest.fn();
+
+  const { getByText, getByTestId } = render(<Challenge_length challenge_length={5} setChallenge_length={setChallenge_length} gameState={null}/>);
+
+    act(() => {
+      fireEvent.click(getByTestId("button1"));
+    });
+    const linkElement = getByText("15 Questions");
+    expect(linkElement).toBeInTheDocument();
+});

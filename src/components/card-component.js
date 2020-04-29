@@ -30,7 +30,7 @@ function CardComponent(props) {
             { gameState === GAME_STATE.BEFORE && props.name.includes(props.searchValue) &&
 
                 <div className='card-component'>
-                    <Button onClick={() => onClick()}>
+                    <Button data-testid="button1" onClick={() => onClick()}>
                         <img
                             className="playlist-image"
                             src={props.image}
