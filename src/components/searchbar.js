@@ -15,7 +15,7 @@ const SearchBar = (props) => {
     <div>
     { props.gameState === null &&
       <form className="search">
-        <input
+        <input role = 'form1'
           value={searchValue}
           onChange={handleSearchInputChanges}
           type="text"
