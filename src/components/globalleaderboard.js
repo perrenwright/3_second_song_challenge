@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import firestoreRef from '../firebase';
+import firebase from 'firebase';
 import LeaderboardChip from './leaderboard_chip';
 import './globalleaderboard.css';
 
 export default function Leaderboard() {
+  let firestoreRef = firebase.firestore();
+
   console.log('Leaderboard function called');
   const [scores_info, setScoresInfo] = useState([]);
 
@@ -52,7 +54,7 @@ export default function Leaderboard() {
         </div>
         <div className="gbl-bottom2">
           <LeaderboardChip border='green' label={scores_info[3] === undefined ? " " : scores_info[3].join(' - ')}/>
-          <LeaderboardChip label={scores_info[4] === undefined ? " " : scores_info[4].join(' - ')}/> 
+          <LeaderboardChip label={scores_info[4] === undefined ? " " : scores_info[4].join(' - ')}/>
         </div>
       </div>
     );
