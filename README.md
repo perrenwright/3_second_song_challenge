@@ -1,68 +1,97 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 3 Second Song Challenge
 
-## Available Scripts
+The Song Challenge Web App is a React app that uses Firebase as the backend. We maintain most of the logic within the user browser with some calls to the Spotify Web API. 
 
-In the project directory, you can run:
+The single player mode allows the user to select a challenge that they would like to attempt. Users will attempt to guess the title of songs that are played for a specified duration of time. For example, the user may choose 3 seconds to listen to a song and identify it from the four options that are provided to them. 
 
-### `npm start`
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+ 
+## Clone the repository
+https://github.com/perrenwright/3_second_song_challenge.git
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Navigate to the repository directory:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  `cd 3_second_song_challenge`
+ 
+## Prerequisites
+What things you need to install the software and how to install them:
 
-### `npm test`
+NPM
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Firebase
 
-### `npm run build`
+## Installing
+A step by step series of examples that tell you how to get a development env running
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you have not installed npm please navigate to this site and follow the steps:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+`https://www.npmjs.com/get-npm`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you have  not installed Firebase:
 
-### `npm run eject`
+Install Firebase tools
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+sudo npm install -g firebase-tools
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install Firebase
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+npm install firebase
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Run npm start
 
-## Learn More
+## Running the tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run the automated tests for this system
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Navigate to the source folder
 
-### Code Splitting
+cd 3_second_song_challenge
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Run npm test
 
-### Analyzing the Bundle Size
+## Break down into tests
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+We tested each component to ensure that their functionality behaves as expected. We majorly focused on unit testing each feature.
 
-### Making a Progressive Web App
+`Example: Clicking the Challenge length button`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+    test('Challenge_length button sets length', () => {
 
-### Advanced Configuration
+    let setChallenge_length = jest.fn();
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+    const { getByTestId } = render(<Challenge_length challenge_length={5} setChallenge_length={setChallenge_length} gameState=       {null}/>);
 
-### Deployment
+    act(() => {
+      fireEvent.click(getByTestId("button1"));
+    });
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+    expect(setChallenge_length).toHaveBeenCalledWith(5);
+    });
+## Deployment
+Run firebase serve then deploy
+## Built With
+REACTJS - The web framework used
+## Authors
+Oluwatoni Oshikanlu
 
-### `npm run build` fails to minify
+Perren Wright
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Aghogho Biakolo
+
+Mikayla Orange
+
+Prabin Sapkota
+
+## License
+This project is licensed under the MIT License
+## Acknowledgments
+
+JM Perez for the Spotify API Wrapper
+
+Inspiration from The Beat by Shazam
+
+Google Tech Exchange Team
+
+
+
