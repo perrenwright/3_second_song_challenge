@@ -15,6 +15,7 @@ const SearchBar = (props) => {
     <div>
     { props.gameState === null &&
       <form className="search">
+        {/*eslint-disable-next-line*/}
         <input role = 'form1'
           value={searchValue}
           onChange={handleSearchInputChanges}
