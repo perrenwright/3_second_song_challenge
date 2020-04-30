@@ -8,15 +8,15 @@ import userEvent from '@testing-library/user-event'
 
 afterEach(cleanup)
 
-test('Search bar accepts input', () => {
+test('Search bar accepts input', async () => {
 
   let wrappersetSearchValue = jest.fn();
 
   const { getByRole } = render(<SearchBar searchValueSetter={wrappersetSearchValue} gameState={null}/>);
 
-    act(async() => {
-      await userEvent.type(getByRole('form1'), 'Ha')
-    });
+
+  await userEvent.type(getByRole('form1'), 'Ha')
+
     expect(getByRole('form1')).toHaveAttribute('value', 'Ha')
 });
 
@@ -26,8 +26,10 @@ test('Search bar initializes search value', async () => {
 
   const { getByRole } = render(<SearchBar searchValueSetter={wrappersetSearchValue} gameState={null}/>);
 
-    await userEvent.type(getByRole('form1'), 'a')
-    expect(wrappersetSearchValue).toHaveBeenCalledWith('a')
+
+   await userEvent.type(getByRole('form1'), 'j')
+
+    expect(wrappersetSearchValue).toHaveBeenCalledWith('j')
 });
 
 test('Search bar updates search value', async () => {

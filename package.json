@@ -39,6 +39,7 @@
     "react-timeout": "^1.2.0",
     "reactstrap": "^8.4.1",
     "simple-oauth2": "^3.4.0",
+    "sinon": "^9.0.2",
     "spotify-web-api-js": "^1.2.0",
     "sweetalert2": "^9.10.12",
     "yup": "^0.28.4"

@@ -862,3 +862,429 @@ INFO: Detected HTTP/2 connection.
 [debug] [2020-04-29T10:37:29.783Z] Apr 29, 2020 6:37:29 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected HTTP/2 connection.
 
+[debug] [2020-04-29T23:07:18.829Z] ----------------------------------------------------------------------
+[debug] [2020-04-29T23:07:18.830Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:exec --only firestore npm test
+[debug] [2020-04-29T23:07:18.830Z] CLI Version:   7.12.1
+[debug] [2020-04-29T23:07:18.830Z] Platform:      darwin
+[debug] [2020-04-29T23:07:18.830Z] Node Version:  v12.14.1
+[debug] [2020-04-29T23:07:18.831Z] Time:          Wed Apr 29 2020 19:07:18 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-04-29T23:07:18.831Z] ----------------------------------------------------------------------
+[debug] [2020-04-29T23:07:18.831Z] 
+[debug] [2020-04-29T23:07:18.844Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-29T23:07:18.845Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: firestore
+[info] i  firestore: Serving ALL traffic (including WebChannel) on http://localhost:8080
+[warn] ⚠  firestore: Support for WebChannel on a separate port (8081) is DEPRECATED and will go away soon. Please use port above instead.
+[debug] [2020-04-29T23:07:18.880Z] Ignoring unsupported arg: projectId
+[debug] [2020-04-29T23:07:18.880Z] Ignoring unsupported arg: auto_download
+[debug] [2020-04-29T23:07:18.880Z] Starting emulator firestore with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/tonioshikanlu/.cache/firebase/emulators/cloud-firestore-emulator-v1.10.2.jar","--host","localhost","--port",8080,"--rules","/Users/tonioshikanlu/Documents/GitHub/3_second_song_challenge/firestore.rules","--webchannel_port",8081],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator"],"joinArgs":false}
+[info] i  firestore: Emulator logging to firestore-debug.log
+[debug] [2020-04-29T23:07:20.519Z] API endpoint: http://
+[debug] [2020-04-29T23:07:20.520Z] localhost:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8080
+
+Dev App Server is now running.
+
+
+[info] ✔  firestore: Emulator started at http://localhost:8080
+[info] i  firestore: For testing set FIRESTORE_EMULATOR_HOST=localhost:8080
+[info] i  Running script: npm test
+[debug] [2020-04-29T23:07:20.675Z] Running npm test with environment {"TERM_PROGRAM":"Apple_Terminal","TERM":"xterm-256color","SHELL":"/bin/bash","TMPDIR":"/var/folders/jt/py33g4_13tz1qptl01w8xm5c00mq4h/T/","TERM_PROGRAM_VERSION":"433","TERM_SESSION_ID":"635A8173-B6F6-4442-B74B-9DEA2304FADD","USER":"tonioshikanlu","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.aif7l7VKxe/Listeners","SK_SIGNING_PLUGIN":"gnubbyagent","PATH":"/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin","LaunchInstanceID":"7FE0F852-9A7A-4CDE-96EF-38A195016FCF","PWD":"/Users/tonioshikanlu/Documents/GitHub/3_second_song_challenge","LANG":"en_US.UTF-8","XPC_FLAGS":"0x0","HISTCONTROL":"","XPC_SERVICE_NAME":"0","HOME":"/Users/tonioshikanlu","SHLVL":"1","LOGNAME":"tonioshikanlu","SECURITYSESSIONID":"186aa","_":"/usr/local/bin/firebase","__CF_USER_TEXT_ENCODING":"0xA5C90:0x0:0x0","GCLOUD_PROJECT":"secondsongchallenge","FIRESTORE_EMULATOR_HOST":"localhost:8080","FIREBASE_FIRESTORE_EMULATOR_ADDRESS":"localhost:8080"}
+[debug] [2020-04-29T23:14:49.282Z] Apr 29, 2020 7:14:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:14:49.638Z] Apr 29, 2020 7:14:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:25:51.518Z] Apr 29, 2020 7:25:51 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:25:51.564Z] Apr 29, 2020 7:25:51 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:27:46.956Z] Apr 29, 2020 7:27:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:27:47.012Z] Apr 29, 2020 7:27:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:28:06.732Z] Apr 29, 2020 7:28:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:28:06.773Z] Apr 29, 2020 7:28:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:28:21.525Z] Apr 29, 2020 7:28:21 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:28:21.543Z] Apr 29, 2020 7:28:21 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:29:01.170Z] Apr 29, 2020 7:29:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:29:01.192Z] Apr 29, 2020 7:29:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:56:08.773Z] Apr 29, 2020 7:56:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:56:08.790Z] Apr 29, 2020 7:56:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:56:28.897Z] Apr 29, 2020 7:56:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-29T23:56:28.915Z] Apr 29, 2020 7:56:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:02:30.249Z] Apr 30, 2020 2:02:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:02:30.306Z] Apr 30, 2020 2:02:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:04:01.588Z] Apr 30, 2020 2:04:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:04:01.609Z] Apr 30, 2020 2:04:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:04:54.064Z] Apr 30, 2020 2:04:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:04:54.090Z] Apr 30, 2020 2:04:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:05:56.107Z] Apr 30, 2020 2:05:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:05:56.124Z] Apr 30, 2020 2:05:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:18:57.564Z] Apr 30, 2020 2:18:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:18:57.580Z] Apr 30, 2020 2:18:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:20:01.089Z] Apr 30, 2020 2:20:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:20:01.110Z] Apr 30, 2020 2:20:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:21:01.074Z] Apr 30, 2020 2:21:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:21:01.091Z] Apr 30, 2020 2:21:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:21:15.832Z] Apr 30, 2020 2:21:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:21:15.847Z] Apr 30, 2020 2:21:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:22:16.864Z] Apr 30, 2020 2:22:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:22:16.881Z] Apr 30, 2020 2:22:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:22:53.797Z] Apr 30, 2020 2:22:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:22:53.811Z] Apr 30, 2020 2:22:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:22:54.966Z] Apr 30, 2020 2:22:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:22:54.979Z] Apr 30, 2020 2:22:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:23:39.430Z] Apr 30, 2020 2:23:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:23:39.443Z] Apr 30, 2020 2:23:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:23:39.635Z] Apr 30, 2020 2:23:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:23:39.651Z] Apr 30, 2020 2:23:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:24:56.266Z] Apr 30, 2020 2:24:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:24:56.289Z] Apr 30, 2020 2:24:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:24:56.948Z] Apr 30, 2020 2:24:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:24:56.964Z] Apr 30, 2020 2:24:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:26:02.591Z] Apr 30, 2020 2:26:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:26:02.605Z] Apr 30, 2020 2:26:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:26:02.831Z] Apr 30, 2020 2:26:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:26:02.850Z] Apr 30, 2020 2:26:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:27:46.864Z] Apr 30, 2020 2:27:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:27:46.883Z] Apr 30, 2020 2:27:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:27:47.053Z] Apr 30, 2020 2:27:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:27:47.070Z] Apr 30, 2020 2:27:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:28:49.760Z] Apr 30, 2020 2:28:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:28:49.773Z] Apr 30, 2020 2:28:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:28:49.837Z] Apr 30, 2020 2:28:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:28:49.852Z] Apr 30, 2020 2:28:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:30:04.487Z] Apr 30, 2020 2:30:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:30:04.504Z] Apr 30, 2020 2:30:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:30:05.098Z] Apr 30, 2020 2:30:05 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:30:05.113Z] Apr 30, 2020 2:30:05 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:30:28.637Z] Apr 30, 2020 2:30:28 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:30:28.651Z] Apr 30, 2020 2:30:28 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:30:56.228Z] Apr 30, 2020 2:30:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:30:56.241Z] Apr 30, 2020 2:30:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:30:57.516Z] Apr 30, 2020 2:30:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:30:57.529Z] Apr 30, 2020 2:30:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:31:36.969Z] Apr 30, 2020 2:31:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:31:36.986Z] Apr 30, 2020 2:31:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:31:37.783Z] Apr 30, 2020 2:31:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:31:37.820Z] Apr 30, 2020 2:31:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:31:54.404Z] Apr 30, 2020 2:31:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:31:54.453Z] Apr 30, 2020 2:31:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:32:35.729Z] Apr 30, 2020 2:32:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:32:35.741Z] Apr 30, 2020 2:32:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:32:36.964Z] Apr 30, 2020 2:32:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:32:36.980Z] Apr 30, 2020 2:32:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:35:48.213Z] Apr 30, 2020 2:35:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:35:48.225Z] Apr 30, 2020 2:35:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:35:57.934Z] Apr 30, 2020 2:35:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:35:57.952Z] Apr 30, 2020 2:35:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:26.104Z] Apr 30, 2020 2:37:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:26.118Z] Apr 30, 2020 2:37:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:27.209Z] Apr 30, 2020 2:37:27 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:27.220Z] Apr 30, 2020 2:37:27 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:39.864Z] Apr 30, 2020 2:37:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:39.880Z] Apr 30, 2020 2:37:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:40.591Z] Apr 30, 2020 2:37:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:40.605Z] Apr 30, 2020 2:37:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:51.529Z] Apr 30, 2020 2:37:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:51.539Z] Apr 30, 2020 2:37:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:51.584Z] Apr 30, 2020 2:37:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:37:51.596Z] Apr 30, 2020 2:37:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:38:26.613Z] Apr 30, 2020 2:38:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:38:26.628Z] Apr 30, 2020 2:38:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:40:46.048Z] Apr 30, 2020 2:40:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:40:46.067Z] Apr 30, 2020 2:40:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:40:47.312Z] Apr 30, 2020 2:40:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:40:47.321Z] Apr 30, 2020 2:40:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:43:30.302Z] Apr 30, 2020 2:43:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:43:30.313Z] Apr 30, 2020 2:43:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:43:30.827Z] Apr 30, 2020 2:43:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:43:30.863Z] Apr 30, 2020 2:43:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:43:40.551Z] Apr 30, 2020 2:43:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:43:40.561Z] Apr 30, 2020 2:43:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:43:40.654Z] Apr 30, 2020 2:43:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:43:40.665Z] Apr 30, 2020 2:43:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:44:18.578Z] Apr 30, 2020 2:44:18 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:44:18.593Z] Apr 30, 2020 2:44:18 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:44:19.524Z] Apr 30, 2020 2:44:19 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:44:19.540Z] Apr 30, 2020 2:44:19 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:44:46.613Z] Apr 30, 2020 2:44:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:44:46.641Z] Apr 30, 2020 2:44:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:44:47.140Z] Apr 30, 2020 2:44:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:44:47.171Z] Apr 30, 2020 2:44:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:53:37.893Z] Apr 30, 2020 2:53:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:53:37.911Z] Apr 30, 2020 2:53:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:53:37.937Z] Apr 30, 2020 2:53:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:53:37.951Z] Apr 30, 2020 2:53:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:55:54.328Z] Apr 30, 2020 2:55:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:55:54.344Z] Apr 30, 2020 2:55:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:55:55.115Z] Apr 30, 2020 2:55:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:55:55.128Z] Apr 30, 2020 2:55:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:59:35.662Z] Apr 30, 2020 2:59:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T06:59:35.677Z] Apr 30, 2020 2:59:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T07:04:20.148Z] Apr 30, 2020 3:04:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T07:04:20.166Z] Apr 30, 2020 3:04:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T07:09:03.460Z] Apr 30, 2020 3:09:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T07:09:03.474Z] Apr 30, 2020 3:09:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T07:09:23.820Z] Apr 30, 2020 3:09:23 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T07:09:23.832Z] Apr 30, 2020 3:09:23 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+

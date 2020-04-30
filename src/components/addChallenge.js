@@ -6,10 +6,11 @@ import createChallengeUtil from '../createChallengeUtil';
 import { getLocalToken } from '../token';
 import './addChallenge.css';
 import './challenges.css';
-import firestoreRef from '../firebase';
+import firebase from 'firebase';
 
 
 function Challenges() {
+  let firestoreRef = firebase.firestore();
   function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
@@ -95,7 +96,7 @@ function Challenges() {
     console.log("Message: ", message)
     return message;
   }
-  
+
   function handleClose(event, reason){
     if (reason === 'clickaway') {
       return;
@@ -139,5 +140,5 @@ function Challenges() {
     </div>
   );
 }
-  
+
 export default Challenges;

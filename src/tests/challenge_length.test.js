@@ -1,5 +1,4 @@
 import React from "react";
-// import { create } from "react-test-renderer";
 import Challenge_length from "../components/challenge_length.js"
 import {GAME_STATE} from '../gamestate_enum.js';
 import { render, fireEvent, act, getByTestId, cleanup } from '@testing-library/react';
