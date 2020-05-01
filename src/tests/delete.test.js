@@ -15,7 +15,7 @@ beforeEach(async () => {
   await firebaseTesting.loadFirestoreRules({ projectId, rules });
 });
 
-describe("Add and Delete", () => {
+describe("Delete", () => {
 
 	const firebaseApp = firebase.initializeApp({
 	  projectId: projectId
@@ -34,7 +34,7 @@ describe("Add and Delete", () => {
       challenge_name: "challenge_name"
     });
 
-    render(<addChallenge />);
+    // render(<addChallenge />);
 
     // The default values we inserted should be rendered
     firebase.assertSucceeds(app.firestore().collection("challenge-test").doc("223").get());
