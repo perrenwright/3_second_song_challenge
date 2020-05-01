@@ -61,14 +61,14 @@ const Challenge_length = (props) => {
     <div>
       { props.gameState === null &&
       <div>
-        <Button
+        <Button data-testid='button1'
           aria-controls="customized-menu"
           aria-haspopup="true"
           variant="contained"
           // endIcon={<ExpandMore/>}
           style={{backgroundColor: '#19869E',color:'#FAFAF6'}}
           onClick={handleClick}
-         
+
         >
           Challenge Length
         </Button>
