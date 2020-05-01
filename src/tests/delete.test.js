@@ -6,28 +6,10 @@ import fs from 'fs'; // File system import
 import firebase from 'firebase';
 import * as firebaseTesting from '@firebase/testing'
 
-const projectId = "project-id";
-const rules = fs.readFileSync("firestore.rules", "utf8");
 
-beforeEach(async () => {
-  // Clear the database between tests
-  await firebaseTesting.clearFirestoreData({ projectId });
-  await firebaseTesting.loadFirestoreRules({ projectId, rules });
-});
+// const rules = fs.readFileSync("firestore.rules", "utf8");
 
-describe("Delete", () => {
-
-	const firebaseApp = firebase.initializeApp({
-	  projectId: projectId
-	});
-
-	const db = firebaseApp.firestore();
-	db.settings({
-		host: "localhost:8080",
-		ssl: false
-	});
-
-  test('prints leaderboard', async () => {
+test('Test Delete', async () => {
 
     // add mock data and wait till it's finished adding
     await db.collection("challenge_test").doc("223").set({
@@ -41,4 +23,3 @@ describe("Delete", () => {
     render(<Delete />);
     firebase.assertFails(app.firestore().collection("challenge-test").doc("223").get());
   });
-});
