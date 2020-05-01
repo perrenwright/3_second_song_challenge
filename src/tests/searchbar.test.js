@@ -13,10 +13,15 @@ test('Search bar accepts input', async () => {
   let wrappersetSearchValue = jest.fn();
 
   const { getByRole } = render(<SearchBar searchValueSetter={wrappersetSearchValue} gameState={null}/>);
-
+  try {
 
   await userEvent.type(getByRole('form1'), 'Ha')
 
+  } catch (e) {
+
+    expect(e).toMatch('error');
+
+  }
     expect(getByRole('form1')).toHaveAttribute('value', 'Ha')
 });
 
@@ -25,11 +30,13 @@ test('Search bar initializes search value', async () => {
   let wrappersetSearchValue = jest.fn();
 
   const { getByRole } = render(<SearchBar searchValueSetter={wrappersetSearchValue} gameState={null}/>);
-
+  try {
 
    await userEvent.type(getByRole('form1'), 'j')
-
-    expect(wrappersetSearchValue).toHaveBeenCalledWith('j')
+   } catch (e) {
+    expect(e).toMatch('error');
+  }
+  expect(wrappersetSearchValue).toHaveBeenCalledWith('j')
 });
 
 test('Search bar updates search value', async () => {
@@ -37,9 +44,11 @@ test('Search bar updates search value', async () => {
   let wrappersetSearchValue = jest.fn();
 
   const { getByRole } = render(<SearchBar searchValueSetter={wrappersetSearchValue} gameState={null}/>);
-
+  try {
 
    await userEvent.type(getByRole('form1'), 'ja')
-
+   } catch (e) {
+    expect(e).toMatch('error');
+  }
     expect(wrappersetSearchValue).toHaveBeenCalledWith('ja')
 });

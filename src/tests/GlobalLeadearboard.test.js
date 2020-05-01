@@ -29,7 +29,7 @@ describe("Global Leaderboard", () => {
   });
 
   test('prints leaderboard', async () => {
-
+    try {
     // add mock data and wait till it's finished adding
     await db.collection("challenge_test").doc("123").set({
       highest_score: "12",
@@ -37,10 +37,14 @@ describe("Global Leaderboard", () => {
       challenge_name: "challenge_name"
     });
 
+
     const { findByText } = render(<Leaderboard />);
 
     // The default values we inserted should be rendered
     await findByText("challenge_name - 12 - highest_scorer");
 
+    } catch (e) {
+      expect(e).toMatch('error');
+    }
   });
 });
