@@ -1300,3 +1300,101 @@ INFO: Detected HTTP/2 connection.
 [debug] [2020-04-30T07:24:12.948Z] Apr 30, 2020 3:24:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected HTTP/2 connection.
 
+[debug] [2020-04-30T22:41:13.238Z] ----------------------------------------------------------------------
+[debug] [2020-04-30T22:41:13.240Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:exec --only firestore npm test
+[debug] [2020-04-30T22:41:13.240Z] CLI Version:   8.2.0
+[debug] [2020-04-30T22:41:13.240Z] Platform:      darwin
+[debug] [2020-04-30T22:41:13.240Z] Node Version:  v13.6.0
+[debug] [2020-04-30T22:41:13.241Z] Time:          Thu Apr 30 2020 17:41:13 GMT-0500 (Central Daylight Time)
+[debug] [2020-04-30T22:41:13.241Z] ----------------------------------------------------------------------
+[debug] [2020-04-30T22:41:13.241Z] 
+[debug] [2020-04-30T22:41:13.252Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-30T22:41:13.252Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: firestore
+[debug] [2020-04-30T22:41:13.290Z] [hub] writing locator at /var/folders/70/rgqv2h1s7vl5kxpgzhjb0mn400q6p6/T/hub-secondsongchallenge.json
+[info] ✔  hub: emulator hub started at http://localhost:4400
+[info] i  firestore: downloading cloud-firestore-emulator-v1.11.3.jar...
+[info] i  firestore: Removing outdated emulator files: cloud-firestore-emulator-v1.10.4.jar
+[debug] [2020-04-30T22:41:19.655Z] Ignoring unsupported arg: projectId
+[debug] [2020-04-30T22:41:19.655Z] Ignoring unsupported arg: auto_download
+[debug] [2020-04-30T22:41:19.655Z] Starting firestore emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/perrenwright/.cache/firebase/emulators/cloud-firestore-emulator-v1.11.3.jar","--host","localhost","--port",8080,"--rules","/Users/perrenwright/Documents/3_Second_Song_Challenge/3_second_song_challenge/firestore.rules"],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false}
+[info] i  firestore: firestore emulator logging to firestore-debug.log
+[debug] [2020-04-30T22:41:21.701Z] API endpoint: http://
+[debug] [2020-04-30T22:41:21.701Z] localhost:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8080
+
+Dev App Server is now running.
+
+
+[info] ✔  firestore: firestore emulator started at http://localhost:8080
+[info] i  firestore: For testing set FIRESTORE_EMULATOR_HOST=localhost:8080
+[info] i  Running script: npm test
+[debug] [2020-04-30T22:41:21.707Z] Running npm test with environment {"SECURITYSESSIONID":"186a8","USER":"perrenwright","COMMAND_MODE":"unix2003","PATH":"/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin","HOME":"/Users/perrenwright","SHELL":"/bin/zsh","LaunchInstanceID":"9C578137-9316-4363-A3B7-DFE44650B294","__CF_USER_TEXT_ENCODING":"0xB9AC6:0x0:0x0","XPC_SERVICE_NAME":"0","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.7yULv4i0ug/Listeners","XPC_FLAGS":"0x0","LOGNAME":"perrenwright","TMPDIR":"/var/folders/70/rgqv2h1s7vl5kxpgzhjb0mn400q6p6/T/","OLDPWD":"/Users/perrenwright/Documents/3_Second_Song_Challenge/3_second_song_challenge","PWD":"/Users/perrenwright/Documents/3_Second_Song_Challenge/3_second_song_challenge","SHLVL":"1","SK_SIGNING_PLUGIN":"gnubbyagent","TERM_PROGRAM":"vscode","TERM_PROGRAM_VERSION":"1.44.2","LANG":"en_US.UTF-8","COLORTERM":"truecolor","TERM":"xterm-256color","_":"/usr/local/bin/firebase","IS_FIREBASE_CLI":"true","GCLOUD_PROJECT":"secondsongchallenge","FIRESTORE_EMULATOR_HOST":"localhost:8080","FIREBASE_FIRESTORE_EMULATOR_ADDRESS":"localhost:8080","FIREBASE_EMULATOR_HUB":"localhost:4400"}
+[debug] [2020-04-30T22:41:31.044Z] Apr 30, 2020 5:41:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-04-30T22:41:31.687Z] Apr 30, 2020 5:41:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-05-01T16:43:24.325Z] ----------------------------------------------------------------------
+[debug] [2020-05-01T16:43:24.327Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:exec --only firestore npm test --detectOpenHandles
+[debug] [2020-05-01T16:43:24.327Z] CLI Version:   8.2.0
+[debug] [2020-05-01T16:43:24.327Z] Platform:      darwin
+[debug] [2020-05-01T16:43:24.327Z] Node Version:  v13.6.0
+[debug] [2020-05-01T16:43:24.328Z] Time:          Fri May 01 2020 11:43:24 GMT-0500 (Central Daylight Time)
+[debug] [2020-05-01T16:43:24.328Z] ----------------------------------------------------------------------
+[debug] [2020-05-01T16:43:24.328Z] 
+[debug] [2020-05-01T16:43:24.336Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-01T16:43:24.336Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: firestore
+[debug] [2020-05-01T16:43:24.371Z] [hub] writing locator at /var/folders/70/rgqv2h1s7vl5kxpgzhjb0mn400q6p6/T/hub-secondsongchallenge.json
+[info] ✔  hub: emulator hub started at http://localhost:4400
+[debug] [2020-05-01T16:43:24.385Z] Ignoring unsupported arg: projectId
+[debug] [2020-05-01T16:43:24.385Z] Ignoring unsupported arg: auto_download
+[debug] [2020-05-01T16:43:24.385Z] Starting firestore emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/perrenwright/.cache/firebase/emulators/cloud-firestore-emulator-v1.11.3.jar","--host","localhost","--port",8080,"--rules","/Users/perrenwright/Documents/3_Second_Song_Challenge/3_second_song_challenge/firestore.rules"],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false}
+[info] i  firestore: firestore emulator logging to firestore-debug.log
+[debug] [2020-05-01T16:43:31.538Z] API endpoint: http://
+[debug] [2020-05-01T16:43:31.538Z] localhost:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8080
+
+Dev App Server is now running.
+
+
+[info] ✔  firestore: firestore emulator started at http://localhost:8080
+[info] i  firestore: For testing set FIRESTORE_EMULATOR_HOST=localhost:8080
+[info] i  Running script: npm test --detectOpenHandles
+[debug] [2020-05-01T16:43:31.544Z] Running npm test --detectOpenHandles with environment {"SECURITYSESSIONID":"186a7","USER":"perrenwright","COMMAND_MODE":"unix2003","PATH":"/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin","HOME":"/Users/perrenwright","SHELL":"/bin/zsh","LaunchInstanceID":"7BC4298B-2ACE-4F2A-8823-6B6F12F8DE49","__CF_USER_TEXT_ENCODING":"0xB9AC6:0x0:0x0","XPC_SERVICE_NAME":"0","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.xcdwfoxV2T/Listeners","XPC_FLAGS":"0x0","LOGNAME":"perrenwright","TMPDIR":"/var/folders/70/rgqv2h1s7vl5kxpgzhjb0mn400q6p6/T/","OLDPWD":"/Users/perrenwright/Documents/3_Second_Song_Challenge/3_second_song_challenge","PWD":"/Users/perrenwright/Documents/3_Second_Song_Challenge/3_second_song_challenge","SHLVL":"1","SK_SIGNING_PLUGIN":"gnubbyagent","TERM_PROGRAM":"vscode","TERM_PROGRAM_VERSION":"1.44.2","LANG":"en_US.UTF-8","COLORTERM":"truecolor","TERM":"xterm-256color","_":"/usr/local/bin/firebase","IS_FIREBASE_CLI":"true","GCLOUD_PROJECT":"secondsongchallenge","FIRESTORE_EMULATOR_HOST":"localhost:8080","FIREBASE_FIRESTORE_EMULATOR_ADDRESS":"localhost:8080","FIREBASE_EMULATOR_HUB":"localhost:4400"}
+[debug] [2020-05-01T16:43:39.490Z] May 01, 2020 11:43:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-05-01T16:43:40.099Z] May 01, 2020 11:43:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-05-01T16:49:01.984Z] May 01, 2020 11:49:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-05-01T16:49:02.034Z] May 01, 2020 11:49:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-05-01T16:50:49.607Z] May 01, 2020 11:50:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-05-01T16:50:49.630Z] May 01, 2020 11:50:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-05-01T16:55:54.786Z] May 01, 2020 11:55:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-05-01T16:55:54.816Z] May 01, 2020 11:55:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-05-01T16:57:03.602Z] May 01, 2020 11:57:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-05-01T16:57:03.615Z] May 01, 2020 11:57:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
