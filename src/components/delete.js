@@ -1,16 +1,12 @@
 import React,{useState, useEffect} from 'react';
 import {Button,Snackbar} from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
-import './firebase.js';
 import firebase from 'firebase';
-import firestoreRef from '../firebase';
 import { getLocalToken } from '../token';
 import SpotifyWebApi from 'spotify-web-api-js';
 import './about.css';
 import './challenges.css';
 import './addChallenge.css'
-
-
 
 function Delete()
 {
@@ -35,7 +31,7 @@ function Delete()
     async function getPlaylists() {
         var username = await getUsername()
         let newPlaylist = [];
-         let querySnapshot =  await firestoreRef
+         let querySnapshot =  await firebase.firestore()
           .collection('challenge_test')
           .get();
           querySnapshot.forEach(function(doc) {
